@@ -1,11 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Link Monitor resources",
+  "title": "Link Monitor resources (source-site schema)",
+  "description": "采用 awesome-zhuiju-free 的完整字段结构：标签/访问权限/评分/风险/验证/来源/GitHub 元数据",
   "type": "object",
   "required": ["version", "updated_at", "resources"],
   "properties": {
     "version": { "type": "integer" },
-    "updated_at": { "type": "string" },
+    "updated_at": { "type": "string", "description": "ISO 日期 YYYY-MM-DD" },
     "resources": {
       "type": "array",
       "items": {
@@ -15,10 +16,71 @@
           "id": { "type": "string", "description": "唯一英文标识" },
           "name": { "type": "string", "description": "显示名称" },
           "url": { "type": "string", "description": "完整 http(s) 地址" },
-          "category": { "type": "string", "description": "分类 key，对应 categories" },
-          "summary": { "type": "string", "description": "一句话简介" },
-          "enabled": { "type": "boolean", "description": "是否参与检测与发布" },
-          "featured": { "type": "boolean", "description": "是否显示在首页精选区" }
+          "link_url": { "type": "string", "description": "可选跳转地址" },
+          "category": { "type": "string", "description": "分类 key：opensource/subtitle/player/tools/dev/media/learn/other" },
+          "summary": { "type": "string", "description": "完整介绍" },
+          "summary_short": { "type": "string", "description": "短介绍" },
+          "platforms": { "type": "array", "items": { "type": "string" }, "description": "支持平台 web/android/ios..." },
+          "tags": { "type": "array", "items": { "type": "string" }, "description": "标签" },
+          "access": {
+            "type": "object",
+            "description": "访问条件",
+            "properties": {
+              "requires_login": { "type": "boolean" },
+              "free_level": { "type": "string", "enum": ["free", "partial", "unknown"] },
+              "regions": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+          "scores": {
+            "type": "object",
+            "description": "1-5 星评分",
+            "properties": {
+              "more": { "type": "integer", "minimum": 1, "maximum": 5 },
+              "speed": { "type": "integer", "minimum": 1, "maximum": 5 },
+              "clean": { "type": "integer", "minimum": 1, "maximum": 5 },
+              "stable": { "type": "integer", "minimum": 1, "maximum": 5 },
+              "ease": { "type": "integer", "minimum": 1, "maximum": 5 }
+            }
+          },
+          "risks": {
+            "type": "object",
+            "description": "风险等级",
+            "properties": {
+              "copyright": { "type": "string", "enum": ["high", "medium", "low", "unknown"] },
+              "safety": { "type": "string" },
+              "privacy": { "type": "string" },
+              "payment": { "type": "string" }
+            }
+          },
+          "verification": {
+            "type": "object",
+            "description": "验证状态（检测脚本自动回写 status/last_checked/method/notes）",
+            "properties": {
+              "status": { "type": "string", "enum": ["active", "caution", "removed", "unreachable"] },
+              "last_checked": { "type": "string" },
+              "method": { "type": "string", "enum": ["auto", "manual"] },
+              "notes": { "type": "string" }
+            }
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "submitted_by": { "type": "string" },
+              "added_at": { "type": "string" }
+            }
+          },
+          "github": {
+            "type": "object",
+            "description": "GitHub 仓库元数据",
+            "properties": {
+              "full_name": { "type": "string" },
+              "stars": { "type": "integer" },
+              "pushed_at": { "type": "string" }
+            }
+          },
+          "featured": { "type": "boolean", "description": "是否精选" },
+          "featured_order": { "type": "integer", "description": "精选排序" },
+          "enabled": { "type": "boolean", "description": "是否参与检测与发布（本工具扩展字段）" }
         }
       }
     }
