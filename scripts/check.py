@@ -102,6 +102,30 @@ def main():
             results.append(fut.result())
     results.sort(key=lambda x: x["resource_id"])
 
+    # 将检测结果回写到 resources.json 的 verification 字段（仿源站机制）
+    by_id = {r["resource_id"]: r for r in results}
+    today = datetime.now(timezone.utc).date().isoformat()
+    for res in data["resources"]:
+        rid = res["id"]
+        if rid not in by_id:
+            continue
+        r = by_id[rid]
+        v = res.setdefault("verification", {})
+        if r["status"] == "reachable":
+            v["status"] = "active"
+            v["notes"] = "自动检测通过 (HTTP %s, %dms)" % (r["http_status"], r["response_ms"])
+        elif r["status"] == "restricted":
+            v["status"] = "caution"
+            v["notes"] = "访问受限 (HTTP %s)" % r["http_status"]
+        else:
+            v["status"] = "unreachable"
+            v["notes"] = "无法访问 (%s)" % (r.get("http_status") or r.get("error") or "timeout")
+        v["last_checked"] = today
+        v["method"] = "auto"
+    with open(RES_PATH, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+
     report = {
         "version": 1,
         "generated_at": datetime.now(timezone.utc).isoformat(),
