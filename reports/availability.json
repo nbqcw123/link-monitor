@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-11-24T15:39:11.343395+00:00",
+  "generated_at": "2026-11-24T16:58:50.329300+00:00",
   "checker": {
     "environment": "local",
     "timeout_s": 12.0,
@@ -8,31 +8,31 @@
     "retries": 2
   },
   "summary": {
-    "total": 7,
-    "reachable": 5,
+    "total": 16,
+    "reachable": 16,
     "restricted": 0,
-    "unreachable": 2
+    "unreachable": 0
   },
   "results": [
     {
-      "resource_id": "bad-example",
-      "url": "https://this-domain-does-not-exist-xyz123.invalid/",
-      "status": "unreachable",
-      "http_status": null,
-      "final_url": null,
-      "response_ms": 25,
-      "checked_at": "2026-11-24T15:39:07.947743+00:00",
-      "attempts": 2,
-      "error": "<urlopen error Tunnel connection failed: 502 Bad Gateway>"
-    },
-    {
-      "resource_id": "baidu",
-      "url": "https://www.baidu.com/",
+      "resource_id": "bilibili",
+      "url": "https://www.bilibili.com/",
       "status": "reachable",
       "http_status": 200,
-      "final_url": "https://www.baidu.com/",
-      "response_ms": 184,
-      "checked_at": "2026-11-24T15:39:07.762792+00:00",
+      "final_url": "https://www.bilibili.com/",
+      "response_ms": 230,
+      "checked_at": "2026-11-24T16:58:47.574353+00:00",
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "resource_id": "douban-movie",
+      "url": "https://movie.douban.com/",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://movie.douban.com/",
+      "response_ms": 235,
+      "checked_at": "2026-11-24T16:58:47.834003+00:00",
       "attempts": 1,
       "error": null
     },
@@ -42,8 +42,41 @@
       "status": "reachable",
       "http_status": 200,
       "final_url": "https://github.com/",
-      "response_ms": 632,
-      "checked_at": "2026-11-24T15:39:07.763687+00:00",
+      "response_ms": 371,
+      "checked_at": "2026-11-24T16:58:48.045796+00:00",
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "resource_id": "imdb",
+      "url": "https://www.imdb.com/",
+      "status": "reachable",
+      "http_status": 202,
+      "final_url": "https://www.imdb.com/",
+      "response_ms": 695,
+      "checked_at": "2026-11-24T16:58:47.941786+00:00",
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "resource_id": "iqiyi",
+      "url": "https://www.iqiyi.com/",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.iqiyi.com/",
+      "response_ms": 197,
+      "checked_at": "2026-11-24T16:58:47.572757+00:00",
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "resource_id": "ixigua",
+      "url": "https://www.ixigua.com/",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.ixigua.com/",
+      "response_ms": 171,
+      "checked_at": "2026-11-24T16:58:47.770619+00:00",
       "attempts": 1,
       "error": null
     },
@@ -53,8 +86,41 @@
       "status": "reachable",
       "http_status": 200,
       "final_url": "https://kodi.tv/",
-      "response_ms": 1343,
-      "checked_at": "2026-11-24T15:39:07.764216+00:00",
+      "response_ms": 2364,
+      "checked_at": "2026-11-24T16:58:47.964598+00:00",
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "resource_id": "le",
+      "url": "https://www.le.com/",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.le.com/",
+      "response_ms": 354,
+      "checked_at": "2026-11-24T16:58:47.804785+00:00",
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "resource_id": "mgtv",
+      "url": "https://www.mgtv.com/",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.mgtv.com/",
+      "response_ms": 260,
+      "checked_at": "2026-11-24T16:58:47.573896+00:00",
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "resource_id": "miguvideo",
+      "url": "https://www.miguvideo.com/",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.miguvideo.com/",
+      "response_ms": 142,
+      "checked_at": "2026-11-24T16:58:47.709227+00:00",
       "attempts": 1,
       "error": null
     },
@@ -64,8 +130,19 @@
       "status": "reachable",
       "http_status": 200,
       "final_url": "https://www.icourse163.org/",
-      "response_ms": 356,
-      "checked_at": "2026-11-24T15:39:07.765724+00:00",
+      "response_ms": 222,
+      "checked_at": "2026-11-24T16:58:48.159346+00:00",
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "resource_id": "mtime",
+      "url": "https://www.mtime.com/",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.mtime.com/",
+      "response_ms": 194,
+      "checked_at": "2026-11-24T16:58:47.851436+00:00",
       "attempts": 1,
       "error": null
     },
@@ -75,20 +152,42 @@
       "status": "reachable",
       "http_status": 200,
       "final_url": "https://www.python.org/",
-      "response_ms": 788,
-      "checked_at": "2026-11-24T15:39:07.764676+00:00",
+      "response_ms": 697,
+      "checked_at": "2026-11-24T16:58:48.069305+00:00",
       "attempts": 1,
       "error": null
     },
     {
-      "resource_id": "zimuku",
-      "url": "https://zimuku.org/",
-      "status": "unreachable",
-      "http_status": 404,
-      "final_url": null,
-      "response_ms": 3574,
-      "checked_at": "2026-11-24T15:39:07.767949+00:00",
-      "attempts": 2,
+      "resource_id": "vqq",
+      "url": "https://v.qq.com/",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://v.qq.com/",
+      "response_ms": 392,
+      "checked_at": "2026-11-24T16:58:47.571957+00:00",
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "resource_id": "yangshipin",
+      "url": "https://www.yangshipin.cn/",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.yangshipin.cn/",
+      "response_ms": 133,
+      "checked_at": "2026-11-24T16:58:47.575068+00:00",
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "resource_id": "youku",
+      "url": "https://www.youku.com/",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.youku.com/ku/webhome",
+      "response_ms": 652,
+      "checked_at": "2026-11-24T16:58:47.573391+00:00",
+      "attempts": 1,
       "error": null
     }
   ]
