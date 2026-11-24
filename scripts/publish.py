@@ -14,6 +14,9 @@ REPORT_PATH = os.path.join(ROOT, "reports", "availability.json")
 OUT_PATH = os.path.join(ROOT, "index.html")
 
 CATEGORY_NAMES = {
+    "opensource": "开源影视项目",
+    "subtitle": "字幕工具",
+    "player": "播放器",
     "tools": "实用工具",
     "dev": "开发工具",
     "media": "影音媒体",
