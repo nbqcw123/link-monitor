@@ -1,0 +1,142 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""静态发布页生成：读 resources.json + availability.json，生成响应式 index.html。
+纯 Python 标准库。仿照 awesome-zhuiju-free 的数据驱动发布思路。
+"""
+import os
+import json
+import html
+from datetime import datetime
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+RES_PATH = os.path.join(ROOT, "resources", "resources.json")
+REPORT_PATH = os.path.join(ROOT, "reports", "availability.json")
+OUT_PATH = os.path.join(ROOT, "index.html")
+
+CATEGORY_NAMES = {
+    "tools": "实用工具",
+    "dev": "开发工具",
+    "media": "影音媒体",
+    "learn": "学习资源",
+    "other": "其他",
+}
+STATUS_META = {
+    "reachable": ("可访问", "#00a870", "#e8f8f2"),
+    "restricted": ("访问受限", "#d89614", "#fff7e6"),
+    "unreachable": ("无法访问", "#d54941", "#fef0ef"),
+    "unknown": ("未检测", "#8c8c8c", "#f5f5f5"),
+}
+E = html.escape
+
+
+def load_json(path, default=None):
+    try:
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return default
+
+
+def main():
+    data = load_json(RES_PATH)
+    report = load_json(REPORT_PATH, {"results": [], "generated_at": None, "summary": {}})
+    if not data:
+        raise SystemExit("缺少 resources/resources.json")
+
+    status_by_id = {r["resource_id"]: r for r in report.get("results", [])}
+    resources = [r for r in data["resources"] if r.get("enabled", True)]
+
+    groups = {}
+    for r in resources:
+        groups.setdefault(r.get("category", "other"), []).append(r)
+
+    gen = report.get("generated_at")
+    if gen:
+        try:
+            gen_disp = datetime.fromisoformat(gen.replace("Z", "+00:00")).strftime("%Y-%m-%d %H:%M UTC")
+        except Exception:
+            gen_disp = gen
+    else:
+        gen_disp = "尚未检测"
+
+    s = report.get("summary", {})
+    total = s.get("total", len(resources))
+    ok = s.get("reachable", 0)
+    bad = s.get("unreachable", 0)
+
+    parts = []
+    parts.append("""<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>我的资源导航</title>
+<style>
+:root{--bg:#f7f8fa;--card:#fff;--ink:#1f2329;--sub:#646a73;--line:#e5e6eb;--blue:#3370ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.6}
+.wrap{max-width:1000px;margin:0 auto;padding:32px 20px 60px}
+header{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;margin-bottom:24px}
+h1{font-size:26px;margin:0 0 6px;font-weight:600}
+.sub{color:var(--sub);font-size:13px}
+.stats{display:flex;gap:18px;margin-top:16px;flex-wrap:wrap}
+.stat{background:var(--bg);border-radius:8px;padding:8px 14px;font-size:13px}
+.stat b{font-size:18px;margin-right:4px}
+.c-g{color:#00a870}.c-r{color:#d54941}.c-b{color:var(--blue)}
+h2{font-size:17px;margin:26px 0 12px;font-weight:600;border-left:4px solid var(--blue);padding-left:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:inherit;display:block;transition:border-color .15s}
+.card:hover{border-color:var(--blue)}
+.card .name{font-size:15px;font-weight:600;margin-bottom:4px}
+.card .desc{font-size:12.5px;color:var(--sub);min-height:20px}
+.card .foot{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.badge{font-size:11px;padding:2px 8px;border-radius:10px}
+.badge.dim{opacity:.6}
+.ms{font-size:11px;color:var(--sub)}
+footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
+</style></head><body><div class="wrap">
+<header>
+<h1>我的资源导航</h1>
+<div class="sub">数据驱动 · 每日自动检测 · 静态发布　|　检测时间：__GEN__</div>
+<div class="stats">
+<div class="stat"><b class="c-b">__TOTAL__</b> 个资源</div>
+<div class="stat"><b class="c-g">__OK__</b> 可访问</div>
+<div class="stat"><b class="c-r">__BAD__</b> 无法访问</div>
+</div>
+</header>
+""")
+    head = "\n".join(parts)
+    head = head.replace("__GEN__", E(gen_disp)).replace("__TOTAL__", str(total)).replace("__OK__", str(ok)).replace("__BAD__", str(bad))
+
+    body = []
+    for cat in sorted(groups, key=lambda c: (-len(groups[c]), c)):
+        cat_name = CATEGORY_NAMES.get(cat, cat)
+        body.append("<h2>%s（%d）</h2>" % (E(cat_name), len(groups[cat])))
+        body.append('<div class="grid">')
+        for r in groups[cat]:
+            st = status_by_id.get(r["id"], {})
+            status = st.get("status", "unknown")
+            label, fg, bg = STATUS_META.get(status, STATUS_META["unknown"])
+            ms = st.get("response_ms")
+            ms_txt = "%dms" % ms if ms is not None else "-"
+            dim = " dim" if status in ("unreachable", "unknown") else ""
+            body.append(
+                '<a class="card" href="%s" target="_blank" rel="noopener">'
+                '<div class="name">%s</div>'
+                '<div class="desc">%s</div>'
+                '<div class="foot"><span class="badge%s" style="color:%s;background:%s">%s</span>'
+                '<span class="ms">%s</span></div></a>'
+                % (E(r["url"]), E(r["name"]), E(r.get("summary", "")), dim, fg, bg, label, ms_txt)
+            )
+        body.append("</div>")
+
+    tail = """
+<footer>由 link-monitor 自动生成 · 资源可用性每日检测<br>仅供技术研究，请通过正规渠道获取内容</footer>
+</div></body></html>
+"""
+    with open(OUT_PATH, "w", encoding="utf-8") as f:
+        f.write(head + "\n".join(body) + tail)
+    print("已生成：%s" % OUT_PATH)
+    print("资源 %d 个，分类 %d 个" % (len(resources), len(groups)))
+
+
+if __name__ == "__main__":
+    main()
