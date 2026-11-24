@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Link Monitor resources",
+  "type": "object",
+  "required": ["version", "updated_at", "resources"],
+  "properties": {
+    "version": { "type": "integer" },
+    "updated_at": { "type": "string" },
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "url", "category"],
+        "properties": {
+          "id": { "type": "string", "description": "唯一英文标识" },
+          "name": { "type": "string", "description": "显示名称" },
+          "url": { "type": "string", "description": "完整 http(s) 地址" },
+          "category": { "type": "string", "description": "分类 key，对应 categories" },
+          "summary": { "type": "string", "description": "一句话简介" },
+          "enabled": { "type": "boolean", "description": "是否参与检测与发布" },
+          "featured": { "type": "boolean", "description": "是否显示在首页精选区" }
+        }
+      }
+    }
+  }
+}
