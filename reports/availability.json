@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "generated_at": "2026-11-24T15:39:11.343395+00:00",
+  "checker": {
+    "environment": "local",
+    "timeout_s": 12.0,
+    "workers": 6,
+    "retries": 2
+  },
+  "summary": {
+    "total": 7,
+    "reachable": 5,
+    "restricted": 0,
+    "unreachable": 2
+  },
+  "results": [
+    {
+      "resource_id": "bad-example",
+      "url": "https://this-domain-does-not-exist-xyz123.invalid/",
+      "status": "unreachable",
+      "http_status": null,
+      "final_url": null,
+      "response_ms": 25,
+      "checked_at": "2026-11-24T15:39:07.947743+00:00",
+      "attempts": 2,
+      "error": "<urlopen error Tunnel connection failed: 502 Bad Gateway>"
+    },
+    {
+      "resource_id": "baidu",
+      "url": "https://www.baidu.com/",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.baidu.com/",
+      "response_ms": 184,
+      "checked_at": "2026-11-24T15:39:07.762792+00:00",
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "resource_id": "github",
+      "url": "https://github.com/",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/",
+      "response_ms": 632,
+      "checked_at": "2026-11-24T15:39:07.763687+00:00",
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "resource_id": "kodi",
+      "url": "https://kodi.tv/",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://kodi.tv/",
+      "response_ms": 1343,
+      "checked_at": "2026-11-24T15:39:07.764216+00:00",
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "resource_id": "mooc",
+      "url": "https://www.icourse163.org/",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.icourse163.org/",
+      "response_ms": 356,
+      "checked_at": "2026-11-24T15:39:07.765724+00:00",
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "resource_id": "python",
+      "url": "https://www.python.org/",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.python.org/",
+      "response_ms": 788,
+      "checked_at": "2026-11-24T15:39:07.764676+00:00",
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "resource_id": "zimuku",
+      "url": "https://zimuku.org/",
+      "status": "unreachable",
+      "http_status": 404,
+      "final_url": null,
+      "response_ms": 3574,
+      "checked_at": "2026-11-24T15:39:07.767949+00:00",
+      "attempts": 2,
+      "error": null
+    }
+  ]
+}
