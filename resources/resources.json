@@ -4,110 +4,29 @@
   "updated_at": "2026-11-25",
   "resources": [
     {
-      "id": "vqq",
-      "name": "腾讯视频",
-      "url": "https://v.qq.com/",
-      "category": "media",
-      "summary": "头部热播剧、国漫、综艺、体育赛事综合平台",
+      "id": "zimuku",
+      "name": "字幕库",
+      "url": "https://zimuku.org",
+      "category": "subtitle",
+      "summary": "原域名失效，已停用（2026-11-25 检测 404）",
+      "enabled": false,
+      "featured": true
+    },
+    {
+      "id": "assrt",
+      "name": "射手网(伪)",
+      "url": "https://assrt.net",
+      "category": "subtitle",
+      "summary": "字幕下载",
       "enabled": true,
       "featured": true
     },
     {
-      "id": "iqiyi",
-      "name": "爱奇艺",
-      "url": "https://www.iqiyi.com/",
-      "category": "media",
-      "summary": "悬疑剧场、电影库、自制综艺",
-      "enabled": true,
-      "featured": true
-    },
-    {
-      "id": "youku",
-      "name": "优酷",
-      "url": "https://www.youku.com/",
-      "category": "media",
-      "summary": "TVB 港剧、经典老剧、人文纪录片",
-      "enabled": true,
-      "featured": true
-    },
-    {
-      "id": "mgtv",
-      "name": "芒果TV",
-      "url": "https://www.mgtv.com/",
-      "category": "media",
-      "summary": "湖南卫视综艺、青春剧、女性向内容",
-      "enabled": true,
-      "featured": true
-    },
-    {
-      "id": "bilibili",
-      "name": "哔哩哔哩",
-      "url": "https://www.bilibili.com/",
-      "category": "media",
-      "summary": "番剧、纪录片、UP 主原创、公开课",
-      "enabled": true,
-      "featured": true
-    },
-    {
-      "id": "yangshipin",
-      "name": "央视频",
-      "url": "https://www.yangshipin.cn/",
-      "category": "media",
-      "summary": "央视节目、纪录片、公开课，权威免费",
-      "enabled": true,
-      "featured": true
-    },
-    {
-      "id": "miguvideo",
-      "name": "咪咕视频",
-      "url": "https://www.miguvideo.com/",
-      "category": "media",
-      "summary": "体育赛事直播与回放，中国移动旗下",
-      "enabled": true,
-      "featured": true
-    },
-    {
-      "id": "ixigua",
-      "name": "西瓜视频",
-      "url": "https://www.ixigua.com/",
-      "category": "media",
-      "summary": "中长视频、影视解说、纪录片",
-      "enabled": true,
-      "featured": false
-    },
-    {
-      "id": "le",
-      "name": "乐视视频",
-      "url": "https://www.le.com/",
-      "category": "media",
-      "summary": "网页端找片，怀旧老剧与经典电影",
-      "enabled": true,
-      "featured": false
-    },
-    {
-      "id": "douban-movie",
-      "name": "豆瓣电影",
-      "url": "https://movie.douban.com/",
-      "category": "media",
-      "summary": "影片评分、影评、片单与上映信息",
-      "enabled": true,
-      "featured": true
-    },
-    {
-      "id": "mtime",
-      "name": "时光网",
-      "url": "https://www.mtime.com/",
-      "category": "media",
-      "summary": "电影资讯、评分、影讯与预告片",
-      "enabled": true,
-      "featured": false
-    },
-    {
-      "id": "imdb",
-      "name": "IMDb",
-      "url": "https://www.imdb.com/",
-      "category": "media",
-      "summary": "全球电影数据库、评分与榜单",
+      "id": "subhd",
+      "name": "SubHD",
+      "url": "https://subhd.tv",
+      "category": "subtitle",
+      "summary": "分享下载字幕平台",
       "enabled": true,
       "featured": false
     },
@@ -115,35 +34,161 @@
       "id": "kodi",
       "name": "Kodi",
       "url": "https://kodi.tv/",
-      "category": "tools",
-      "summary": "开源跨平台家庭媒体中心",
+      "category": "player",
+      "summary": "开源、跨平台家庭媒体中心",
       "enabled": true,
       "featured": true
     },
     {
-      "id": "github",
-      "name": "GitHub",
-      "url": "https://github.com/",
-      "category": "dev",
-      "summary": "全球最大代码托管平台",
+      "id": "moontvplus",
+      "name": "MoonTVPlus",
+      "url": "https://github.com/mtvpls/MoonTVPlus",
+      "category": "opensource",
+      "summary": "MoonTV 增强版影视聚合播放器",
       "enabled": true,
       "featured": false
     },
     {
-      "id": "python",
-      "name": "Python 官网",
-      "url": "https://www.python.org/",
-      "category": "dev",
-      "summary": "Python 编程语言官方网站",
+      "id": "zyfun",
+      "name": "zyfun",
+      "url": "https://github.com/Hiram-Wong/zyfun",
+      "category": "opensource",
+      "summary": "跨平台桌面端视频资源播放器",
+      "enabled": true,
+      "featured": true
+    },
+    {
+      "id": "iptv-api",
+      "name": "iptv-api",
+      "url": "https://github.com/Guovin/iptv-api",
+      "category": "opensource",
+      "summary": "IPTV 直播源自动采集筛选更新平台",
+      "enabled": true,
+      "featured": true
+    },
+    {
+      "id": "iptv-org-iptv",
+      "name": "iptv",
+      "url": "https://github.com/iptv-org/iptv",
+      "category": "opensource",
+      "summary": "全球公开 IPTV 频道集合",
+      "enabled": true,
+      "featured": true
+    },
+    {
+      "id": "pansou",
+      "name": "pansou",
+      "url": "https://github.com/fish2018/pansou",
+      "category": "opensource",
+      "summary": "高性能网盘资源搜索 API 服务",
       "enabled": true,
       "featured": false
     },
     {
-      "id": "mooc",
-      "name": "中国大学 MOOC",
-      "url": "https://www.icourse163.org/",
-      "category": "learn",
-      "summary": "免费公开课平台",
+      "id": "cloudsaver",
+      "name": "CloudSaver",
+      "url": "https://github.com/jiangrui1994/CloudSaver",
+      "category": "opensource",
+      "summary": "网盘资源搜索与转存工具",
+      "enabled": true,
+      "featured": false
+    },
+    {
+      "id": "quark-auto-save",
+      "name": "quark-auto-save",
+      "url": "https://github.com/Cp0204/quark-auto-save",
+      "category": "opensource",
+      "summary": "夸克网盘自动签到转存整理工具",
+      "enabled": true,
+      "featured": false
+    },
+    {
+      "id": "animeko",
+      "name": "Animeko",
+      "url": "https://github.com/open-ani/animeko",
+      "category": "opensource",
+      "summary": "一站式弹幕追番平台",
+      "enabled": true,
+      "featured": false
+    },
+    {
+      "id": "predidit-kazumi",
+      "name": "Kazumi",
+      "url": "https://github.com/Predidit/Kazumi",
+      "category": "opensource",
+      "summary": "免费无广告的番剧采集与在线观看",
+      "enabled": true,
+      "featured": false
+    },
+    {
+      "id": "selenetv",
+      "name": "SeleneTV",
+      "url": "https://github.com/MoonTechLab/Selene",
+      "category": "opensource",
+      "summary": "MoonTV v100/Helios 后端客户端",
+      "enabled": true,
+      "featured": false
+    },
+    {
+      "id": "webhometv",
+      "name": "WebHomeTV",
+      "url": "https://github.com/fish2018/webhtv",
+      "category": "opensource",
+      "summary": "基于 FongMi/CatVod 二开的 Android 影音应用",
+      "enabled": true,
+      "featured": false
+    },
+    {
+      "id": "webhometv2",
+      "name": "WebHomeTV2",
+      "url": "https://github.com/Silent1566/webhtv",
+      "category": "opensource",
+      "summary": "基于 WebHomeTV 二开，支持 TMDB 海报",
+      "enabled": true,
+      "featured": false
+    },
+    {
+      "id": "github-com-12",
+      "name": "sky-tv",
+      "url": "https://github.com/sky22333/sky-tv",
+      "category": "opensource",
+      "summary": "现代化跨平台视频播放器空壳应用",
+      "enabled": true,
+      "featured": false
+    },
+    {
+      "id": "fongmi-tv",
+      "name": "FongMi TV",
+      "url": "https://github.com/FongMi/TV",
+      "category": "opensource",
+      "summary": "基于 CatVod 的开源 Android 影音应用",
+      "enabled": true,
+      "featured": true
+    },
+    {
+      "id": "czy0729-bangumi",
+      "name": "Bangumi",
+      "url": "https://github.com/czy0729/Bangumi",
+      "category": "opensource",
+      "summary": "专门做 ACG 的类豆瓣追番客户端",
+      "enabled": true,
+      "featured": false
+    },
+    {
+      "id": "github-com-49",
+      "name": "nTv 直播软件",
+      "url": "https://github.com/buhanzhe/NativeWasmTv",
+      "category": "opensource",
+      "summary": "横屏直播播放器",
+      "enabled": true,
+      "featured": false
+    },
+    {
+      "id": "xiugou-tv",
+      "name": "修狗TV",
+      "url": "https://github.com/qfw66/xiugou-tv",
+      "category": "opensource",
+      "summary": "兼容 TVBox 配置的 Windows 影视播放器",
       "enabled": true,
       "featured": false
     }
