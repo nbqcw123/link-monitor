@@ -1,14 +1,122 @@
 {
   "$schema": "./schema.json",
   "version": 1,
-  "updated_at": "2026-11-24",
+  "updated_at": "2026-11-25",
   "resources": [
     {
-      "id": "baidu",
-      "name": "百度",
-      "url": "https://www.baidu.com/",
+      "id": "vqq",
+      "name": "腾讯视频",
+      "url": "https://v.qq.com/",
+      "category": "media",
+      "summary": "头部热播剧、国漫、综艺、体育赛事综合平台",
+      "enabled": true,
+      "featured": true
+    },
+    {
+      "id": "iqiyi",
+      "name": "爱奇艺",
+      "url": "https://www.iqiyi.com/",
+      "category": "media",
+      "summary": "悬疑剧场、电影库、自制综艺",
+      "enabled": true,
+      "featured": true
+    },
+    {
+      "id": "youku",
+      "name": "优酷",
+      "url": "https://www.youku.com/",
+      "category": "media",
+      "summary": "TVB 港剧、经典老剧、人文纪录片",
+      "enabled": true,
+      "featured": true
+    },
+    {
+      "id": "mgtv",
+      "name": "芒果TV",
+      "url": "https://www.mgtv.com/",
+      "category": "media",
+      "summary": "湖南卫视综艺、青春剧、女性向内容",
+      "enabled": true,
+      "featured": true
+    },
+    {
+      "id": "bilibili",
+      "name": "哔哩哔哩",
+      "url": "https://www.bilibili.com/",
+      "category": "media",
+      "summary": "番剧、纪录片、UP 主原创、公开课",
+      "enabled": true,
+      "featured": true
+    },
+    {
+      "id": "yangshipin",
+      "name": "央视频",
+      "url": "https://www.yangshipin.cn/",
+      "category": "media",
+      "summary": "央视节目、纪录片、公开课，权威免费",
+      "enabled": true,
+      "featured": true
+    },
+    {
+      "id": "miguvideo",
+      "name": "咪咕视频",
+      "url": "https://www.miguvideo.com/",
+      "category": "media",
+      "summary": "体育赛事直播与回放，中国移动旗下",
+      "enabled": true,
+      "featured": true
+    },
+    {
+      "id": "ixigua",
+      "name": "西瓜视频",
+      "url": "https://www.ixigua.com/",
+      "category": "media",
+      "summary": "中长视频、影视解说、纪录片",
+      "enabled": true,
+      "featured": false
+    },
+    {
+      "id": "le",
+      "name": "乐视视频",
+      "url": "https://www.le.com/",
+      "category": "media",
+      "summary": "网页端找片，怀旧老剧与经典电影",
+      "enabled": true,
+      "featured": false
+    },
+    {
+      "id": "douban-movie",
+      "name": "豆瓣电影",
+      "url": "https://movie.douban.com/",
+      "category": "media",
+      "summary": "影片评分、影评、片单与上映信息",
+      "enabled": true,
+      "featured": true
+    },
+    {
+      "id": "mtime",
+      "name": "时光网",
+      "url": "https://www.mtime.com/",
+      "category": "media",
+      "summary": "电影资讯、评分、影讯与预告片",
+      "enabled": true,
+      "featured": false
+    },
+    {
+      "id": "imdb",
+      "name": "IMDb",
+      "url": "https://www.imdb.com/",
+      "category": "media",
+      "summary": "全球电影数据库、评分与榜单",
+      "enabled": true,
+      "featured": false
+    },
+    {
+      "id": "kodi",
+      "name": "Kodi",
+      "url": "https://kodi.tv/",
       "category": "tools",
-      "summary": "中文搜索引擎",
+      "summary": "开源跨平台家庭媒体中心",
       "enabled": true,
       "featured": true
     },
@@ -19,16 +127,7 @@
       "category": "dev",
       "summary": "全球最大代码托管平台",
       "enabled": true,
-      "featured": true
-    },
-    {
-      "id": "kodi",
-      "name": "Kodi",
-      "url": "https://kodi.tv/",
-      "category": "media",
-      "summary": "开源跨平台家庭媒体中心",
-      "enabled": true,
-      "featured": true
+      "featured": false
     },
     {
       "id": "python",
@@ -47,24 +146,6 @@
       "summary": "免费公开课平台",
       "enabled": true,
       "featured": false
-    },
-    {
-      "id": "zimuku",
-      "name": "字幕库",
-      "url": "https://zimuku.org/",
-      "category": "media",
-      "summary": "字幕下载站（示例，请自行替换为合法来源）",
-      "enabled": true,
-      "featured": false
-    },
-    {
-      "id": "bad-example",
-      "name": "失效示例站",
-      "url": "https://this-domain-does-not-exist-xyz123.invalid/",
-      "category": "tools",
-      "summary": "故意放一个失效地址，用于验证检测能识别",
-      "enabled": true,
-      "featured": true
     }
   ]
 }
