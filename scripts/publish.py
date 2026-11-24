@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """静态发布页生成：读 resources.json + availability.json，生成响应式 index.html。
+支持源站完整字段：标签 / 评分 / 风险 / 验证状态 / GitHub Star。
 纯 Python 标准库。仿照 awesome-zhuiju-free 的数据驱动发布思路。
 """
 import os
@@ -29,6 +30,7 @@ STATUS_META = {
     "unreachable": ("无法访问", "#d54941", "#fef0ef"),
     "unknown": ("未检测", "#8c8c8c", "#f5f5f5"),
 }
+RISK_LABEL = {"high": "高风险", "medium": "中风险", "low": "低风险", "unknown": "未知"}
 E = html.escape
 
 
@@ -38,6 +40,15 @@ def load_json(path, default=None):
             return json.load(f)
     except FileNotFoundError:
         return default
+
+
+def stars(n):
+    try:
+        n = int(n)
+    except (TypeError, ValueError):
+        return ""
+    n = max(0, min(5, n))
+    return "★" * n + "☆" * (5 - n)
 
 
 def main():
@@ -67,8 +78,7 @@ def main():
     ok = s.get("reachable", 0)
     bad = s.get("unreachable", 0)
 
-    parts = []
-    parts.append("""<!DOCTYPE html>
+    parts = ["""<!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>我的资源导航</title>
@@ -76,7 +86,7 @@ def main():
 :root{--bg:#f7f8fa;--card:#fff;--ink:#1f2329;--sub:#646a73;--line:#e5e6eb;--blue:#3370ff}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.6}
-.wrap{max-width:1000px;margin:0 auto;padding:32px 20px 60px}
+.wrap{max-width:1040px;margin:0 auto;padding:32px 20px 60px}
 header{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;margin-bottom:24px}
 h1{font-size:26px;margin:0 0 6px;font-weight:600}
 .sub{color:var(--sub);font-size:13px}
@@ -85,14 +95,19 @@ h1{font-size:26px;margin:0 0 6px;font-weight:600}
 .stat b{font-size:18px;margin-right:4px}
 .c-g{color:#00a870}.c-r{color:#d54941}.c-b{color:var(--blue)}
 h2{font-size:17px;margin:26px 0 12px;font-weight:600;border-left:4px solid var(--blue);padding-left:10px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:inherit;display:block;transition:border-color .15s}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:inherit;display:block;transition:border-color .15s,border-color .15s}
 .card:hover{border-color:var(--blue)}
 .card .name{font-size:15px;font-weight:600;margin-bottom:4px}
 .card .desc{font-size:12.5px;color:var(--sub);min-height:20px}
-.card .foot{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.tags{margin-top:10px;display:flex;gap:5px;flex-wrap:wrap}
+.tag{font-size:10.5px;color:var(--sub);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:1px 7px}
+.scores{font-size:11px;color:#d89614;margin-top:8px;letter-spacing:1px}
+.gh{font-size:11px;color:var(--sub);margin-top:6px}
+.card .foot{display:flex;justify-content:space-between;align-items:center;margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
 .badge{font-size:11px;padding:2px 8px;border-radius:10px}
 .badge.dim{opacity:.6}
+.risk{font-size:10.5px;padding:1px 7px;border-radius:8px;margin-left:6px}
 .ms{font-size:11px;color:var(--sub)}
 footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
 </style></head><body><div class="wrap">
@@ -105,7 +120,7 @@ footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
 <div class="stat"><b class="c-r">__BAD__</b> 无法访问</div>
 </div>
 </header>
-""")
+"""]
     head = "\n".join(parts)
     head = head.replace("__GEN__", E(gen_disp)).replace("__TOTAL__", str(total)).replace("__OK__", str(ok)).replace("__BAD__", str(bad))
 
@@ -121,18 +136,43 @@ footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
             ms = st.get("response_ms")
             ms_txt = "%dms" % ms if ms is not None else "-"
             dim = " dim" if status in ("unreachable", "unknown") else ""
+
+            tags_html = ""
+            if r.get("tags"):
+                tags_html = '<div class="tags">%s</div>' % "".join(
+                    '<span class="tag">%s</span>' % E(t) for t in r["tags"][:5]
+                )
+            score_html = ""
+            sc = r.get("scores") or {}
+            if sc:
+                avg = sum(v for v in sc.values() if isinstance(v, (int, float))) / max(1, len(sc))
+                score_html = '<div class="scores">%s <span style="color:#8c8c8c">%.1f</span></div>' % (stars(round(avg)), avg)
+            gh_html = ""
+            gh = r.get("github") or {}
+            if gh.get("full_name"):
+                gh_txt = gh["full_name"] + (" · ★%s" % gh["stars"] if gh.get("stars") is not None else "")
+                gh_html = '<div class="gh">⌘ %s</div>' % E(gh_txt)
+            risk_html = ""
+            risk = (r.get("risks") or {}).get("copyright")
+            if risk and risk != "low":
+                rc = {"high": "#d54941", "medium": "#d89614", "unknown": "#8c8c8c"}.get(risk, "#8c8c8c")
+                risk_html = '<span class="risk" style="color:%s;background:#f5f5f5">%s</span>' % (rc, RISK_LABEL.get(risk, risk))
+
             body.append(
                 '<a class="card" href="%s" target="_blank" rel="noopener">'
-                '<div class="name">%s</div>'
+                '<div class="name">%s%s</div>'
                 '<div class="desc">%s</div>'
+                '%s%s%s'
                 '<div class="foot"><span class="badge%s" style="color:%s;background:%s">%s</span>'
                 '<span class="ms">%s</span></div></a>'
-                % (E(r["url"]), E(r["name"]), E(r.get("summary", "")), dim, fg, bg, label, ms_txt)
+                % (E(r["url"]), E(r["name"]), risk_html, E(r.get("summary_short") or r.get("summary", "")),
+                   tags_html, score_html, gh_html,
+                   dim, fg, bg, label, ms_txt)
             )
         body.append("</div>")
 
     tail = """
-<footer>由 link-monitor 自动生成 · 资源可用性每日检测<br>仅供技术研究，请通过正规渠道获取内容</footer>
+<footer>由 link-monitor 自动生成 · 采用源站完整字段结构 · 资源可用性每日检测<br>仅供技术研究，请通过正规渠道获取内容</footer>
 </div></body></html>
 """
     with open(OUT_PATH, "w", encoding="utf-8") as f:
