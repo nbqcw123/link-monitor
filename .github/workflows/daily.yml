@@ -1,0 +1,62 @@
+name: Daily link check and publish
+
+on:
+  schedule:
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "resources/resources.json"
+      - "scripts/*.py"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-link-check
+  cancel-in-progress: false
+
+jobs:
+  check-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Check availability
+        env:
+          CHECK_TIMEOUT: "12"
+          CHECK_WORKERS: "6"
+          CHECK_RETRIES: "2"
+        run: python3 scripts/check.py
+
+      - name: Generate static page
+        run: python3 scripts/publish.py
+
+      - name: Prepare site directory
+        run: |
+          mkdir -p site
+          cp index.html site/index.html
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/availability.json index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: daily availability check"
+          git push
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          keep_files: false
