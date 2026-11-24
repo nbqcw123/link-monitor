@@ -8,171 +8,952 @@
       "name": "字幕库",
       "url": "https://zimuku.org",
       "category": "subtitle",
-      "summary": "原域名失效，已停用（2026-11-25 检测 404）",
-      "enabled": false,
-      "featured": true
+      "summary": "字幕下载。",
+      "summary_short": "字幕下载",
+      "tags": [
+        "字幕",
+        "字幕下载",
+        "中文"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "unknown",
+        "regions": [
+          "GLOBAL"
+        ]
+      },
+      "scores": {
+        "more": 5,
+        "speed": 5,
+        "clean": 5,
+        "stable": 5,
+        "ease": 5
+      },
+      "risks": {
+        "copyright": "medium",
+        "safety": "medium",
+        "privacy": "unknown",
+        "payment": "unknown"
+      },
+      "verification": {
+        "status": "removed",
+        "last_checked": "2026-06-19",
+        "method": "manual",
+        "notes": "原域名 404，本地检测停用（2026-11-25）"
+      },
+      "source": {
+        "submitted_by": "maintainer",
+        "added_at": "2026-06-19"
+      },
+      "featured": true,
+      "enabled": false
     },
     {
       "id": "assrt",
       "name": "射手网(伪)",
       "url": "https://assrt.net",
       "category": "subtitle",
-      "summary": "字幕下载",
-      "enabled": true,
-      "featured": true
+      "summary": "字幕下载。",
+      "summary_short": "字幕下载",
+      "tags": [
+        "字幕",
+        "字幕下载",
+        "中文"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "unknown",
+        "regions": [
+          "GLOBAL"
+        ]
+      },
+      "scores": {
+        "more": 5,
+        "speed": 5,
+        "clean": 5,
+        "stable": 5,
+        "ease": 5
+      },
+      "risks": {
+        "copyright": "medium",
+        "safety": "medium",
+        "privacy": "unknown",
+        "payment": "unknown"
+      },
+      "verification": {
+        "status": "active",
+        "last_checked": "2026-11-24",
+        "method": "auto",
+        "notes": "自动检测通过 (HTTP 200, 4646ms)"
+      },
+      "source": {
+        "submitted_by": "maintainer",
+        "added_at": "2026-06-19"
+      },
+      "featured": true,
+      "enabled": true
     },
     {
       "id": "subhd",
       "name": "SubHD",
       "url": "https://subhd.tv",
       "category": "subtitle",
-      "summary": "分享下载字幕平台",
-      "enabled": true,
-      "featured": false
+      "summary": "分享下载字幕平台。",
+      "summary_short": "分享下载字幕平台",
+      "tags": [
+        "字幕",
+        "字幕下载",
+        "分享平台"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "unknown",
+        "regions": [
+          "GLOBAL"
+        ]
+      },
+      "scores": {
+        "more": 5,
+        "speed": 5,
+        "clean": 5,
+        "stable": 5,
+        "ease": 5
+      },
+      "risks": {
+        "copyright": "medium",
+        "safety": "medium",
+        "privacy": "unknown",
+        "payment": "unknown"
+      },
+      "verification": {
+        "status": "active",
+        "last_checked": "2026-11-24",
+        "method": "auto",
+        "notes": "自动检测通过 (HTTP 200, 3235ms)"
+      },
+      "source": {
+        "submitted_by": "maintainer",
+        "added_at": "2026-06-19"
+      },
+      "featured": true,
+      "enabled": true
     },
     {
       "id": "kodi",
       "name": "Kodi",
       "url": "https://kodi.tv/",
       "category": "player",
-      "summary": "开源、跨平台家庭媒体中心",
-      "enabled": true,
-      "featured": true
+      "summary": "开源、跨平台的家庭媒体中心软件。",
+      "summary_short": "开源、跨平台家庭媒体中心",
+      "tags": [
+        "开源",
+        "播放器",
+        "跨平台"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "free",
+        "regions": [
+          "GLOBAL"
+        ]
+      },
+      "scores": {
+        "more": 4.5,
+        "speed": 4,
+        "clean": 5,
+        "stable": 4.8,
+        "ease": 3.8
+      },
+      "risks": {
+        "copyright": "low",
+        "safety": "low",
+        "privacy": "low",
+        "payment": "low"
+      },
+      "verification": {
+        "status": "active",
+        "last_checked": "2026-11-24",
+        "method": "auto",
+        "notes": "自动检测通过 (HTTP 200, 2252ms)"
+      },
+      "source": {
+        "submitted_by": "maintainer",
+        "added_at": "2026-06-06"
+      },
+      "featured": true,
+      "enabled": true
     },
     {
       "id": "moontvplus",
       "name": "MoonTVPlus",
       "url": "https://github.com/mtvpls/MoonTVPlus",
       "category": "opensource",
-      "summary": "MoonTV 增强版影视聚合播放器",
-      "enabled": true,
-      "featured": false
+      "summary": "MoonTVPlus 是基于 MoonTV v100 二次开发的增强版影视聚合播放器。",
+      "summary_short": "MoonTV 增强版影视聚合播放器",
+      "tags": [
+        "开源项目",
+        "影视聚合",
+        "播放器"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "free",
+        "regions": [
+          "GLOBAL"
+        ]
+      },
+      "scores": {
+        "more": 5,
+        "speed": 5,
+        "clean": 5,
+        "stable": 5,
+        "ease": 5
+      },
+      "risks": {
+        "copyright": "unknown",
+        "safety": "medium",
+        "privacy": "unknown",
+        "payment": "low"
+      },
+      "verification": {
+        "status": "active",
+        "last_checked": "2026-11-24",
+        "method": "auto",
+        "notes": "自动检测通过 (HTTP 200, 1175ms)"
+      },
+      "source": {
+        "submitted_by": "maintainer",
+        "added_at": "2026-06-19"
+      },
+      "featured": true,
+      "featured_order": 1,
+      "github": {
+        "full_name": "mtvpls/MoonTVPlus",
+        "stars": 3772,
+        "pushed_at": "2026-11-22T12:57:23Z"
+      },
+      "enabled": true
     },
     {
       "id": "zyfun",
       "name": "zyfun",
       "url": "https://github.com/Hiram-Wong/zyfun",
       "category": "opensource",
-      "summary": "跨平台桌面端视频资源播放器",
-      "enabled": true,
-      "featured": true
+      "summary": "zyfun 是跨平台桌面端视频资源播放器。",
+      "summary_short": "跨平台桌面端视频资源播放器",
+      "tags": [
+        "开源项目",
+        "视频播放器",
+        "跨平台"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "free",
+        "regions": [
+          "GLOBAL"
+        ]
+      },
+      "scores": {
+        "more": 5,
+        "speed": 5,
+        "clean": 5,
+        "stable": 5,
+        "ease": 5
+      },
+      "risks": {
+        "copyright": "unknown",
+        "safety": "medium",
+        "privacy": "unknown",
+        "payment": "low"
+      },
+      "verification": {
+        "status": "active",
+        "last_checked": "2026-11-24",
+        "method": "auto",
+        "notes": "自动检测通过 (HTTP 200, 1277ms)"
+      },
+      "source": {
+        "submitted_by": "maintainer",
+        "added_at": "2026-06-19"
+      },
+      "featured": true,
+      "featured_order": 2,
+      "github": {
+        "full_name": "Hiram-Wong/zyfun",
+        "stars": 9181,
+        "pushed_at": "2026-06-25T14:11:54Z"
+      },
+      "enabled": true
     },
     {
       "id": "iptv-api",
       "name": "iptv-api",
       "url": "https://github.com/Guovin/iptv-api",
       "category": "opensource",
-      "summary": "IPTV 直播源自动采集筛选更新平台",
-      "enabled": true,
-      "featured": true
+      "summary": "iptv-api 是 IPTV 直播源自动更新平台，支持采集、筛选、测速和生成。",
+      "summary_short": "IPTV 直播源自动采集筛选更新平台",
+      "tags": [
+        "开源项目",
+        "IPTV",
+        "直播源"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "free",
+        "regions": [
+          "GLOBAL"
+        ]
+      },
+      "scores": {
+        "more": 5,
+        "speed": 5,
+        "clean": 5,
+        "stable": 5,
+        "ease": 5
+      },
+      "risks": {
+        "copyright": "unknown",
+        "safety": "medium",
+        "privacy": "unknown",
+        "payment": "low"
+      },
+      "verification": {
+        "status": "active",
+        "last_checked": "2026-11-24",
+        "method": "auto",
+        "notes": "自动检测通过 (HTTP 200, 1125ms)"
+      },
+      "source": {
+        "submitted_by": "maintainer",
+        "added_at": "2026-06-19"
+      },
+      "featured": true,
+      "featured_order": 3,
+      "github": {
+        "full_name": "Guovin/iptv-api",
+        "stars": 26254,
+        "pushed_at": "2026-10-14T01:21:43Z"
+      },
+      "enabled": true
     },
     {
       "id": "iptv-org-iptv",
       "name": "iptv",
       "url": "https://github.com/iptv-org/iptv",
       "category": "opensource",
-      "summary": "全球公开 IPTV 频道集合",
-      "enabled": true,
-      "featured": true
+      "summary": "iptv-org/iptv 收集全球公开可用的 IPTV 频道。",
+      "summary_short": "全球公开 IPTV 频道集合",
+      "tags": [
+        "开源项目",
+        "IPTV",
+        "直播源"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "free",
+        "regions": [
+          "GLOBAL"
+        ]
+      },
+      "scores": {
+        "more": 5,
+        "speed": 5,
+        "clean": 5,
+        "stable": 5,
+        "ease": 5
+      },
+      "risks": {
+        "copyright": "unknown",
+        "safety": "medium",
+        "privacy": "unknown",
+        "payment": "low"
+      },
+      "verification": {
+        "status": "active",
+        "last_checked": "2026-11-24",
+        "method": "auto",
+        "notes": "自动检测通过 (HTTP 200, 1164ms)"
+      },
+      "source": {
+        "submitted_by": "maintainer",
+        "added_at": "2026-06-19"
+      },
+      "featured": true,
+      "featured_order": 4,
+      "github": {
+        "full_name": "iptv-org/iptv",
+        "stars": 144532,
+        "pushed_at": "2026-11-23T00:12:50Z"
+      },
+      "enabled": true
     },
     {
       "id": "pansou",
       "name": "pansou",
       "url": "https://github.com/fish2018/pansou",
       "category": "opensource",
-      "summary": "高性能网盘资源搜索 API 服务",
-      "enabled": true,
-      "featured": false
+      "summary": "PanSou 是高性能网盘资源搜索 API 服务，支持 TG 频道和插件搜索。",
+      "summary_short": "高性能网盘资源搜索 API 服务",
+      "tags": [
+        "开源项目",
+        "网盘搜索",
+        "API"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "free",
+        "regions": [
+          "GLOBAL"
+        ]
+      },
+      "scores": {
+        "more": 5,
+        "speed": 5,
+        "clean": 5,
+        "stable": 5,
+        "ease": 5
+      },
+      "risks": {
+        "copyright": "unknown",
+        "safety": "medium",
+        "privacy": "unknown",
+        "payment": "low"
+      },
+      "verification": {
+        "status": "active",
+        "last_checked": "2026-11-24",
+        "method": "auto",
+        "notes": "自动检测通过 (HTTP 200, 1080ms)"
+      },
+      "source": {
+        "submitted_by": "maintainer",
+        "added_at": "2026-06-19"
+      },
+      "featured": true,
+      "featured_order": 5,
+      "github": {
+        "full_name": "fish2018/pansou",
+        "stars": 15338,
+        "pushed_at": "2026-10-12T06:00:52Z"
+      },
+      "enabled": true
     },
     {
       "id": "cloudsaver",
       "name": "CloudSaver",
       "url": "https://github.com/jiangrui1994/CloudSaver",
       "category": "opensource",
-      "summary": "网盘资源搜索与转存工具",
-      "enabled": true,
-      "featured": false
+      "summary": "CloudSaver 是基于 Vue 3 与 Express 的网盘资源搜索与转存工具。",
+      "summary_short": "网盘资源搜索与转存工具",
+      "tags": [
+        "开源项目",
+        "网盘搜索",
+        "转存"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "free",
+        "regions": [
+          "GLOBAL"
+        ]
+      },
+      "scores": {
+        "more": 5,
+        "speed": 5,
+        "clean": 5,
+        "stable": 5,
+        "ease": 5
+      },
+      "risks": {
+        "copyright": "unknown",
+        "safety": "medium",
+        "privacy": "unknown",
+        "payment": "low"
+      },
+      "verification": {
+        "status": "active",
+        "last_checked": "2026-11-24",
+        "method": "auto",
+        "notes": "自动检测通过 (HTTP 200, 959ms)"
+      },
+      "source": {
+        "submitted_by": "maintainer",
+        "added_at": "2026-06-19"
+      },
+      "featured": true,
+      "featured_order": 6,
+      "github": {
+        "full_name": "jiangrui1994/CloudSaver",
+        "stars": 9475,
+        "pushed_at": "2026-11-21T15:23:55Z"
+      },
+      "enabled": true
     },
     {
       "id": "quark-auto-save",
       "name": "quark-auto-save",
       "url": "https://github.com/Cp0204/quark-auto-save",
       "category": "opensource",
-      "summary": "夸克网盘自动签到转存整理工具",
-      "enabled": true,
-      "featured": false
+      "summary": "quark-auto-save 支持夸克网盘签到、自动转存、命名整理和推送提醒。",
+      "summary_short": "夸克网盘自动签到转存整理工具",
+      "tags": [
+        "开源项目",
+        "夸克网盘",
+        "自动转存"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "free",
+        "regions": [
+          "GLOBAL"
+        ]
+      },
+      "scores": {
+        "more": 5,
+        "speed": 5,
+        "clean": 5,
+        "stable": 5,
+        "ease": 5
+      },
+      "risks": {
+        "copyright": "unknown",
+        "safety": "medium",
+        "privacy": "unknown",
+        "payment": "low"
+      },
+      "verification": {
+        "status": "active",
+        "last_checked": "2026-11-24",
+        "method": "auto",
+        "notes": "自动检测通过 (HTTP 200, 1548ms)"
+      },
+      "source": {
+        "submitted_by": "maintainer",
+        "added_at": "2026-06-19"
+      },
+      "featured": true,
+      "featured_order": 7,
+      "github": {
+        "full_name": "Cp0204/quark-auto-save",
+        "stars": 3122,
+        "pushed_at": "2026-07-09T11:44:49Z"
+      },
+      "enabled": true
     },
     {
       "id": "animeko",
       "name": "Animeko",
       "url": "https://github.com/open-ani/animeko",
       "category": "opensource",
-      "summary": "一站式弹幕追番平台",
-      "enabled": true,
-      "featured": false
+      "summary": "Animeko 是集找番、追番、看番的一站式弹幕追番平台。",
+      "summary_short": "一站式弹幕追番平台",
+      "tags": [
+        "开源项目",
+        "追番",
+        "弹幕"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "free",
+        "regions": [
+          "GLOBAL"
+        ]
+      },
+      "scores": {
+        "more": 5,
+        "speed": 5,
+        "clean": 5,
+        "stable": 5,
+        "ease": 5
+      },
+      "risks": {
+        "copyright": "unknown",
+        "safety": "medium",
+        "privacy": "unknown",
+        "payment": "low"
+      },
+      "verification": {
+        "status": "active",
+        "last_checked": "2026-11-24",
+        "method": "auto",
+        "notes": "自动检测通过 (HTTP 200, 983ms)"
+      },
+      "source": {
+        "submitted_by": "maintainer",
+        "added_at": "2026-07-10"
+      },
+      "featured": true,
+      "featured_order": 8,
+      "github": {
+        "full_name": "open-ani/animeko",
+        "stars": 22011,
+        "pushed_at": "2026-11-22T08:51:46Z"
+      },
+      "enabled": true
     },
     {
       "id": "predidit-kazumi",
       "name": "Kazumi",
       "url": "https://github.com/Predidit/Kazumi",
       "category": "opensource",
-      "summary": "免费无广告的番剧采集与在线观看",
-      "enabled": true,
-      "featured": false
+      "summary": "Kazumi 是免费无广告的番剧采集与在线观看项目。",
+      "summary_short": "免费无广告的番剧采集与在线观看",
+      "tags": [
+        "开源项目",
+        "番剧",
+        "在线观看",
+        "无广告"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "free",
+        "regions": [
+          "GLOBAL"
+        ]
+      },
+      "scores": {
+        "more": 5,
+        "speed": 5,
+        "clean": 5,
+        "stable": 5,
+        "ease": 5
+      },
+      "risks": {
+        "copyright": "unknown",
+        "safety": "medium",
+        "privacy": "unknown",
+        "payment": "low"
+      },
+      "verification": {
+        "status": "active",
+        "last_checked": "2026-11-24",
+        "method": "auto",
+        "notes": "自动检测通过 (HTTP 200, 953ms)"
+      },
+      "source": {
+        "submitted_by": "maintainer",
+        "added_at": "2026-07-11"
+      },
+      "featured": true,
+      "featured_order": 9,
+      "github": {
+        "full_name": "Predidit/Kazumi",
+        "stars": 43648,
+        "pushed_at": "2026-11-22T15:12:36Z"
+      },
+      "enabled": true
     },
     {
       "id": "selenetv",
       "name": "SeleneTV",
       "url": "https://github.com/MoonTechLab/Selene",
       "category": "opensource",
-      "summary": "MoonTV v100/Helios 后端客户端",
-      "enabled": true,
-      "featured": false
+      "summary": "SeleneTV 是以 MoonTV v100 版本 / Helios 为后端的客户端。",
+      "summary_short": "MoonTV v100/Helios 后端客户端",
+      "tags": [
+        "开源项目",
+        "MoonTV",
+        "Helios",
+        "客户端"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "free",
+        "regions": [
+          "GLOBAL"
+        ]
+      },
+      "scores": {
+        "more": 5,
+        "speed": 5,
+        "clean": 5,
+        "stable": 5,
+        "ease": 5
+      },
+      "risks": {
+        "copyright": "unknown",
+        "safety": "medium",
+        "privacy": "unknown",
+        "payment": "low"
+      },
+      "verification": {
+        "status": "active",
+        "last_checked": "2026-11-24",
+        "method": "auto",
+        "notes": "自动检测通过 (HTTP 200, 1081ms)"
+      },
+      "source": {
+        "submitted_by": "maintainer",
+        "added_at": "2026-07-12"
+      },
+      "featured": true,
+      "featured_order": 10,
+      "github": {
+        "full_name": "MoonTechLab/Selene",
+        "stars": 2655,
+        "pushed_at": "2026-05-25T10:26:26Z"
+      },
+      "enabled": true
     },
     {
       "id": "webhometv",
       "name": "WebHomeTV",
       "url": "https://github.com/fish2018/webhtv",
       "category": "opensource",
-      "summary": "基于 FongMi/CatVod 二开的 Android 影音应用",
-      "enabled": true,
-      "featured": false
+      "summary": "WebHomeTV 是基于 FongMi / CatVod 二次开发的 Android 影音应用。",
+      "summary_short": "基于 FongMi/CatVod 二开的 Android 影音应用",
+      "tags": [
+        "开源项目",
+        "Android",
+        "FongMi",
+        "CatVod",
+        "影音应用"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "free",
+        "regions": [
+          "GLOBAL"
+        ]
+      },
+      "scores": {
+        "more": 5,
+        "speed": 5,
+        "clean": 5,
+        "stable": 5,
+        "ease": 5
+      },
+      "risks": {
+        "copyright": "unknown",
+        "safety": "medium",
+        "privacy": "unknown",
+        "payment": "low"
+      },
+      "verification": {
+        "status": "active",
+        "last_checked": "2026-11-24",
+        "method": "auto",
+        "notes": "自动检测通过 (HTTP 200, 1976ms)"
+      },
+      "source": {
+        "submitted_by": "maintainer",
+        "added_at": "2026-07-18"
+      },
+      "featured": true,
+      "featured_order": 11,
+      "github": {
+        "full_name": "fish2018/webhtv",
+        "stars": 1937,
+        "pushed_at": "2026-11-10T16:14:30Z"
+      },
+      "enabled": true
     },
     {
       "id": "webhometv2",
       "name": "WebHomeTV2",
       "url": "https://github.com/Silent1566/webhtv",
       "category": "opensource",
-      "summary": "基于 WebHomeTV 二开，支持 TMDB 海报",
-      "enabled": true,
-      "featured": false
+      "summary": "WebHomeTV2 基于 WebHomeTV 二次开发，支持 TMDB 海报。",
+      "summary_short": "基于 WebHomeTV 二开，支持 TMDB 海报",
+      "tags": [
+        "开源项目",
+        "Android",
+        "WebHomeTV",
+        "TMDB",
+        "影音应用"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "free",
+        "regions": [
+          "GLOBAL"
+        ]
+      },
+      "scores": {
+        "more": 5,
+        "speed": 5,
+        "clean": 5,
+        "stable": 5,
+        "ease": 5
+      },
+      "risks": {
+        "copyright": "unknown",
+        "safety": "medium",
+        "privacy": "unknown",
+        "payment": "low"
+      },
+      "verification": {
+        "status": "active",
+        "last_checked": "2026-11-24",
+        "method": "auto",
+        "notes": "自动检测通过 (HTTP 200, 1101ms)"
+      },
+      "source": {
+        "submitted_by": "maintainer",
+        "added_at": "2026-07-18"
+      },
+      "featured": true,
+      "featured_order": 12,
+      "github": {
+        "full_name": "Silent1566/webhtv",
+        "stars": 837,
+        "pushed_at": "2026-11-21T03:14:28Z"
+      },
+      "enabled": true
     },
     {
       "id": "github-com-12",
       "name": "sky-tv",
       "url": "https://github.com/sky22333/sky-tv",
       "category": "opensource",
-      "summary": "现代化跨平台视频播放器空壳应用",
-      "enabled": true,
-      "featured": false
+      "summary": "现代化跨平台视频播放器空壳应用。",
+      "summary_short": "现代化跨平台视频播放器空壳应用",
+      "tags": [
+        "开源项目"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "unknown",
+        "regions": [
+          "GLOBAL"
+        ]
+      },
+      "scores": {
+        "more": 4,
+        "speed": 4,
+        "clean": 4,
+        "stable": 4,
+        "ease": 4
+      },
+      "risks": {
+        "copyright": "unknown",
+        "safety": "medium",
+        "privacy": "unknown",
+        "payment": "low"
+      },
+      "verification": {
+        "status": "active",
+        "last_checked": "2026-11-24",
+        "method": "auto",
+        "notes": "自动检测通过 (HTTP 200, 1039ms)"
+      },
+      "source": {
+        "submitted_by": "@sky22333",
+        "added_at": "2026-07-27"
+      },
+      "featured": true,
+      "github": {
+        "full_name": "sky22333/sky-tv",
+        "stars": 144,
+        "pushed_at": "2026-10-03T04:30:08Z"
+      },
+      "enabled": true
     },
     {
       "id": "fongmi-tv",
       "name": "FongMi TV",
       "url": "https://github.com/FongMi/TV",
       "category": "opensource",
-      "summary": "基于 CatVod 的开源 Android 影音应用",
-      "enabled": true,
-      "featured": true
+      "summary": "FongMi TV 是基于 CatVod 的开源 Android 影音应用。",
+      "summary_short": "基于 CatVod 的开源 Android 影音应用",
+      "tags": [
+        "开源项目",
+        "Android",
+        "FongMi",
+        "CatVod",
+        "影音应用"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "free",
+        "regions": [
+          "GLOBAL"
+        ]
+      },
+      "scores": {
+        "more": 5,
+        "speed": 5,
+        "clean": 5,
+        "stable": 5,
+        "ease": 5
+      },
+      "risks": {
+        "copyright": "unknown",
+        "safety": "medium",
+        "privacy": "unknown",
+        "payment": "low"
+      },
+      "verification": {
+        "status": "active",
+        "last_checked": "2026-11-24",
+        "method": "auto",
+        "notes": "自动检测通过 (HTTP 200, 1006ms)"
+      },
+      "source": {
+        "submitted_by": "maintainer",
+        "added_at": "2026-08-01"
+      },
+      "featured": true,
+      "featured_order": 14,
+      "github": {
+        "full_name": "FongMi/TV",
+        "stars": 10732,
+        "pushed_at": "2026-11-22T05:56:04Z"
+      },
+      "enabled": true
     },
     {
       "id": "czy0729-bangumi",
       "name": "Bangumi",
       "url": "https://github.com/czy0729/Bangumi",
       "category": "opensource",
-      "summary": "专门做 ACG 的类豆瓣追番客户端",
-      "enabled": true,
-      "featured": false
+      "summary": "Bangumi 是专门做 ACG 的类豆瓣追番客户端。",
+      "summary_short": "专门做 ACG 的类豆瓣追番客户端",
+      "tags": [
+        "开源项目",
+        "ACG",
+        "追番",
+        "Android",
+        "iOS",
+        "React Native"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "free",
+        "regions": [
+          "GLOBAL"
+        ]
+      },
+      "scores": {
+        "more": 5,
+        "speed": 5,
+        "clean": 5,
+        "stable": 5,
+        "ease": 5
+      },
+      "risks": {
+        "copyright": "unknown",
+        "safety": "medium",
+        "privacy": "unknown",
+        "payment": "low"
+      },
+      "verification": {
+        "status": "active",
+        "last_checked": "2026-11-24",
+        "method": "auto",
+        "notes": "自动检测通过 (HTTP 200, 1061ms)"
+      },
+      "source": {
+        "submitted_by": "maintainer",
+        "added_at": "2026-08-29"
+      },
+      "featured": true,
+      "github": {
+        "full_name": "czy0729/Bangumi",
+        "stars": 6272,
+        "pushed_at": "2026-11-22T19:10:55Z"
+      },
+      "enabled": true
     },
     {
       "id": "github-com-49",
@@ -180,17 +961,97 @@
       "url": "https://github.com/buhanzhe/NativeWasmTv",
       "category": "opensource",
       "summary": "横屏直播播放器",
-      "enabled": true,
-      "featured": false
+      "summary_short": "横屏直播播放器",
+      "tags": [
+        "开源项目"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "unknown",
+        "regions": [
+          "GLOBAL"
+        ]
+      },
+      "scores": {
+        "more": 4,
+        "speed": 4,
+        "clean": 4,
+        "stable": 4,
+        "ease": 4
+      },
+      "risks": {
+        "copyright": "unknown",
+        "safety": "medium",
+        "privacy": "unknown",
+        "payment": "low"
+      },
+      "verification": {
+        "status": "active",
+        "last_checked": "2026-11-24",
+        "method": "auto",
+        "notes": "自动检测通过 (HTTP 200, 1025ms)"
+      },
+      "source": {
+        "submitted_by": "@goodsand",
+        "added_at": "2026-10-23"
+      },
+      "featured": true,
+      "github": {
+        "full_name": "buhanzhe/NativeWasmTv",
+        "stars": 502,
+        "pushed_at": "2026-11-21T08:04:07Z"
+      },
+      "enabled": true
     },
     {
       "id": "xiugou-tv",
       "name": "修狗TV",
       "url": "https://github.com/qfw66/xiugou-tv",
       "category": "opensource",
-      "summary": "兼容 TVBox 配置的 Windows 影视播放器",
-      "enabled": true,
-      "featured": false
+      "summary": "面向 Windows 10/11 x64 的桌面影视聚合播放器，兼容 TVBox 配置与 spider 插件，支持点播和直播；需自行导入内容源。",
+      "summary_short": "兼容 TVBox 配置的 Windows 影视播放器",
+      "tags": [
+        "开源项目",
+        "Windows",
+        "TVBox"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "free",
+        "regions": [
+          "GLOBAL"
+        ]
+      },
+      "scores": {
+        "more": 3,
+        "speed": 3,
+        "clean": 3,
+        "stable": 3,
+        "ease": 3
+      },
+      "risks": {
+        "copyright": "unknown",
+        "safety": "unknown",
+        "privacy": "unknown",
+        "payment": "unknown"
+      },
+      "verification": {
+        "status": "active",
+        "last_checked": "2026-11-24",
+        "method": "auto",
+        "notes": "自动检测通过 (HTTP 200, 1121ms)"
+      },
+      "source": {
+        "submitted_by": "maintainer",
+        "added_at": "2026-10-31"
+      },
+      "featured": true,
+      "github": {
+        "full_name": "qfw66/xiugou-tv",
+        "stars": 306,
+        "pushed_at": "2026-11-22T15:08:52Z"
+      },
+      "enabled": true
     }
   ]
 }
