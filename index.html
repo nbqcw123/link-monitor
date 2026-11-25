@@ -30,6 +30,14 @@ h2{font-size:17px;margin:26px 0 12px;font-weight:600;border-left:4px solid var(-
 .risk{font-size:10.5px;padding:1px 7px;border-radius:8px;margin-left:6px}
 .ms{font-size:11px;color:var(--sub)}
 footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
+.tabs{position:sticky;top:0;z-index:20;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px;margin-bottom:20px;display:flex;gap:6px;overflow-x:auto;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.tab{white-space:nowrap;cursor:pointer;border:0;background:transparent;color:var(--sub);font-size:13px;padding:7px 13px;border-radius:8px;font-weight:500;font-family:inherit}
+.tab:hover{background:var(--bg)}
+.tab.active{background:var(--blue);color:#fff}
+.tab .n{opacity:.75;font-size:11px;margin-left:3px}
+.cat-panel{display:none}
+.cat-panel.active{display:block}
+.cat-panel h2{margin-top:0}
 </style></head><body><div class="wrap">
 <header>
 <h1>我的资源导航</h1>
@@ -40,6 +48,19 @@ footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
 <div class="stat"><b class="c-r">20</b> 无法访问</div>
 </div>
 </header>
+<nav class="tabs" aria-label="资源分类">
+<button class="tab active" type="button" data-cat="online_video">在线影视站<span class="n">(54)</span></button>
+<button class="tab" type="button" data-cat="open_source">开源项目<span class="n">(17)</span></button>
+<button class="tab" type="button" data-cat="tvbox_config">TVBox 配置<span class="n">(17)</span></button>
+<button class="tab" type="button" data-cat="magnet_search">磁力搜索<span class="n">(16)</span></button>
+<button class="tab" type="button" data-cat="player">播放器<span class="n">(7)</span></button>
+<button class="tab" type="button" data-cat="subscription">订阅服务<span class="n">(5)</span></button>
+<button class="tab" type="button" data-cat="video_app">影视 App<span class="n">(5)</span></button>
+<button class="tab" type="button" data-cat="cloud_search">网盘搜索<span class="n">(4)</span></button>
+<button class="tab" type="button" data-cat="subtitles">字幕工具<span class="n">(3)</span></button>
+<button class="tab" type="button" data-cat="__ALL__">全部<span class="n">(128)</span></button>
+</nav>
+<section class="cat-panel active" data-cat="online_video">
 <h2>在线影视站（54）</h2>
 <div class="grid">
 <a class="card" href="https://www.kankanya.me/" target="_blank" rel="noopener"><div class="name">看看鸭<span class="risk" style="color:#d54941;background:#f5f5f5">高风险</span></div><div class="desc">高清无广告新站</div><div class="tags"><span class="tag">在线影视</span></div><div class="scores">★★★★★ <span style="color:#8c8c8c">5.0</span></div><div class="foot"><span class="badge" style="color:#00a870;background:#e8f8f2">可访问</span><span class="ms">441ms</span></div></a>
@@ -97,6 +118,8 @@ footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
 <a class="card" href="https://ys.cxkjg.cn/" target="_blank" rel="noopener"><div class="name">创享影视<span class="risk" style="color:#d54941;background:#f5f5f5">高风险</span></div><div class="desc">无广告三网高峰秒播（@zxaay贡献）</div><div class="tags"><span class="tag">在线影视</span></div><div class="scores">★★★★★ <span style="color:#8c8c8c">5.0</span></div><div class="foot"><span class="badge" style="color:#00a870;background:#e8f8f2">可访问</span><span class="ms">1484ms</span></div></a>
 <a class="card" href="https://yingxivod.com/" target="_blank" rel="noopener"><div class="name">影夕视频<span class="risk" style="color:#d54941;background:#f5f5f5">高风险</span></div><div class="desc">高清免费在线影视，每日更新</div><div class="tags"><span class="tag">在线影视</span></div><div class="scores">★★★★☆ <span style="color:#8c8c8c">4.0</span></div><div class="foot"><span class="badge" style="color:#00a870;background:#e8f8f2">可访问</span><span class="ms">122ms</span></div></a>
 </div>
+</section>
+<section class="cat-panel" data-cat="open_source">
 <h2>开源项目（17）</h2>
 <div class="grid">
 <a class="card" href="https://github.com/mtvpls/MoonTVPlus" target="_blank" rel="noopener"><div class="name">MoonTVPlus<span class="risk" style="color:#8c8c8c;background:#f5f5f5">未知</span></div><div class="desc">MoonTV 增强版影视聚合播放器</div><div class="tags"><span class="tag">开源项目</span><span class="tag">影视聚合</span><span class="tag">播放器</span></div><div class="scores">★★★★★ <span style="color:#8c8c8c">4.7</span> <span style="color:#8c8c8c;font-size:10px">Star 自动</span></div><div class="gh">⌘ mtvpls/MoonTVPlus · ★3788</div><div class="foot"><span class="badge" style="color:#00a870;background:#e8f8f2">可访问</span><span class="ms">539ms</span></div></a>
@@ -117,6 +140,8 @@ footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
 <a class="card" href="https://github.com/buhanzhe/NativeWasmTv" target="_blank" rel="noopener"><div class="name">nTv 直播软件<span class="risk" style="color:#8c8c8c;background:#f5f5f5">未知</span></div><div class="desc">横屏直播播放器</div><div class="tags"><span class="tag">开源项目</span></div><div class="scores">★★★★☆ <span style="color:#8c8c8c">4.0</span> <span style="color:#8c8c8c;font-size:10px">Star 自动</span></div><div class="gh">⌘ buhanzhe/NativeWasmTv · ★512</div><div class="foot"><span class="badge" style="color:#00a870;background:#e8f8f2">可访问</span><span class="ms">557ms</span></div></a>
 <a class="card" href="https://github.com/qfw66/xiugou-tv" target="_blank" rel="noopener"><div class="name">修狗TV<span class="risk" style="color:#8c8c8c;background:#f5f5f5">未知</span></div><div class="desc">兼容 TVBox 配置的 Windows 影视播放器</div><div class="tags"><span class="tag">开源项目</span><span class="tag">Windows</span><span class="tag">TVBox</span></div><div class="scores">★★★★☆ <span style="color:#8c8c8c">3.9</span> <span style="color:#8c8c8c;font-size:10px">Star 自动</span></div><div class="gh">⌘ qfw66/xiugou-tv · ★338</div><div class="foot"><span class="badge" style="color:#00a870;background:#e8f8f2">可访问</span><span class="ms">399ms</span></div></a>
 </div>
+</section>
+<section class="cat-panel" data-cat="tvbox_config">
 <h2>TVBox 配置（17）</h2>
 <div class="grid">
 <a class="card" href="http://www.饭太硬.net/tv" target="_blank" rel="noopener"><div class="name">饭太硬<span class="risk" style="color:#d54941;background:#f5f5f5">高风险</span></div><div class="desc">影视仓配置地址</div><div class="tags"><span class="tag">影视仓</span><span class="tag">配置地址</span><span class="tag">TVBox</span></div><div class="scores">★★★★★ <span style="color:#8c8c8c">5.0</span></div><div class="foot"><span class="badge dim" style="color:#d54941;background:#fef0ef">无法访问</span><span class="ms">0ms</span></div></a>
@@ -137,6 +162,8 @@ footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
 <a class="card" href="http://ztha.top/TVBox/GYCK.json" target="_blank" rel="noopener"><div class="name">挺好分享多仓<span class="risk" style="color:#d54941;background:#f5f5f5">高风险</span></div><div class="desc">影视仓配置地址</div><div class="tags"><span class="tag">影视仓</span><span class="tag">配置地址</span><span class="tag">TVBox</span></div><div class="scores">★★★★★ <span style="color:#8c8c8c">5.0</span></div><div class="foot"><span class="badge" style="color:#00a870;background:#e8f8f2">可访问</span><span class="ms">1560ms</span></div></a>
 <a class="card" href="https://www.xhztv.pro/" target="_blank" rel="noopener"><div class="name">小盒子<span class="risk" style="color:#d54941;background:#f5f5f5">高风险</span></div><div class="desc">专业 TV 工具箱，免费好用</div><div class="tags"><span class="tag">影视仓</span><span class="tag">TV工具箱</span><span class="tag">收集页</span></div><div class="scores">★★★★☆ <span style="color:#8c8c8c">4.0</span></div><div class="foot"><span class="badge" style="color:#00a870;background:#e8f8f2">可访问</span><span class="ms">287ms</span></div></a>
 </div>
+</section>
+<section class="cat-panel" data-cat="magnet_search">
 <h2>磁力搜索（16）</h2>
 <div class="grid">
 <a class="card" href="https://www.juhebd.com/" target="_blank" rel="noopener"><div class="name">BD影视聚合<span class="risk" style="color:#d54941;background:#f5f5f5">高风险</span></div><div class="desc">最新高清电影电视剧下载</div><div class="tags"><span class="tag">磁力</span><span class="tag">BT</span><span class="tag">电影</span><span class="tag">电视剧</span><span class="tag">高清</span></div><div class="scores">★★★★★ <span style="color:#8c8c8c">5.0</span></div><div class="foot"><span class="badge" style="color:#d89614;background:#fff7e6">访问受限</span><span class="ms">73ms</span></div></a>
@@ -156,6 +183,8 @@ footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
 <a class="card" href="https://sidhub.cc/" target="_blank" rel="noopener"><div class="name">SeedHub<span class="risk" style="color:#d54941;background:#f5f5f5">高风险</span></div><div class="desc">影视&amp;动漫分享，页面纯净、无广告</div><div class="tags"><span class="tag">磁力与 BT</span></div><div class="scores">★★★★★ <span style="color:#8c8c8c">5.0</span></div><div class="foot"><span class="badge" style="color:#d89614;background:#fff7e6">访问受限</span><span class="ms">90ms</span></div></a>
 <a class="card" href="https://acg.rip/" target="_blank" rel="noopener"><div class="name">ACG.RIP<span class="risk" style="color:#d54941;background:#f5f5f5">高风险</span></div><div class="desc">磁力为主的动漫、OST发布，无广</div><div class="tags"><span class="tag">磁力与 BT</span></div><div class="scores">★★★★☆ <span style="color:#8c8c8c">4.0</span></div><div class="foot"><span class="badge" style="color:#00a870;background:#e8f8f2">可访问</span><span class="ms">716ms</span></div></a>
 </div>
+</section>
+<section class="cat-panel" data-cat="player">
 <h2>播放器（7）</h2>
 <div class="grid">
 <a class="card" href="https://kodi.tv/" target="_blank" rel="noopener"><div class="name">Kodi</div><div class="desc">开源、跨平台家庭媒体中心</div><div class="tags"><span class="tag">开源</span><span class="tag">播放器</span><span class="tag">跨平台</span></div><div class="scores">★★★★☆ <span style="color:#8c8c8c">4.4</span></div><div class="foot"><span class="badge" style="color:#00a870;background:#e8f8f2">可访问</span><span class="ms">74ms</span></div></a>
@@ -166,6 +195,8 @@ footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
 <a class="card" href="https://b.zhuiju.me/p/16" target="_blank" rel="noopener"><div class="name">FongMi 蜂蜜<span class="risk" style="color:#8c8c8c;background:#f5f5f5">未知</span></div><div class="desc">基于 CatVod 二开 ，支持Android TV和手机</div><div class="tags"><span class="tag">TVBox</span><span class="tag">影视仓</span><span class="tag">FongMi</span><span class="tag">CatVod</span><span class="tag">Android TV</span></div><div class="scores">★★★★★ <span style="color:#8c8c8c">5.0</span></div><div class="foot"><span class="badge" style="color:#00a870;background:#e8f8f2">可访问</span><span class="ms">179ms</span></div></a>
 <a class="card" href="https://b.zhuiju.me/p/15" target="_blank" rel="noopener"><div class="name">影视仓<span class="risk" style="color:#8c8c8c;background:#f5f5f5">未知</span></div><div class="desc">基于 TVBox 二次开发，魔改里知名度最高</div><div class="tags"><span class="tag">TVBox</span><span class="tag">影视仓</span><span class="tag">Android TV</span></div><div class="scores">★★★★★ <span style="color:#8c8c8c">5.0</span></div><div class="foot"><span class="badge" style="color:#00a870;background:#e8f8f2">可访问</span><span class="ms">198ms</span></div></a>
 </div>
+</section>
+<section class="cat-panel" data-cat="subscription">
 <h2>订阅服务（5）</h2>
 <div class="grid">
 <a class="card" href="https://github.com/iptv-org/iptv" target="_blank" rel="noopener"><div class="name">IPTV-org<span class="risk" style="color:#d89614;background:#f5f5f5">中风险</span></div><div class="desc">社区维护的公开 IPTV 频道集合</div><div class="tags"><span class="tag">IPTV</span><span class="tag">开源</span><span class="tag">订阅源</span></div><div class="scores">★★★★☆ <span style="color:#8c8c8c">4.0</span></div><div class="foot"><span class="badge" style="color:#00a870;background:#e8f8f2">可访问</span><span class="ms">391ms</span></div></a>
@@ -174,6 +205,8 @@ footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
 <a class="card" href="http://肥猫.net/tv" target="_blank" rel="noopener"><div class="name">肥猫<span class="risk" style="color:#d54941;background:#f5f5f5">高风险</span></div><div class="desc">IPTV 直播源地址</div><div class="tags"><span class="tag">IPTV</span><span class="tag">直播源</span></div><div class="scores">★★★★★ <span style="color:#8c8c8c">5.0</span></div><div class="foot"><span class="badge dim" style="color:#d54941;background:#fef0ef">无法访问</span><span class="ms">0ms</span></div></a>
 <a class="card" href="https://iptv.cqshushu.com/" target="_blank" rel="noopener"><div class="name">IPTV神器Pro<span class="risk" style="color:#d54941;background:#f5f5f5">高风险</span></div><div class="desc">免费IPTV直播源（@goodsand贡献）</div><div class="tags"><span class="tag">IPTV 订阅源</span></div><div class="scores">★★★★★ <span style="color:#8c8c8c">5.0</span></div><div class="foot"><span class="badge" style="color:#00a870;background:#e8f8f2">可访问</span><span class="ms">320ms</span></div></a>
 </div>
+</section>
+<section class="cat-panel" data-cat="video_app">
 <h2>影视 App（5）</h2>
 <div class="grid">
 <a class="card" href="https://animeko.org/downloads/" target="_blank" rel="noopener"><div class="name">Animeko<span class="risk" style="color:#8c8c8c;background:#f5f5f5">未知</span></div><div class="desc">在线弹幕追番平台</div><div class="tags"><span class="tag">影视APP</span><span class="tag">动漫</span><span class="tag">追番</span><span class="tag">弹幕</span><span class="tag">Android</span></div><div class="scores">★★★★☆ <span style="color:#8c8c8c">4.0</span></div><div class="foot"><span class="badge" style="color:#00a870;background:#e8f8f2">可访问</span><span class="ms">105ms</span></div></a>
@@ -182,6 +215,8 @@ footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
 <a class="card" href="https://b.zhuiju.me/p/23" target="_blank" rel="noopener"><div class="name">苹果iOS影视APP<span class="risk" style="color:#d54941;background:#f5f5f5">高风险</span></div><div class="desc">苹果iOS可用APP合集</div><div class="tags"><span class="tag">影视APP</span><span class="tag">iOS</span><span class="tag">追剧</span><span class="tag">应用合集</span></div><div class="scores">★★★★☆ <span style="color:#8c8c8c">4.0</span></div><div class="foot"><span class="badge" style="color:#00a870;background:#e8f8f2">可访问</span><span class="ms">448ms</span></div></a>
 <a class="card" href="https://b.zhuiju.me/p/27" target="_blank" rel="noopener"><div class="name">安卓Android影视APP<span class="risk" style="color:#d54941;background:#f5f5f5">高风险</span></div><div class="desc">安卓影视APP下载合集</div><div class="tags"><span class="tag">影视APP</span><span class="tag">Android</span><span class="tag">安卓</span><span class="tag">追剧</span><span class="tag">应用合集</span></div><div class="scores">★★★★☆ <span style="color:#8c8c8c">4.0</span></div><div class="foot"><span class="badge" style="color:#00a870;background:#e8f8f2">可访问</span><span class="ms">194ms</span></div></a>
 </div>
+</section>
+<section class="cat-panel" data-cat="cloud_search">
 <h2>网盘搜索（4）</h2>
 <div class="grid">
 <a class="card" href="https://pansou.de" target="_blank" rel="noopener"><div class="name">PanSou<span class="risk" style="color:#d89614;background:#f5f5f5">中风险</span></div><div class="desc">纯净的夸克网盘资源搜索引擎</div><div class="tags"><span class="tag">网盘搜索</span><span class="tag">夸克网盘</span><span class="tag">中文</span></div><div class="scores">★★★★★ <span style="color:#8c8c8c">5.0</span></div><div class="foot"><span class="badge" style="color:#00a870;background:#e8f8f2">可访问</span><span class="ms">710ms</span></div></a>
@@ -189,11 +224,30 @@ footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
 <a class="card" href="https://www.zhuiju.us/" target="_blank" rel="noopener"><div class="name">追剧吧<span class="risk" style="color:#d54941;background:#f5f5f5">高风险</span></div><div class="desc">国内外热门影视网盘资源搜索</div><div class="tags"><span class="tag">网盘搜索</span><span class="tag">影视资源</span><span class="tag">中文</span></div><div class="scores">★★★★★ <span style="color:#8c8c8c">5.0</span></div><div class="foot"><span class="badge" style="color:#00a870;background:#e8f8f2">可访问</span><span class="ms">658ms</span></div></a>
 <a class="card" href="https://gugeso.com/" target="_blank" rel="noopener"><div class="name">谷哥搜<span class="risk" style="color:#d54941;background:#f5f5f5">高风险</span></div><div class="desc">支持9种网盘的综合搜索站</div><div class="tags"><span class="tag">网盘搜索</span><span class="tag">多网盘</span><span class="tag">中文</span></div><div class="scores">★★★★★ <span style="color:#8c8c8c">5.0</span></div><div class="foot"><span class="badge" style="color:#00a870;background:#e8f8f2">可访问</span><span class="ms">2860ms</span></div></a>
 </div>
+</section>
+<section class="cat-panel" data-cat="subtitles">
 <h2>字幕工具（3）</h2>
 <div class="grid">
 <a class="card" href="https://zimuku.org" target="_blank" rel="noopener"><div class="name">字幕库<span class="risk" style="color:#d89614;background:#f5f5f5">中风险</span></div><div class="desc">字幕下载</div><div class="tags"><span class="tag">字幕</span><span class="tag">字幕下载</span><span class="tag">中文</span></div><div class="scores">★★★★★ <span style="color:#8c8c8c">5.0</span></div><div class="foot"><span class="badge dim" style="color:#d54941;background:#fef0ef">无法访问</span><span class="ms">381ms</span></div></a>
 <a class="card" href="https://assrt.net" target="_blank" rel="noopener"><div class="name">射手网(伪)<span class="risk" style="color:#d89614;background:#f5f5f5">中风险</span></div><div class="desc">字幕下载</div><div class="tags"><span class="tag">字幕</span><span class="tag">字幕下载</span><span class="tag">中文</span></div><div class="scores">★★★★★ <span style="color:#8c8c8c">5.0</span></div><div class="foot"><span class="badge" style="color:#00a870;background:#e8f8f2">可访问</span><span class="ms">1193ms</span></div></a>
 <a class="card" href="https://subhd.tv" target="_blank" rel="noopener"><div class="name">SubHD<span class="risk" style="color:#d89614;background:#f5f5f5">中风险</span></div><div class="desc">分享下载字幕平台</div><div class="tags"><span class="tag">字幕</span><span class="tag">字幕下载</span><span class="tag">分享平台</span></div><div class="scores">★★★★★ <span style="color:#8c8c8c">5.0</span></div><div class="foot"><span class="badge" style="color:#00a870;background:#e8f8f2">可访问</span><span class="ms">289ms</span></div></a>
 </div>
+</section>
 <footer>由 link-monitor 自动生成 · 采用源站完整字段结构 · 资源可用性每日检测<br>仅供技术研究，请通过正规渠道获取内容</footer>
-</div></body></html>
+</div>
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  var panels=[].slice.call(document.querySelectorAll('.cat-panel'));
+  function show(key){
+    var all=(key==='__ALL__');
+    tabs.forEach(function(t){t.classList.toggle('active',t.getAttribute('data-cat')===key)});
+    panels.forEach(function(p){p.classList.toggle('active',all||p.getAttribute('data-cat')===key)});
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.getAttribute('data-cat'))})});
+  var h=location.hash.replace(/^#/,'');
+  var found=(h==='__ALL__')||panels.some(function(p){return p.getAttribute('data-cat')===h});
+  if(found&&h)show(h);
+})();
+</script>
+</body></html>

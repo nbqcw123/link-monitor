@@ -120,6 +120,14 @@ h2{font-size:17px;margin:26px 0 12px;font-weight:600;border-left:4px solid var(-
 .risk{font-size:10.5px;padding:1px 7px;border-radius:8px;margin-left:6px}
 .ms{font-size:11px;color:var(--sub)}
 footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
+.tabs{position:sticky;top:0;z-index:20;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px;margin-bottom:20px;display:flex;gap:6px;overflow-x:auto;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.tab{white-space:nowrap;cursor:pointer;border:0;background:transparent;color:var(--sub);font-size:13px;padding:7px 13px;border-radius:8px;font-weight:500;font-family:inherit}
+.tab:hover{background:var(--bg)}
+.tab.active{background:var(--blue);color:#fff}
+.tab .n{opacity:.75;font-size:11px;margin-left:3px}
+.cat-panel{display:none}
+.cat-panel.active{display:block}
+.cat-panel h2{margin-top:0}
 </style></head><body><div class="wrap">
 <header>
 <h1>我的资源导航</h1>
@@ -134,9 +142,24 @@ footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
     head = "\n".join(parts)
     head = head.replace("__GEN__", E(gen_disp)).replace("__TOTAL__", str(total)).replace("__OK__", str(ok)).replace("__BAD__", str(bad))
 
-    body = []
-    for cat in sorted(groups, key=lambda c: (-len(groups[c]), c)):
+    cats_sorted = sorted(groups, key=lambda c: (-len(groups[c]), c))
+
+    # 顶部分类标签栏：点击切换显示，默认第一个分类
+    tabs = ['<nav class="tabs" aria-label="资源分类">']
+    for i, cat in enumerate(cats_sorted):
+        active = " active" if i == 0 else ""
+        tabs.append(
+            '<button class="tab%s" type="button" data-cat="%s">%s<span class="n">(%d)</span></button>'
+            % (active, E(cat), E(CATEGORY_NAMES.get(cat, cat)), len(groups[cat]))
+        )
+    tabs.append('<button class="tab" type="button" data-cat="__ALL__">全部<span class="n">(%d)</span></button>' % len(resources))
+    tabs.append("</nav>")
+
+    body = ["\n".join(tabs)]
+    for i, cat in enumerate(cats_sorted):
         cat_name = CATEGORY_NAMES.get(cat, cat)
+        active = " active" if i == 0 else ""
+        body.append('<section class="cat-panel%s" data-cat="%s">' % (active, E(cat)))
         body.append("<h2>%s（%d）</h2>" % (E(cat_name), len(groups[cat])))
         body.append('<div class="grid">')
         for r in groups[cat]:
@@ -183,10 +206,27 @@ footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
                    dim, fg, bg, label, ms_txt)
             )
         body.append("</div>")
+        body.append("</section>")
 
     tail = """
 <footer>由 link-monitor 自动生成 · 采用源站完整字段结构 · 资源可用性每日检测<br>仅供技术研究，请通过正规渠道获取内容</footer>
-</div></body></html>
+</div>
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  var panels=[].slice.call(document.querySelectorAll('.cat-panel'));
+  function show(key){
+    var all=(key==='__ALL__');
+    tabs.forEach(function(t){t.classList.toggle('active',t.getAttribute('data-cat')===key)});
+    panels.forEach(function(p){p.classList.toggle('active',all||p.getAttribute('data-cat')===key)});
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.getAttribute('data-cat'))})});
+  var h=location.hash.replace(/^#/,'');
+  var found=(h==='__ALL__')||panels.some(function(p){return p.getAttribute('data-cat')===h});
+  if(found&&h)show(h);
+})();
+</script>
+</body></html>
 """
     with open(OUT_PATH, "w", encoding="utf-8") as f:
         f.write(head + "\n".join(body) + tail)
