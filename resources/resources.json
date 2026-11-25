@@ -44,7 +44,8 @@
         "added_at": "2026-10-23"
       },
       "featured": true,
-      "featured_order": 1
+      "featured_order": 1,
+      "scores_source": "manual"
     },
     {
       "id": "no-video",
@@ -88,7 +89,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-06-13"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "gaze-red",
@@ -133,7 +135,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-06-13"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "sotvla",
@@ -178,7 +181,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-06-13"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "xlys",
@@ -223,7 +227,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-06-13"
       },
-      "featured": false
+      "featured": false,
+      "scores_source": "manual"
     },
     {
       "id": "duonao-video",
@@ -267,7 +272,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-06-19"
       },
-      "featured": false
+      "featured": false,
+      "scores_source": "manual"
     },
     {
       "id": "tdgo",
@@ -311,7 +317,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-06-19"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "ddmf",
@@ -355,7 +362,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-04"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "appmovie",
@@ -399,7 +407,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-04"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "ai-movie",
@@ -443,7 +452,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-06-19"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "jpyy",
@@ -487,7 +497,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-06-19"
       },
-      "featured": false
+      "featured": false,
+      "scores_source": "manual"
     },
     {
       "id": "tv-937",
@@ -531,7 +542,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-06-19"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "iyf",
@@ -575,7 +587,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-06-19"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "czzymovie",
@@ -619,7 +632,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-06-19"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "libvio",
@@ -663,7 +677,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-06-19"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "auete-video",
@@ -707,7 +722,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-04"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "dyrs",
@@ -751,7 +767,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-04"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "netflixgc",
@@ -795,7 +812,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-04"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "nfyingshi",
@@ -839,7 +857,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-04"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "nivod",
@@ -883,7 +902,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-04"
       },
-      "featured": false
+      "featured": false,
+      "scores_source": "manual"
     },
     {
       "id": "ppnix",
@@ -927,7 +947,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-04"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "dbku",
@@ -971,7 +992,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-04"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "bubu-zhuiju",
@@ -1015,7 +1037,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-12"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "yingmao-cangku",
@@ -1059,7 +1082,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-12"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "aikanbot",
@@ -1105,7 +1129,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-18"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "duse91",
@@ -1150,7 +1175,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-18"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "guangsu-yingshi",
@@ -1194,7 +1220,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-18"
       },
-      "featured": false
+      "featured": false,
+      "scores_source": "manual"
     },
     {
       "id": "haohaokan",
@@ -1239,7 +1266,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-18"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "ifn",
@@ -1283,7 +1311,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-18"
       },
-      "featured": false
+      "featured": false,
+      "scores_source": "manual"
     },
     {
       "id": "animeko-app",
@@ -1340,7 +1369,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-10"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "kazumi",
@@ -1397,7 +1427,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-11"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "selenetv-app",
@@ -1452,7 +1483,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-12"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "ios-yingshi-app",
@@ -1500,7 +1532,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-09-13"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "android-yingshi-app",
@@ -1549,7 +1582,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-11-01"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "zimuku",
@@ -1593,7 +1627,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-06-19"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "assrt",
@@ -1637,7 +1672,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-06-19"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "subhd",
@@ -1681,7 +1717,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-06-19"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "kodi",
@@ -1725,7 +1762,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-06-06"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "iptv-org",
@@ -1769,7 +1807,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-06-06"
       },
-      "featured": false
+      "featured": false,
+      "scores_source": "manual"
     },
     {
       "id": "vma-iptv-source",
@@ -1813,7 +1852,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-10-17"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "fan-tai-ying-iptv",
@@ -1857,7 +1897,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-10-17"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "fei-mao-iptv",
@@ -1901,7 +1942,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-10-17"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "fan-tai-ying",
@@ -1947,7 +1989,8 @@
         "added_at": "2026-07-04"
       },
       "featured": true,
-      "featured_order": 1
+      "featured_order": 1,
+      "scores_source": "manual"
     },
     {
       "id": "fei-mao",
@@ -1992,7 +2035,8 @@
         "added_at": "2026-07-04"
       },
       "featured": true,
-      "featured_order": 2
+      "featured_order": 2,
+      "scores_source": "manual"
     },
     {
       "id": "lao-liu-bei",
@@ -2037,7 +2081,8 @@
         "added_at": "2026-07-04"
       },
       "featured": true,
-      "featured_order": 3
+      "featured_order": 3,
+      "scores_source": "manual"
     },
     {
       "id": "xiao-ma",
@@ -2082,7 +2127,8 @@
         "added_at": "2026-07-04"
       },
       "featured": true,
-      "featured_order": 5
+      "featured_order": 5,
+      "scores_source": "manual"
     },
     {
       "id": "mo-yu-er",
@@ -2128,7 +2174,8 @@
         "added_at": "2026-07-04"
       },
       "featured": true,
-      "featured_order": 6
+      "featured_order": 6,
+      "scores_source": "manual"
     },
     {
       "id": "wang-er-xiao",
@@ -2174,7 +2221,8 @@
         "added_at": "2026-07-04"
       },
       "featured": true,
-      "featured_order": 7
+      "featured_order": 7,
+      "scores_source": "manual"
     },
     {
       "id": "xiao-he-zi-4k",
@@ -2219,7 +2267,8 @@
         "added_at": "2026-07-04"
       },
       "featured": true,
-      "featured_order": 8
+      "featured_order": 8,
+      "scores_source": "manual"
     },
     {
       "id": "chuang-xiang-ying-shi-tvbox",
@@ -2264,7 +2313,8 @@
         "added_at": "2026-10-17"
       },
       "featured": true,
-      "featured_order": 9
+      "featured_order": 9,
+      "scores_source": "manual"
     },
     {
       "id": "ying-cang-tvbox",
@@ -2310,7 +2360,8 @@
         "added_at": "2026-10-17"
       },
       "featured": true,
-      "featured_order": 9
+      "featured_order": 9,
+      "scores_source": "manual"
     },
     {
       "id": "lun-li-tvbox",
@@ -2355,7 +2406,8 @@
         "added_at": "2026-10-17"
       },
       "featured": true,
-      "featured_order": 10
+      "featured_order": 10,
+      "scores_source": "manual"
     },
     {
       "id": "xiao-he-zi-single",
@@ -2400,7 +2452,8 @@
         "added_at": "2026-07-04"
       },
       "featured": true,
-      "featured_order": 9
+      "featured_order": 9,
+      "scores_source": "manual"
     },
     {
       "id": "ao-wu",
@@ -2445,7 +2498,8 @@
         "added_at": "2026-07-04"
       },
       "featured": true,
-      "featured_order": 11
+      "featured_order": 11,
+      "scores_source": "manual"
     },
     {
       "id": "wu-ming",
@@ -2490,7 +2544,8 @@
         "added_at": "2026-07-12"
       },
       "featured": true,
-      "featured_order": 16
+      "featured_order": 16,
+      "scores_source": "manual"
     },
     {
       "id": "xiao-he-zi-multi",
@@ -2535,7 +2590,8 @@
         "added_at": "2026-07-04"
       },
       "featured": true,
-      "featured_order": 12
+      "featured_order": 12,
+      "scores_source": "manual"
     },
     {
       "id": "shi-guang-multi",
@@ -2580,7 +2636,8 @@
         "added_at": "2026-07-04"
       },
       "featured": true,
-      "featured_order": 13
+      "featured_order": 13,
+      "scores_source": "manual"
     },
     {
       "id": "ting-hao-share-multi",
@@ -2625,7 +2682,8 @@
         "added_at": "2026-07-04"
       },
       "featured": true,
-      "featured_order": 14
+      "featured_order": 14,
+      "scores_source": "manual"
     },
     {
       "id": "xiao-he-zi",
@@ -2671,7 +2729,8 @@
         "added_at": "2026-07-04"
       },
       "featured": true,
-      "featured_order": 15
+      "featured_order": 15,
+      "scores_source": "manual"
     },
     {
       "id": "juhebd",
@@ -2717,7 +2776,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-08-29"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "ainunu",
@@ -2761,7 +2821,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-08-29"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "bdflixs",
@@ -2807,7 +2868,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-08-29"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "ldysg",
@@ -2853,7 +2915,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-08-29"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "meijufen",
@@ -2898,7 +2961,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-06-19"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "cilixiong",
@@ -2942,7 +3006,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-06-19"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "ciligou",
@@ -2986,7 +3051,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-04"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "cilidi",
@@ -3030,7 +3096,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-08-02"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "bt-yingshi",
@@ -3075,7 +3142,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-04"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "4k-yuanpan",
@@ -3120,7 +3188,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-12"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "dianyinggang",
@@ -3165,7 +3234,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-12"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "btshijiewang",
@@ -3210,7 +3280,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-12"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "gaoqing-mp4",
@@ -3255,7 +3326,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-12"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "gaoqingzu",
@@ -3300,7 +3372,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-07-12"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "kuake-so-1",
@@ -3345,7 +3418,8 @@
         "added_at": "2026-06-06"
       },
       "featured": true,
-      "featured_order": 1
+      "featured_order": 1,
+      "scores_source": "manual"
     },
     {
       "id": "kuakeso",
@@ -3391,7 +3465,8 @@
         "added_at": "2026-06-13"
       },
       "featured": true,
-      "featured_order": 4
+      "featured_order": 4,
+      "scores_source": "manual"
     },
     {
       "id": "zhuiju-us",
@@ -3436,7 +3511,8 @@
         "added_at": "2026-06-13"
       },
       "featured": true,
-      "featured_order": 2
+      "featured_order": 2,
+      "scores_source": "manual"
     },
     {
       "id": "gugeso",
@@ -3481,7 +3557,8 @@
         "added_at": "2026-06-13"
       },
       "featured": true,
-      "featured_order": 3
+      "featured_order": 3,
+      "scores_source": "manual"
     },
     {
       "id": "moontvplus",
@@ -3503,11 +3580,11 @@
         ]
       },
       "scores": {
-        "more": 5,
-        "speed": 5,
-        "clean": 5,
-        "stable": 5,
-        "ease": 5
+        "more": 4.7,
+        "speed": 4.7,
+        "clean": 4.7,
+        "stable": 4.7,
+        "ease": 4.7
       },
       "risks": {
         "copyright": "unknown",
@@ -3529,9 +3606,10 @@
       "featured_order": 1,
       "github": {
         "full_name": "mtvpls/MoonTVPlus",
-        "stars": 3772,
+        "stars": 3788,
         "pushed_at": "2026-11-22T12:57:23Z"
-      }
+      },
+      "scores_source": "github-stars"
     },
     {
       "id": "zyfun",
@@ -3553,11 +3631,11 @@
         ]
       },
       "scores": {
-        "more": 5,
-        "speed": 5,
-        "clean": 5,
-        "stable": 5,
-        "ease": 5
+        "more": 5.0,
+        "speed": 5.0,
+        "clean": 5.0,
+        "stable": 5.0,
+        "ease": 5.0
       },
       "risks": {
         "copyright": "unknown",
@@ -3579,9 +3657,10 @@
       "featured_order": 2,
       "github": {
         "full_name": "Hiram-Wong/zyfun",
-        "stars": 9181,
+        "stars": 9204,
         "pushed_at": "2026-06-25T14:11:54Z"
-      }
+      },
+      "scores_source": "github-stars"
     },
     {
       "id": "iptv-api",
@@ -3603,11 +3682,11 @@
         ]
       },
       "scores": {
-        "more": 5,
-        "speed": 5,
-        "clean": 5,
-        "stable": 5,
-        "ease": 5
+        "more": 5.0,
+        "speed": 5.0,
+        "clean": 5.0,
+        "stable": 5.0,
+        "ease": 5.0
       },
       "risks": {
         "copyright": "unknown",
@@ -3629,9 +3708,10 @@
       "featured_order": 3,
       "github": {
         "full_name": "Guovin/iptv-api",
-        "stars": 26254,
+        "stars": 26303,
         "pushed_at": "2026-10-14T01:21:43Z"
-      }
+      },
+      "scores_source": "github-stars"
     },
     {
       "id": "iptv-org-iptv",
@@ -3653,11 +3733,11 @@
         ]
       },
       "scores": {
-        "more": 5,
-        "speed": 5,
-        "clean": 5,
-        "stable": 5,
-        "ease": 5
+        "more": 5.0,
+        "speed": 5.0,
+        "clean": 5.0,
+        "stable": 5.0,
+        "ease": 5.0
       },
       "risks": {
         "copyright": "unknown",
@@ -3679,9 +3759,10 @@
       "featured_order": 4,
       "github": {
         "full_name": "iptv-org/iptv",
-        "stars": 144532,
-        "pushed_at": "2026-11-23T00:12:50Z"
-      }
+        "stars": 144705,
+        "pushed_at": "2026-11-25T06:06:13Z"
+      },
+      "scores_source": "github-stars"
     },
     {
       "id": "pansou",
@@ -3703,11 +3784,11 @@
         ]
       },
       "scores": {
-        "more": 5,
-        "speed": 5,
-        "clean": 5,
-        "stable": 5,
-        "ease": 5
+        "more": 5.0,
+        "speed": 5.0,
+        "clean": 5.0,
+        "stable": 5.0,
+        "ease": 5.0
       },
       "risks": {
         "copyright": "unknown",
@@ -3729,9 +3810,10 @@
       "featured_order": 5,
       "github": {
         "full_name": "fish2018/pansou",
-        "stars": 15338,
+        "stars": 15373,
         "pushed_at": "2026-10-12T06:00:52Z"
-      }
+      },
+      "scores_source": "github-stars"
     },
     {
       "id": "cloudsaver",
@@ -3753,11 +3835,11 @@
         ]
       },
       "scores": {
-        "more": 5,
-        "speed": 5,
-        "clean": 5,
-        "stable": 5,
-        "ease": 5
+        "more": 5.0,
+        "speed": 5.0,
+        "clean": 5.0,
+        "stable": 5.0,
+        "ease": 5.0
       },
       "risks": {
         "copyright": "unknown",
@@ -3779,9 +3861,10 @@
       "featured_order": 6,
       "github": {
         "full_name": "jiangrui1994/CloudSaver",
-        "stars": 9475,
+        "stars": 9481,
         "pushed_at": "2026-11-21T15:23:55Z"
-      }
+      },
+      "scores_source": "github-stars"
     },
     {
       "id": "quark-auto-save",
@@ -3803,11 +3886,11 @@
         ]
       },
       "scores": {
-        "more": 5,
-        "speed": 5,
-        "clean": 5,
-        "stable": 5,
-        "ease": 5
+        "more": 4.6,
+        "speed": 4.6,
+        "clean": 4.6,
+        "stable": 4.6,
+        "ease": 4.6
       },
       "risks": {
         "copyright": "unknown",
@@ -3829,9 +3912,10 @@
       "featured_order": 7,
       "github": {
         "full_name": "Cp0204/quark-auto-save",
-        "stars": 3122,
+        "stars": 3129,
         "pushed_at": "2026-07-09T11:44:49Z"
-      }
+      },
+      "scores_source": "github-stars"
     },
     {
       "id": "animeko",
@@ -3853,11 +3937,11 @@
         ]
       },
       "scores": {
-        "more": 5,
-        "speed": 5,
-        "clean": 5,
-        "stable": 5,
-        "ease": 5
+        "more": 5.0,
+        "speed": 5.0,
+        "clean": 5.0,
+        "stable": 5.0,
+        "ease": 5.0
       },
       "risks": {
         "copyright": "unknown",
@@ -3879,9 +3963,10 @@
       "featured_order": 8,
       "github": {
         "full_name": "open-ani/animeko",
-        "stars": 22011,
-        "pushed_at": "2026-11-22T08:51:46Z"
-      }
+        "stars": 22082,
+        "pushed_at": "2026-11-23T23:53:36Z"
+      },
+      "scores_source": "github-stars"
     },
     {
       "id": "predidit-kazumi",
@@ -3904,11 +3989,11 @@
         ]
       },
       "scores": {
-        "more": 5,
-        "speed": 5,
-        "clean": 5,
-        "stable": 5,
-        "ease": 5
+        "more": 5.0,
+        "speed": 5.0,
+        "clean": 5.0,
+        "stable": 5.0,
+        "ease": 5.0
       },
       "risks": {
         "copyright": "unknown",
@@ -3930,9 +4015,10 @@
       "featured_order": 9,
       "github": {
         "full_name": "Predidit/Kazumi",
-        "stars": 43648,
-        "pushed_at": "2026-11-22T15:12:36Z"
-      }
+        "stars": 44055,
+        "pushed_at": "2026-11-25T15:06:57Z"
+      },
+      "scores_source": "github-stars"
     },
     {
       "id": "selenetv",
@@ -3955,11 +4041,11 @@
         ]
       },
       "scores": {
-        "more": 5,
-        "speed": 5,
-        "clean": 5,
-        "stable": 5,
-        "ease": 5
+        "more": 4.6,
+        "speed": 4.6,
+        "clean": 4.6,
+        "stable": 4.6,
+        "ease": 4.6
       },
       "risks": {
         "copyright": "unknown",
@@ -3981,9 +4067,10 @@
       "featured_order": 10,
       "github": {
         "full_name": "MoonTechLab/Selene",
-        "stars": 2655,
+        "stars": 2657,
         "pushed_at": "2026-05-25T10:26:26Z"
-      }
+      },
+      "scores_source": "github-stars"
     },
     {
       "id": "webhometv",
@@ -4007,11 +4094,11 @@
         ]
       },
       "scores": {
-        "more": 5,
-        "speed": 5,
-        "clean": 5,
-        "stable": 5,
-        "ease": 5
+        "more": 4.5,
+        "speed": 4.5,
+        "clean": 4.5,
+        "stable": 4.5,
+        "ease": 4.5
       },
       "risks": {
         "copyright": "unknown",
@@ -4033,9 +4120,10 @@
       "featured_order": 11,
       "github": {
         "full_name": "fish2018/webhtv",
-        "stars": 1937,
+        "stars": 1953,
         "pushed_at": "2026-11-10T16:14:30Z"
-      }
+      },
+      "scores_source": "github-stars"
     },
     {
       "id": "webhometv2",
@@ -4059,11 +4147,11 @@
         ]
       },
       "scores": {
-        "more": 5,
-        "speed": 5,
-        "clean": 5,
-        "stable": 5,
-        "ease": 5
+        "more": 4.2,
+        "speed": 4.2,
+        "clean": 4.2,
+        "stable": 4.2,
+        "ease": 4.2
       },
       "risks": {
         "copyright": "unknown",
@@ -4085,9 +4173,10 @@
       "featured_order": 12,
       "github": {
         "full_name": "Silent1566/webhtv",
-        "stars": 837,
-        "pushed_at": "2026-11-21T03:14:28Z"
-      }
+        "stars": 850,
+        "pushed_at": "2026-11-25T15:13:46Z"
+      },
+      "scores_source": "github-stars"
     },
     {
       "id": "tv-xn-yhqu5zs87a-top-3",
@@ -4129,7 +4218,8 @@
         "submitted_by": "@LFNHHHHH",
         "added_at": "2026-07-10"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "yangke-peekpro",
@@ -4175,7 +4265,8 @@
         "added_at": "2026-08-01"
       },
       "featured": true,
-      "featured_order": 5
+      "featured_order": 5,
+      "scores_source": "manual"
     },
     {
       "id": "webhometv-player",
@@ -4222,7 +4313,8 @@
         "added_at": "2026-08-01"
       },
       "featured": true,
-      "featured_order": 4
+      "featured_order": 4,
+      "scores_source": "manual"
     },
     {
       "id": "ok-yingshi-player",
@@ -4268,7 +4360,8 @@
         "added_at": "2026-08-01"
       },
       "featured": true,
-      "featured_order": 3
+      "featured_order": 3,
+      "scores_source": "manual"
     },
     {
       "id": "fongmi-fengmi",
@@ -4316,7 +4409,8 @@
         "added_at": "2026-08-01"
       },
       "featured": true,
-      "featured_order": 2
+      "featured_order": 2,
+      "scores_source": "manual"
     },
     {
       "id": "yingshicang-player",
@@ -4361,7 +4455,8 @@
         "added_at": "2026-08-01"
       },
       "featured": true,
-      "featured_order": 1
+      "featured_order": 1,
+      "scores_source": "manual"
     },
     {
       "id": "sidhub-cc-7",
@@ -4403,7 +4498,8 @@
         "submitted_by": "@LesliesCheung",
         "added_at": "2026-07-18"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "acg-rip-10",
@@ -4445,7 +4541,8 @@
         "submitted_by": "@moeyukisako",
         "added_at": "2026-07-19"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "github-com-12",
@@ -4465,11 +4562,11 @@
         ]
       },
       "scores": {
-        "more": 4,
-        "speed": 4,
-        "clean": 4,
-        "stable": 4,
-        "ease": 4
+        "more": 3.6,
+        "speed": 3.6,
+        "clean": 3.6,
+        "stable": 3.6,
+        "ease": 3.6
       },
       "risks": {
         "copyright": "unknown",
@@ -4490,9 +4587,10 @@
       "featured": true,
       "github": {
         "full_name": "sky22333/sky-tv",
-        "stars": 144,
+        "stars": 146,
         "pushed_at": "2026-10-03T04:30:08Z"
-      }
+      },
+      "scores_source": "github-stars"
     },
     {
       "id": "fongmi-tv",
@@ -4516,11 +4614,11 @@
         ]
       },
       "scores": {
-        "more": 5,
-        "speed": 5,
-        "clean": 5,
-        "stable": 5,
-        "ease": 5
+        "more": 5.0,
+        "speed": 5.0,
+        "clean": 5.0,
+        "stable": 5.0,
+        "ease": 5.0
       },
       "risks": {
         "copyright": "unknown",
@@ -4542,9 +4640,10 @@
       "featured_order": 14,
       "github": {
         "full_name": "FongMi/TV",
-        "stars": 10732,
-        "pushed_at": "2026-11-22T05:56:04Z"
-      }
+        "stars": 10796,
+        "pushed_at": "2026-11-25T02:39:46Z"
+      },
+      "scores_source": "github-stars"
     },
     {
       "id": "4kvm-cc-18",
@@ -4589,7 +4688,8 @@
         "submitted_by": "@Function21",
         "added_at": "2026-08-01"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "fdzys",
@@ -4635,7 +4735,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-08-08"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "sa-video",
@@ -4681,7 +4782,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-08-08"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "naifei-fyi-19",
@@ -4723,7 +4825,8 @@
         "submitted_by": "@xwx6164",
         "added_at": "2026-08-10"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "juok",
@@ -4767,7 +4870,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-08-29"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "dandanqi",
@@ -4812,7 +4916,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-08-29"
       },
-      "featured": false
+      "featured": false,
+      "scores_source": "manual"
     },
     {
       "id": "zndy",
@@ -4854,7 +4959,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-08-29"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "yingshidaquan",
@@ -4898,7 +5004,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-08-29"
       },
-      "featured": false
+      "featured": false,
+      "scores_source": "manual"
     },
     {
       "id": "juzong",
@@ -4942,7 +5049,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-08-29"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "jianyunys",
@@ -4987,7 +5095,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-08-29"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "pianku",
@@ -5032,7 +5141,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-08-29"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "66-dapianwang",
@@ -5076,7 +5186,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-08-29"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "didahd",
@@ -5121,7 +5232,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-08-29"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "zhuiying",
@@ -5167,7 +5279,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-08-29"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "wbbb",
@@ -5211,7 +5324,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-08-29"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "kxyy",
@@ -5255,7 +5369,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-08-29"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "dhvideo",
@@ -5299,7 +5414,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-08-29"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "czy0729-bangumi",
@@ -5324,11 +5440,11 @@
         ]
       },
       "scores": {
-        "more": 5,
-        "speed": 5,
-        "clean": 5,
-        "stable": 5,
-        "ease": 5
+        "more": 4.8,
+        "speed": 4.8,
+        "clean": 4.8,
+        "stable": 4.8,
+        "ease": 4.8
       },
       "risks": {
         "copyright": "unknown",
@@ -5349,9 +5465,10 @@
       "featured": true,
       "github": {
         "full_name": "czy0729/Bangumi",
-        "stars": 6272,
-        "pushed_at": "2026-11-22T19:10:55Z"
-      }
+        "stars": 6276,
+        "pushed_at": "2026-11-23T20:26:56Z"
+      },
+      "scores_source": "github-stars"
     },
     {
       "id": "zip0",
@@ -5395,7 +5512,8 @@
         "submitted_by": "maintainer",
         "added_at": "2026-08-30"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "aipan-me-25",
@@ -5437,7 +5555,8 @@
         "submitted_by": "@unilei",
         "added_at": "2026-09-12"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "103-39-111-180-29",
@@ -5479,7 +5598,8 @@
         "submitted_by": "@goodsand",
         "added_at": "2026-09-13"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "skr-skr1-cc-9",
@@ -5521,7 +5641,8 @@
         "submitted_by": "@Honsyu-cn",
         "added_at": "2026-09-13"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     },
     {
       "id": "tv-lxyy-club-36",
@@ -5564,7 +5685,8 @@
         "added_at": "2026-10-10"
       },
       "featured": true,
-      "featured_order": 3
+      "featured_order": 3,
+      "scores_source": "manual"
     },
     {
       "id": "iptv-cqshushu-com-31",
@@ -5606,7 +5728,8 @@
         "submitted_by": "@goodsand",
         "added_at": "2026-10-10"
       },
-      "featured": false
+      "featured": false,
+      "scores_source": "manual"
     },
     {
       "id": "kanmovie-com-34",
@@ -5649,7 +5772,8 @@
         "added_at": "2026-10-10"
       },
       "featured": true,
-      "featured_order": 4
+      "featured_order": 4,
+      "scores_source": "manual"
     },
     {
       "id": "ys-cxkjg-cn-39",
@@ -5692,7 +5816,8 @@
         "added_at": "2026-10-10"
       },
       "featured": true,
-      "featured_order": 2
+      "featured_order": 2,
+      "scores_source": "manual"
     },
     {
       "id": "github-com-49",
@@ -5712,11 +5837,11 @@
         ]
       },
       "scores": {
-        "more": 4,
-        "speed": 4,
-        "clean": 4,
-        "stable": 4,
-        "ease": 4
+        "more": 4.0,
+        "speed": 4.0,
+        "clean": 4.0,
+        "stable": 4.0,
+        "ease": 4.0
       },
       "risks": {
         "copyright": "unknown",
@@ -5737,9 +5862,10 @@
       "featured": true,
       "github": {
         "full_name": "buhanzhe/NativeWasmTv",
-        "stars": 502,
-        "pushed_at": "2026-11-21T08:04:07Z"
-      }
+        "stars": 512,
+        "pushed_at": "2026-11-25T02:47:36Z"
+      },
+      "scores_source": "github-stars"
     },
     {
       "id": "xiugou-tv",
@@ -5761,11 +5887,11 @@
         ]
       },
       "scores": {
-        "more": 3,
-        "speed": 3,
-        "clean": 3,
-        "stable": 3,
-        "ease": 3
+        "more": 3.9,
+        "speed": 3.9,
+        "clean": 3.9,
+        "stable": 3.9,
+        "ease": 3.9
       },
       "risks": {
         "copyright": "unknown",
@@ -5786,9 +5912,10 @@
       "featured": true,
       "github": {
         "full_name": "qfw66/xiugou-tv",
-        "stars": 306,
+        "stars": 338,
         "pushed_at": "2026-11-22T15:08:52Z"
-      }
+      },
+      "scores_source": "github-stars"
     },
     {
       "id": "yingxivod-com-53",
@@ -5830,7 +5957,8 @@
         "submitted_by": "@samuelsuenyi-hub",
         "added_at": "2026-11-07"
       },
-      "featured": true
+      "featured": true,
+      "scores_source": "manual"
     }
   ]
 }

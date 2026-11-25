@@ -15,9 +15,19 @@ REPORT_PATH = os.path.join(ROOT, "reports", "availability.json")
 OUT_PATH = os.path.join(ROOT, "index.html")
 
 CATEGORY_NAMES = {
-    "opensource": "开源影视项目",
-    "subtitle": "字幕工具",
+    # 源站完整字段结构（线上线 9 分类）
+    "online_video": "在线影视站",
+    "video_app": "影视 App",
+    "tvbox_config": "TVBox 配置",
+    "magnet_search": "磁力搜索",
+    "cloud_search": "网盘搜索",
+    "subscription": "订阅服务",
+    "subtitles": "字幕工具",
     "player": "播放器",
+    "open_source": "开源项目",
+    # 通用分类（兼容）
+    "opensource": "开源项目",
+    "subtitle": "字幕工具",
     "tools": "实用工具",
     "dev": "开发工具",
     "media": "影音媒体",
@@ -44,7 +54,7 @@ def load_json(path, default=None):
 
 def stars(n):
     try:
-        n = int(n)
+        n = int(round(float(n)))
     except (TypeError, ValueError):
         return ""
     n = max(0, min(5, n))
@@ -146,7 +156,10 @@ footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
             sc = r.get("scores") or {}
             if sc:
                 avg = sum(v for v in sc.values() if isinstance(v, (int, float))) / max(1, len(sc))
-                score_html = '<div class="scores">%s <span style="color:#8c8c8c">%.1f</span></div>' % (stars(round(avg)), avg)
+                src_tag = ""
+                if r.get("scores_source") == "github-stars":
+                    src_tag = ' <span style="color:#8c8c8c;font-size:10px">Star 自动</span>'
+                score_html = '<div class="scores">%s <span style="color:#8c8c8c">%.1f</span>%s</div>' % (stars(avg), avg, src_tag)
             gh_html = ""
             gh = r.get("github") or {}
             if gh.get("full_name"):

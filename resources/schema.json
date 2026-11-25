@@ -17,7 +17,7 @@
           "name": { "type": "string", "description": "显示名称" },
           "url": { "type": "string", "description": "完整 http(s) 地址" },
           "link_url": { "type": "string", "description": "可选跳转地址" },
-          "category": { "type": "string", "description": "分类 key：opensource/subtitle/player/tools/dev/media/learn/other" },
+          "category": { "type": "string", "description": "分类 key：online_video/video_app/tvbox_config/magnet_search/cloud_search/subscription/subtitles/player/open_source（通用：opensource/subtitle/tools/dev/media/learn/other）" },
           "summary": { "type": "string", "description": "完整介绍" },
           "summary_short": { "type": "string", "description": "短介绍" },
           "platforms": { "type": "array", "items": { "type": "string" }, "description": "支持平台 web/android/ios..." },
@@ -33,14 +33,23 @@
           },
           "scores": {
             "type": "object",
-            "description": "1-5 星评分",
+            "description": "1-5 星评分，可由 GitHub Star 自动计算",
             "properties": {
-              "more": { "type": "integer", "minimum": 1, "maximum": 5 },
-              "speed": { "type": "integer", "minimum": 1, "maximum": 5 },
-              "clean": { "type": "integer", "minimum": 1, "maximum": 5 },
-              "stable": { "type": "integer", "minimum": 1, "maximum": 5 },
-              "ease": { "type": "integer", "minimum": 1, "maximum": 5 }
+              "more": { "type": "number", "minimum": 1, "maximum": 5 },
+              "speed": { "type": "number", "minimum": 1, "maximum": 5 },
+              "clean": { "type": "number", "minimum": 1, "maximum": 5 },
+              "stable": { "type": "number", "minimum": 1, "maximum": 5 },
+              "ease": { "type": "number", "minimum": 1, "maximum": 5 }
             }
+          },
+          "scores_source": {
+            "type": "string",
+            "enum": ["github-stars", "manual"],
+            "description": "评分来源：github-stars 由 Star 自动计算，manual 为手填"
+          },
+          "scores_locked": {
+            "type": "boolean",
+            "description": "设为 true 时保留手填评分，不被自动计算覆盖"
           },
           "risks": {
             "type": "object",
