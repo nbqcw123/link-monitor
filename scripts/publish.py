@@ -152,7 +152,6 @@ footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
             '<button class="tab%s" type="button" data-cat="%s">%s<span class="n">(%d)</span></button>'
             % (active, E(cat), E(CATEGORY_NAMES.get(cat, cat)), len(groups[cat]))
         )
-    tabs.append('<button class="tab" type="button" data-cat="__ALL__">全部<span class="n">(%d)</span></button>' % len(resources))
     tabs.append("</nav>")
 
     body = ["\n".join(tabs)]
@@ -216,14 +215,13 @@ footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
   var tabs=[].slice.call(document.querySelectorAll('.tab'));
   var panels=[].slice.call(document.querySelectorAll('.cat-panel'));
   function show(key){
-    var all=(key==='__ALL__');
     tabs.forEach(function(t){t.classList.toggle('active',t.getAttribute('data-cat')===key)});
-    panels.forEach(function(p){p.classList.toggle('active',all||p.getAttribute('data-cat')===key)});
+    panels.forEach(function(p){p.classList.toggle('active',p.getAttribute('data-cat')===key)});
   }
   tabs.forEach(function(t){t.addEventListener('click',function(){show(t.getAttribute('data-cat'))})});
   var h=location.hash.replace(/^#/,'');
-  var found=(h==='__ALL__')||panels.some(function(p){return p.getAttribute('data-cat')===h});
-  if(found&&h)show(h);
+  var found=panels.some(function(p){return p.getAttribute('data-cat')===h});
+  if(found)show(h);
 })();
 </script>
 </body></html>

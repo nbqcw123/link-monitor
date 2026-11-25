@@ -58,7 +58,6 @@ footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
 <button class="tab" type="button" data-cat="video_app">影视 App<span class="n">(5)</span></button>
 <button class="tab" type="button" data-cat="cloud_search">网盘搜索<span class="n">(4)</span></button>
 <button class="tab" type="button" data-cat="subtitles">字幕工具<span class="n">(3)</span></button>
-<button class="tab" type="button" data-cat="__ALL__">全部<span class="n">(128)</span></button>
 </nav>
 <section class="cat-panel active" data-cat="online_video">
 <h2>在线影视站（54）</h2>
@@ -240,14 +239,13 @@ footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
   var tabs=[].slice.call(document.querySelectorAll('.tab'));
   var panels=[].slice.call(document.querySelectorAll('.cat-panel'));
   function show(key){
-    var all=(key==='__ALL__');
     tabs.forEach(function(t){t.classList.toggle('active',t.getAttribute('data-cat')===key)});
-    panels.forEach(function(p){p.classList.toggle('active',all||p.getAttribute('data-cat')===key)});
+    panels.forEach(function(p){p.classList.toggle('active',p.getAttribute('data-cat')===key)});
   }
   tabs.forEach(function(t){t.addEventListener('click',function(){show(t.getAttribute('data-cat'))})});
   var h=location.hash.replace(/^#/,'');
-  var found=(h==='__ALL__')||panels.some(function(p){return p.getAttribute('data-cat')===h});
-  if(found&&h)show(h);
+  var found=panels.some(function(p){return p.getAttribute('data-cat')===h});
+  if(found)show(h);
 })();
 </script>
 </body></html>
