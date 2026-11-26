@@ -1,7 +1,7 @@
 {
   "$schema": "./schema.json",
   "version": 1,
-  "updated_at": "2026-11-25",
+  "updated_at": "2026-11-27",
   "resources": [
     {
       "id": "kankanya",
@@ -5959,6 +5959,94 @@
       },
       "featured": true,
       "scores_source": "manual"
+    },
+    {
+      "id": "gequbao",
+      "name": "歌曲宝",
+      "url": "https://www.gequbao.com/",
+      "link_url": "https://www.gequbao.com/",
+      "category": "music",
+      "summary": "在线音乐搜索与试听站点",
+      "summary_short": "音乐搜索试听",
+      "platforms": [
+        "web"
+      ],
+      "tags": [
+        "音乐",
+        "搜索",
+        "试听"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "unknown",
+        "regions": []
+      },
+      "scores": {},
+      "risks": {
+        "copyright": "unknown"
+      },
+      "verification": {
+        "status": "unknown",
+        "last_checked": "",
+        "method": "manual",
+        "notes": "手动添加，等待每日自动检测"
+      },
+      "source": {
+        "submitted_by": "admin",
+        "added_at": "2026-11-27"
+      },
+      "featured": false,
+      "featured_order": 0,
+      "scores_source": "manual",
+      "github": {
+        "full_name": "",
+        "stars": null
+      },
+      "enabled": true
+    },
+    {
+      "id": "buguyy",
+      "name": "布谷音乐",
+      "url": "https://www.buguyy.top/",
+      "link_url": "https://www.buguyy.top/",
+      "category": "music",
+      "summary": "在线音乐搜索与试听站点",
+      "summary_short": "音乐搜索试听",
+      "platforms": [
+        "web"
+      ],
+      "tags": [
+        "音乐",
+        "搜索",
+        "试听"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "unknown",
+        "regions": []
+      },
+      "scores": {},
+      "risks": {
+        "copyright": "unknown"
+      },
+      "verification": {
+        "status": "unknown",
+        "last_checked": "",
+        "method": "manual",
+        "notes": "手动添加，等待每日自动检测"
+      },
+      "source": {
+        "submitted_by": "admin",
+        "added_at": "2026-11-27"
+      },
+      "featured": false,
+      "featured_order": 0,
+      "scores_source": "manual",
+      "github": {
+        "full_name": "",
+        "stars": null
+      },
+      "enabled": true
     }
   ]
 }

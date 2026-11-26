@@ -17,7 +17,7 @@
           "name": { "type": "string", "description": "显示名称" },
           "url": { "type": "string", "description": "完整 http(s) 地址" },
           "link_url": { "type": "string", "description": "可选跳转地址" },
-          "category": { "type": "string", "description": "分类 key：online_video/video_app/tvbox_config/magnet_search/cloud_search/subscription/subtitles/player/open_source（通用：opensource/subtitle/tools/dev/media/learn/other）" },
+          "category": { "type": "string", "description": "分类 key：online_video/video_app/tvbox_config/magnet_search/cloud_search/subscription/subtitles/player/music/open_source（通用：opensource/subtitle/tools/dev/media/learn/other）" },
           "summary": { "type": "string", "description": "完整介绍" },
           "summary_short": { "type": "string", "description": "短介绍" },
           "platforms": { "type": "array", "items": { "type": "string" }, "description": "支持平台 web/android/ios..." },

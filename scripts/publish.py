@@ -24,6 +24,7 @@ CATEGORY_NAMES = {
     "subscription": "订阅服务",
     "subtitles": "字幕工具",
     "player": "播放器",
+    "music": "音乐网站",
     "open_source": "开源项目",
     # 通用分类（兼容）
     "opensource": "开源项目",
