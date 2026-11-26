@@ -123,7 +123,7 @@ body.unlocked .wrap{display:block}
 <section class="panel">
   <h2>保存</h2>
   <div class="save-grid">
-    <label>GitHub Token<input id="s-token" type="password" placeholder="ghp_... 需要 repo 权限"></label>
+    <label>GitHub Token（可选）<input id="s-token" type="password" placeholder="已内置，留空即可"></label>
     <label>仓库<input id="s-repo" value="nbqcw123/link-monitor"></label>
     <label>分支<input id="s-branch" value="main"></label>
     <label>文件路径<input id="s-path" value="resources/resources.json"></label>
@@ -145,7 +145,9 @@ body.unlocked .wrap{display:block}
      源码只保存 PBKDF2-SHA256 的盐与派生值，不含明文密码。
      修改密码：本地运行 scripts/set_admin_password.py，把输出的 AUTH 行替换到这里。
      注意：纯静态页面，此校验只拦截普通访问，不能替代服务端鉴权。 */
-  var AUTH = {"user":"admin","iter":150000,"salt":"2218cc44bbaec5c3ac1a1a36cb79e680","hash":"hwa4DuYIjkpE3D1XXIRhV5cPUroKrwXRGXWF5djnYpw="};
+  var AUTH = {"user":"admin","iter":150000,"salt":"9da889dc3b5be2e29e9e08290aebcb3d","hash":"6V0D8xANEBWS80UMO2tK8NdG3Jf5qQVnrdLC5b3+z20="};
+  /* 内置保存凭据（fine-grained token，仅限本仓库 Contents 读写）。留空则需手动填写。 */
+  var BUILTIN_TOKEN="";
   var SESSION_KEY="lm_admin_auth_v1";
   var tries=0, lockUntil=0;
 
@@ -380,15 +382,17 @@ body.unlocked .wrap{display:block}
   }
 
   $("#saveGithub").addEventListener("click",async function(){
-    var token=$("#s-token").value.trim();
+    var typed=$("#s-token").value.trim();
+    var token=typed||BUILTIN_TOKEN;
     var repo=$("#s-repo").value.trim();
     var branch=$("#s-branch").value.trim()||"main";
     var path=$("#s-path").value.trim().replace(/^\/+/,"");
     var h=$("#saveHint");
-    if(!token||!repo||!path){hint(h,"Token、仓库、文件路径都要填。","err");return}
+    if(!token){hint(h,"还没有保存凭据：请填写 Token，或在页面里配置内置凭据。","err");return}
+    if(!repo||!path){hint(h,"仓库和文件路径都要填。","err");return}
     var btn=this;btn.disabled=true;hint(h,"正在读取远端文件…");
     try{
-      localStorage.setItem(TOKEN_KEY,token);
+      if(typed)localStorage.setItem(TOKEN_KEY,typed);
       var api="https://api.github.com/repos/"+repo+"/contents/"+path;
       var headers={Authorization:"Bearer "+token,Accept:"application/vnd.github+json"};
       var got=await fetch(api+"?ref="+encodeURIComponent(branch),{headers:headers,cache:"no-store"});
@@ -449,6 +453,10 @@ body.unlocked .wrap{display:block}
     initCats();
     var savedToken=localStorage.getItem(TOKEN_KEY);
     if(savedToken)$("#s-token").value=savedToken;
+    if(BUILTIN_TOKEN&&!savedToken){
+      $("#s-token").placeholder="已内置保存凭据，留空即可";
+      hint($("#saveHint"),"已内置保存凭据，添加后直接点「保存到仓库」即可。");
+    }
     load();
   }
 
