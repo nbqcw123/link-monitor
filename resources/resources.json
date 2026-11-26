@@ -35,9 +35,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 681ms)"
+        "notes": "自动检测通过 (HTTP 200, 597ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -81,7 +81,7 @@
       },
       "verification": {
         "status": "caution",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "访问受限 (HTTP 403)"
       },
@@ -127,9 +127,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 1097ms)"
+        "notes": "自动检测通过 (HTTP 200, 942ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -173,9 +173,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 290ms)"
+        "notes": "自动检测通过 (HTTP 200, 259ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -219,7 +219,7 @@
       },
       "verification": {
         "status": "unreachable",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "无法访问 (The read operation timed out)"
       },
@@ -264,7 +264,7 @@
       },
       "verification": {
         "status": "unreachable",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "无法访问 (404)"
       },
@@ -309,9 +309,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 121ms)"
+        "notes": "自动检测通过 (HTTP 200, 391ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -354,9 +354,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 2840ms)"
+        "notes": "自动检测通过 (HTTP 200, 754ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -398,10 +398,10 @@
         "payment": "unknown"
       },
       "verification": {
-        "status": "active",
-        "last_checked": "2026-11-25",
+        "status": "caution",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 650ms)"
+        "notes": "访问受限 (HTTP 403)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -444,9 +444,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 2223ms)"
+        "notes": "自动检测通过 (HTTP 200, 3270ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -489,7 +489,7 @@
       },
       "verification": {
         "status": "unreachable",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "无法访问 (521)"
       },
@@ -534,7 +534,7 @@
       },
       "verification": {
         "status": "unreachable",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "无法访问 (<urlopen error [Errno -2] Name or service not known>)"
       },
@@ -579,7 +579,7 @@
       },
       "verification": {
         "status": "caution",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "访问受限 (HTTP 403)"
       },
@@ -624,7 +624,7 @@
       },
       "verification": {
         "status": "caution",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "访问受限 (HTTP 403)"
       },
@@ -669,7 +669,7 @@
       },
       "verification": {
         "status": "caution",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "访问受限 (HTTP 403)"
       },
@@ -714,9 +714,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 738ms)"
+        "notes": "自动检测通过 (HTTP 200, 442ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -759,9 +759,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 512ms)"
+        "notes": "自动检测通过 (HTTP 200, 450ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -804,9 +804,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 197ms)"
+        "notes": "自动检测通过 (HTTP 200, 458ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -849,9 +849,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 1102ms)"
+        "notes": "自动检测通过 (HTTP 200, 491ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -894,7 +894,7 @@
       },
       "verification": {
         "status": "unreachable",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "无法访问 (523)"
       },
@@ -939,9 +939,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 224ms)"
+        "notes": "自动检测通过 (HTTP 200, 179ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -984,9 +984,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 245ms)"
+        "notes": "自动检测通过 (HTTP 200, 197ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -1029,7 +1029,7 @@
       },
       "verification": {
         "status": "unreachable",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "无法访问 (<urlopen error timed out>)"
       },
@@ -1074,9 +1074,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 520ms)"
+        "notes": "自动检测通过 (HTTP 200, 1180ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -1121,9 +1121,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 256ms)"
+        "notes": "自动检测通过 (HTTP 200, 131ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -1167,7 +1167,7 @@
       },
       "verification": {
         "status": "unreachable",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "无法访问 (850)"
       },
@@ -1212,9 +1212,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 958ms)"
+        "notes": "自动检测通过 (HTTP 200, 942ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -1258,7 +1258,7 @@
       },
       "verification": {
         "status": "unreachable",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "无法访问 (850)"
       },
@@ -1303,9 +1303,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 412ms)"
+        "notes": "自动检测通过 (HTTP 200, 685ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -1361,9 +1361,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 99ms)"
+        "notes": "自动检测通过 (HTTP 200, 122ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -1419,9 +1419,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 166ms)"
+        "notes": "自动检测通过 (HTTP 200, 173ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -1475,9 +1475,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 992ms)"
+        "notes": "自动检测通过 (HTTP 200, 956ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -1524,9 +1524,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 907ms)"
+        "notes": "自动检测通过 (HTTP 200, 320ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -1574,9 +1574,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 544ms)"
+        "notes": "自动检测通过 (HTTP 200, 372ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -1619,7 +1619,7 @@
       },
       "verification": {
         "status": "unreachable",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "无法访问 (404)"
       },
@@ -1664,9 +1664,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 1340ms)"
+        "notes": "自动检测通过 (HTTP 200, 1170ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -1709,9 +1709,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 753ms)"
+        "notes": "自动检测通过 (HTTP 200, 835ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -1754,9 +1754,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 140ms)"
+        "notes": "自动检测通过 (HTTP 200, 70ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -1799,9 +1799,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 411ms)"
+        "notes": "自动检测通过 (HTTP 200, 475ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -1844,9 +1844,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 2015ms)"
+        "notes": "自动检测通过 (HTTP 200, 1184ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -1889,7 +1889,7 @@
       },
       "verification": {
         "status": "unreachable",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "无法访问 ('latin-1' codec can't encode characters in position 4-6: ordinal not in range(256))"
       },
@@ -1934,7 +1934,7 @@
       },
       "verification": {
         "status": "unreachable",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "无法访问 ('latin-1' codec can't encode characters in position 0-1: ordinal not in range(256))"
       },
@@ -1980,7 +1980,7 @@
       },
       "verification": {
         "status": "unreachable",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "无法访问 ('latin-1' codec can't encode characters in position 4-6: ordinal not in range(256))"
       },
@@ -2026,7 +2026,7 @@
       },
       "verification": {
         "status": "unreachable",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "无法访问 ('latin-1' codec can't encode characters in position 0-1: ordinal not in range(256))"
       },
@@ -2072,9 +2072,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 212ms)"
+        "notes": "自动检测通过 (HTTP 200, 341ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -2118,9 +2118,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 2522ms)"
+        "notes": "自动检测通过 (HTTP 200, 1419ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -2165,9 +2165,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 885ms)"
+        "notes": "自动检测通过 (HTTP 200, 3021ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -2212,7 +2212,7 @@
       },
       "verification": {
         "status": "unreachable",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "无法访问 ('latin-1' codec can't encode characters in position 4-9: ordinal not in range(256))"
       },
@@ -2258,9 +2258,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 160ms)"
+        "notes": "自动检测通过 (HTTP 200, 210ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -2304,9 +2304,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 1498ms)"
+        "notes": "自动检测通过 (HTTP 200, 2245ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -2351,9 +2351,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 987ms)"
+        "notes": "自动检测通过 (HTTP 200, 895ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -2397,9 +2397,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 493ms)"
+        "notes": "自动检测通过 (HTTP 200, 451ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -2443,9 +2443,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 351ms)"
+        "notes": "自动检测通过 (HTTP 200, 350ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -2489,9 +2489,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 2471ms)"
+        "notes": "自动检测通过 (HTTP 200, 2456ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -2535,9 +2535,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 483ms)"
+        "notes": "自动检测通过 (HTTP 200, 648ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -2581,9 +2581,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 320ms)"
+        "notes": "自动检测通过 (HTTP 200, 347ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -2627,9 +2627,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 560ms)"
+        "notes": "自动检测通过 (HTTP 200, 328ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -2673,9 +2673,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 1880ms)"
+        "notes": "自动检测通过 (HTTP 200, 2077ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -2720,9 +2720,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 190ms)"
+        "notes": "自动检测通过 (HTTP 200, 373ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -2768,7 +2768,7 @@
       },
       "verification": {
         "status": "caution",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "访问受限 (HTTP 403)"
       },
@@ -2813,9 +2813,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 688ms)"
+        "notes": "自动检测通过 (HTTP 200, 605ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -2860,9 +2860,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 800ms)"
+        "notes": "自动检测通过 (HTTP 200, 834ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -2907,9 +2907,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 1607ms)"
+        "notes": "自动检测通过 (HTTP 200, 1127ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -2953,9 +2953,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 966ms)"
+        "notes": "自动检测通过 (HTTP 200, 896ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -2997,10 +2997,10 @@
         "payment": "unknown"
       },
       "verification": {
-        "status": "active",
-        "last_checked": "2026-11-25",
+        "status": "unreachable",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 514ms)"
+        "notes": "无法访问 (The read operation timed out)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -3043,9 +3043,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 374ms)"
+        "notes": "自动检测通过 (HTTP 200, 365ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -3088,7 +3088,7 @@
       },
       "verification": {
         "status": "caution",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "访问受限 (HTTP 403)"
       },
@@ -3134,9 +3134,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 8409ms)"
+        "notes": "自动检测通过 (HTTP 200, 713ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -3180,9 +3180,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 1509ms)"
+        "notes": "自动检测通过 (HTTP 200, 1196ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -3226,9 +3226,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 1558ms)"
+        "notes": "自动检测通过 (HTTP 200, 1452ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -3272,9 +3272,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 1558ms)"
+        "notes": "自动检测通过 (HTTP 200, 1562ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -3318,7 +3318,7 @@
       },
       "verification": {
         "status": "caution",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "访问受限 (HTTP 403)"
       },
@@ -3364,7 +3364,7 @@
       },
       "verification": {
         "status": "caution",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "访问受限 (HTTP 403)"
       },
@@ -3409,9 +3409,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 954ms)"
+        "notes": "自动检测通过 (HTTP 200, 817ms)"
       },
       "source": {
         "submitted_by": "@laoma2053",
@@ -3456,9 +3456,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 855ms)"
+        "notes": "自动检测通过 (HTTP 200, 763ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -3502,9 +3502,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 775ms)"
+        "notes": "自动检测通过 (HTTP 200, 791ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -3548,9 +3548,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 2916ms)"
+        "notes": "自动检测通过 (HTTP 200, 2977ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -3594,9 +3594,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 748ms)"
+        "notes": "自动检测通过 (HTTP 200, 568ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -3606,7 +3606,7 @@
       "featured_order": 1,
       "github": {
         "full_name": "mtvpls/MoonTVPlus",
-        "stars": 3788,
+        "stars": 3792,
         "pushed_at": "2026-11-22T12:57:23Z"
       },
       "scores_source": "github-stars"
@@ -3645,9 +3645,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 406ms)"
+        "notes": "自动检测通过 (HTTP 200, 566ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -3657,7 +3657,7 @@
       "featured_order": 2,
       "github": {
         "full_name": "Hiram-Wong/zyfun",
-        "stars": 9204,
+        "stars": 9205,
         "pushed_at": "2026-06-25T14:11:54Z"
       },
       "scores_source": "github-stars"
@@ -3696,9 +3696,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 515ms)"
+        "notes": "自动检测通过 (HTTP 200, 504ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -3708,7 +3708,7 @@
       "featured_order": 3,
       "github": {
         "full_name": "Guovin/iptv-api",
-        "stars": 26303,
+        "stars": 26310,
         "pushed_at": "2026-10-14T01:21:43Z"
       },
       "scores_source": "github-stars"
@@ -3747,9 +3747,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 38ms)"
+        "notes": "自动检测通过 (HTTP 200, 142ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -3759,8 +3759,8 @@
       "featured_order": 4,
       "github": {
         "full_name": "iptv-org/iptv",
-        "stars": 144706,
-        "pushed_at": "2026-11-25T06:06:13Z"
+        "stars": 144736,
+        "pushed_at": "2026-11-26T00:11:02Z"
       },
       "scores_source": "github-stars"
     },
@@ -3798,9 +3798,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 519ms)"
+        "notes": "自动检测通过 (HTTP 200, 603ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -3810,7 +3810,7 @@
       "featured_order": 5,
       "github": {
         "full_name": "fish2018/pansou",
-        "stars": 15373,
+        "stars": 15386,
         "pushed_at": "2026-10-12T06:00:52Z"
       },
       "scores_source": "github-stars"
@@ -3849,9 +3849,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 454ms)"
+        "notes": "自动检测通过 (HTTP 200, 456ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -3861,7 +3861,7 @@
       "featured_order": 6,
       "github": {
         "full_name": "jiangrui1994/CloudSaver",
-        "stars": 9481,
+        "stars": 9484,
         "pushed_at": "2026-11-21T15:23:55Z"
       },
       "scores_source": "github-stars"
@@ -3900,9 +3900,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 440ms)"
+        "notes": "自动检测通过 (HTTP 200, 436ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -3912,7 +3912,7 @@
       "featured_order": 7,
       "github": {
         "full_name": "Cp0204/quark-auto-save",
-        "stars": 3129,
+        "stars": 3131,
         "pushed_at": "2026-07-09T11:44:49Z"
       },
       "scores_source": "github-stars"
@@ -3951,9 +3951,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 406ms)"
+        "notes": "自动检测通过 (HTTP 200, 476ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -3963,7 +3963,7 @@
       "featured_order": 8,
       "github": {
         "full_name": "open-ani/animeko",
-        "stars": 22083,
+        "stars": 22095,
         "pushed_at": "2026-11-23T23:53:36Z"
       },
       "scores_source": "github-stars"
@@ -4003,9 +4003,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 602ms)"
+        "notes": "自动检测通过 (HTTP 200, 428ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -4015,8 +4015,8 @@
       "featured_order": 9,
       "github": {
         "full_name": "Predidit/Kazumi",
-        "stars": 44056,
-        "pushed_at": "2026-11-25T15:06:57Z"
+        "stars": 44108,
+        "pushed_at": "2026-11-26T04:38:30Z"
       },
       "scores_source": "github-stars"
     },
@@ -4055,9 +4055,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 400ms)"
+        "notes": "自动检测通过 (HTTP 200, 411ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -4067,7 +4067,7 @@
       "featured_order": 10,
       "github": {
         "full_name": "MoonTechLab/Selene",
-        "stars": 2657,
+        "stars": 2658,
         "pushed_at": "2026-05-25T10:26:26Z"
       },
       "scores_source": "github-stars"
@@ -4108,9 +4108,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 702ms)"
+        "notes": "自动检测通过 (HTTP 200, 746ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -4120,7 +4120,7 @@
       "featured_order": 11,
       "github": {
         "full_name": "fish2018/webhtv",
-        "stars": 1953,
+        "stars": 1956,
         "pushed_at": "2026-11-10T16:14:30Z"
       },
       "scores_source": "github-stars"
@@ -4161,9 +4161,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 613ms)"
+        "notes": "自动检测通过 (HTTP 200, 630ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -4173,8 +4173,8 @@
       "featured_order": 12,
       "github": {
         "full_name": "Silent1566/webhtv",
-        "stars": 851,
-        "pushed_at": "2026-11-25T15:13:46Z"
+        "stars": 852,
+        "pushed_at": "2026-11-26T04:02:05Z"
       },
       "scores_source": "github-stars"
     },
@@ -4210,9 +4210,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 858ms)"
+        "notes": "自动检测通过 (HTTP 200, 272ms)"
       },
       "source": {
         "submitted_by": "@LFNHHHHH",
@@ -4256,9 +4256,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 748ms)"
+        "notes": "自动检测通过 (HTTP 200, 478ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -4304,9 +4304,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 971ms)"
+        "notes": "自动检测通过 (HTTP 200, 285ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -4351,9 +4351,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 534ms)"
+        "notes": "自动检测通过 (HTTP 200, 403ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -4400,9 +4400,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 323ms)"
+        "notes": "自动检测通过 (HTTP 200, 275ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -4446,9 +4446,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 304ms)"
+        "notes": "自动检测通过 (HTTP 200, 290ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -4490,7 +4490,7 @@
       },
       "verification": {
         "status": "caution",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "访问受限 (HTTP 403)"
       },
@@ -4533,9 +4533,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 604ms)"
+        "notes": "自动检测通过 (HTTP 200, 941ms)"
       },
       "source": {
         "submitted_by": "@moeyukisako",
@@ -4576,9 +4576,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 432ms)"
+        "notes": "自动检测通过 (HTTP 200, 453ms)"
       },
       "source": {
         "submitted_by": "@sky22333",
@@ -4628,9 +4628,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 393ms)"
+        "notes": "自动检测通过 (HTTP 200, 441ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -4640,7 +4640,7 @@
       "featured_order": 14,
       "github": {
         "full_name": "FongMi/TV",
-        "stars": 10796,
+        "stars": 10807,
         "pushed_at": "2026-11-25T02:39:46Z"
       },
       "scores_source": "github-stars"
@@ -4680,9 +4680,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 838ms)"
+        "notes": "自动检测通过 (HTTP 200, 843ms)"
       },
       "source": {
         "submitted_by": "@Function21",
@@ -4727,9 +4727,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 705ms)"
+        "notes": "自动检测通过 (HTTP 200, 1090ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -4774,9 +4774,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 402ms)"
+        "notes": "自动检测通过 (HTTP 200, 613ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -4817,7 +4817,7 @@
       },
       "verification": {
         "status": "unreachable",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "无法访问 (<urlopen error [Errno -2] Name or service not known>)"
       },
@@ -4862,7 +4862,7 @@
       },
       "verification": {
         "status": "unreachable",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "无法访问 (<urlopen error timed out>)"
       },
@@ -4908,7 +4908,7 @@
       },
       "verification": {
         "status": "unreachable",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "无法访问 (404)"
       },
@@ -4951,9 +4951,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 1364ms)"
+        "notes": "自动检测通过 (HTTP 200, 2721ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -4996,9 +4996,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 695ms)"
+        "notes": "自动检测通过 (HTTP 200, 655ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -5041,7 +5041,7 @@
       },
       "verification": {
         "status": "caution",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "访问受限 (HTTP 403)"
       },
@@ -5087,9 +5087,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 2138ms)"
+        "notes": "自动检测通过 (HTTP 200, 2288ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -5133,9 +5133,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 431ms)"
+        "notes": "自动检测通过 (HTTP 200, 680ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -5178,9 +5178,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 480ms)"
+        "notes": "自动检测通过 (HTTP 200, 458ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -5224,9 +5224,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 862ms)"
+        "notes": "自动检测通过 (HTTP 200, 1047ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -5271,7 +5271,7 @@
       },
       "verification": {
         "status": "unreachable",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "无法访问 (404)"
       },
@@ -5316,7 +5316,7 @@
       },
       "verification": {
         "status": "caution",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "访问受限 (HTTP 403)"
       },
@@ -5361,7 +5361,7 @@
       },
       "verification": {
         "status": "unreachable",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "无法访问 (404)"
       },
@@ -5406,9 +5406,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 266ms)"
+        "notes": "自动检测通过 (HTTP 200, 244ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -5454,9 +5454,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 529ms)"
+        "notes": "自动检测通过 (HTTP 200, 461ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -5465,7 +5465,7 @@
       "featured": true,
       "github": {
         "full_name": "czy0729/Bangumi",
-        "stars": 6276,
+        "stars": 6277,
         "pushed_at": "2026-11-23T20:26:56Z"
       },
       "scores_source": "github-stars"
@@ -5504,9 +5504,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 1243ms)"
+        "notes": "自动检测通过 (HTTP 200, 157ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -5547,9 +5547,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 1185ms)"
+        "notes": "自动检测通过 (HTTP 200, 310ms)"
       },
       "source": {
         "submitted_by": "@unilei",
@@ -5590,7 +5590,7 @@
       },
       "verification": {
         "status": "unreachable",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "无法访问 (850)"
       },
@@ -5633,7 +5633,7 @@
       },
       "verification": {
         "status": "caution",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
         "notes": "访问受限 (HTTP 403)"
       },
@@ -5676,9 +5676,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 76ms)"
+        "notes": "自动检测通过 (HTTP 200, 82ms)"
       },
       "source": {
         "submitted_by": "@anyongki",
@@ -5720,9 +5720,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 804ms)"
+        "notes": "自动检测通过 (HTTP 200, 630ms)"
       },
       "source": {
         "submitted_by": "@goodsand",
@@ -5763,9 +5763,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 3469ms)"
+        "notes": "自动检测通过 (HTTP 200, 2223ms)"
       },
       "source": {
         "submitted_by": "@miaodongsu7",
@@ -5807,9 +5807,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 507ms)"
+        "notes": "自动检测通过 (HTTP 200, 706ms)"
       },
       "source": {
         "submitted_by": "@zxaay",
@@ -5851,9 +5851,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 446ms)"
+        "notes": "自动检测通过 (HTTP 200, 544ms)"
       },
       "source": {
         "submitted_by": "@goodsand",
@@ -5862,7 +5862,7 @@
       "featured": true,
       "github": {
         "full_name": "buhanzhe/NativeWasmTv",
-        "stars": 512,
+        "stars": 513,
         "pushed_at": "2026-11-25T02:47:36Z"
       },
       "scores_source": "github-stars"
@@ -5901,9 +5901,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 492ms)"
+        "notes": "自动检测通过 (HTTP 200, 464ms)"
       },
       "source": {
         "submitted_by": "maintainer",
@@ -5912,7 +5912,7 @@
       "featured": true,
       "github": {
         "full_name": "qfw66/xiugou-tv",
-        "stars": 338,
+        "stars": 346,
         "pushed_at": "2026-11-22T15:08:52Z"
       },
       "scores_source": "github-stars"
@@ -5949,9 +5949,9 @@
       },
       "verification": {
         "status": "active",
-        "last_checked": "2026-11-25",
+        "last_checked": "2026-11-26",
         "method": "auto",
-        "notes": "自动检测通过 (HTTP 200, 518ms)"
+        "notes": "自动检测通过 (HTTP 200, 114ms)"
       },
       "source": {
         "submitted_by": "@samuelsuenyi-hub",
