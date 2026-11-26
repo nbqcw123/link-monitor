@@ -6047,6 +6047,138 @@
         "stars": null
       },
       "enabled": true
+    },
+    {
+      "id": "dgcol",
+      "name": "动感酷音乐",
+      "url": "https://www.dgcol.com/",
+      "link_url": "https://www.dgcol.com/",
+      "category": "music",
+      "summary": "动感酷音乐（DGcol）在线音乐播放站点，可直接在网页试听曲库歌曲",
+      "summary_short": "在线播放",
+      "platforms": [
+        "web"
+      ],
+      "tags": [
+        "音乐",
+        "在线播放",
+        "试听"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "unknown",
+        "regions": []
+      },
+      "scores": {},
+      "risks": {
+        "copyright": "unknown"
+      },
+      "verification": {
+        "status": "active",
+        "last_checked": "2026-11-26",
+        "method": "auto",
+        "notes": "自动检测通过 (HTTP 200, 350ms)"
+      },
+      "source": {
+        "submitted_by": "admin",
+        "added_at": "2026-11-27"
+      },
+      "featured": false,
+      "featured_order": 0,
+      "scores_source": "manual",
+      "github": {
+        "full_name": "",
+        "stars": null
+      },
+      "enabled": true
+    },
+    {
+      "id": "xmwsyy",
+      "name": "熊猫无损音乐",
+      "url": "https://www.xmwsyy.com",
+      "link_url": "https://www.xmwsyy.com",
+      "category": "music",
+      "summary": "熊猫无损音乐站，提供无损音乐下载资源，需自行下载后本地播放",
+      "summary_short": "无损音乐下载",
+      "platforms": [
+        "web"
+      ],
+      "tags": [
+        "音乐",
+        "无损",
+        "下载"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "unknown",
+        "regions": []
+      },
+      "scores": {},
+      "risks": {
+        "copyright": "unknown"
+      },
+      "verification": {
+        "status": "active",
+        "last_checked": "2026-11-26",
+        "method": "auto",
+        "notes": "自动检测通过 (HTTP 200, 243ms)"
+      },
+      "source": {
+        "submitted_by": "admin",
+        "added_at": "2026-11-27"
+      },
+      "featured": false,
+      "featured_order": 0,
+      "scores_source": "manual",
+      "github": {
+        "full_name": "",
+        "stars": null
+      },
+      "enabled": true
+    },
+    {
+      "id": "dtwav",
+      "name": "动听音乐网",
+      "url": "https://www.dtwav.com",
+      "link_url": "https://www.dtwav.com",
+      "category": "music",
+      "summary": "动听音乐网，网页直接在线播放，无需下载即可试听",
+      "summary_short": "在线播放",
+      "platforms": [
+        "web"
+      ],
+      "tags": [
+        "音乐",
+        "在线播放",
+        "试听"
+      ],
+      "access": {
+        "requires_login": false,
+        "free_level": "unknown",
+        "regions": []
+      },
+      "scores": {},
+      "risks": {
+        "copyright": "unknown"
+      },
+      "verification": {
+        "status": "active",
+        "last_checked": "2026-11-26",
+        "method": "auto",
+        "notes": "自动检测通过 (HTTP 200, 397ms)"
+      },
+      "source": {
+        "submitted_by": "admin",
+        "added_at": "2026-11-27"
+      },
+      "featured": false,
+      "featured_order": 0,
+      "scores_source": "manual",
+      "github": {
+        "full_name": "",
+        "stars": null
+      },
+      "enabled": true
     }
   ]
 }

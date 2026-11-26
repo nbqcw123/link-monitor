@@ -13,8 +13,8 @@
     "method": "score = clamp(2.0 + log10(stars + 1) * 0.75, 1, 5)"
   },
   "summary": {
-    "total": 130,
-    "reachable": 96,
+    "total": 133,
+    "reachable": 99,
     "restricted": 13,
     "unreachable": 21
   },
@@ -361,6 +361,17 @@
       "error": null
     },
     {
+      "resource_id": "dgcol",
+      "url": "https://www.dgcol.com/",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.dgcol.com/",
+      "response_ms": 350,
+      "checked_at": "2026-11-26T17:41:48.434615+00:00",
+      "attempts": 1,
+      "error": null
+    },
+    {
       "resource_id": "dhvideo",
       "url": "https://dhvideo.cc/",
       "status": "reachable",
@@ -390,6 +401,17 @@
       "final_url": "https://www.didahd.xyz/",
       "response_ms": 1809,
       "checked_at": "2026-11-26T17:39:40.023358+00:00",
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "resource_id": "dtwav",
+      "url": "https://www.dtwav.com",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.dtwav.com",
+      "response_ms": 397,
+      "checked_at": "2026-11-26T17:41:49.028473+00:00",
       "attempts": 1,
       "error": null
     },
@@ -1305,6 +1327,17 @@
       "checked_at": "2026-11-26T17:39:24.015830+00:00",
       "attempts": 2,
       "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1018)>"
+    },
+    {
+      "resource_id": "xmwsyy",
+      "url": "https://www.xmwsyy.com",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.xmwsyy.com",
+      "response_ms": 243,
+      "checked_at": "2026-11-26T17:41:48.785230+00:00",
+      "attempts": 1,
+      "error": null
     },
     {
       "resource_id": "yangke-peekpro",
