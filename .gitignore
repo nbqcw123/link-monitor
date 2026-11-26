@@ -1,3 +1,7 @@
 __pycache__/
 *.pyc
 .DS_Store
+
+# 服务端凭据（管理员口令哈希、GitHub PAT）
+.env
+resources/*.tmp

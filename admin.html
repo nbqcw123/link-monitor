@@ -85,7 +85,10 @@ body.unlocked .wrap{display:block}
 <header>
   <div class="head-top">
     <h1>数据字段管理</h1>
-    <a class="back" href="index.html">← 返回导航</a>
+    <div style="display:flex;gap:8px">
+      <button class="back" id="logoutBtn" type="button" style="display:none;background:#fff;cursor:pointer">退出登录</button>
+      <a class="back" href="index.html">← 返回导航</a>
+    </div>
   </div>
   <div class="sub">只需填名称、地址、类型。保存后写入 <code>resources/resources.json</code>，字段格式与源站结构一致。</div>
 </header>
@@ -122,7 +125,7 @@ body.unlocked .wrap{display:block}
 
 <section class="panel">
   <h2>保存</h2>
-  <div class="save-grid">
+  <div class="save-grid" id="credGrid">
     <label>GitHub Token（可选）<input id="s-token" type="password" placeholder="请填写 PAT"></label>
     <label>仓库<input id="s-repo" value="nbqcw123/link-monitor"></label>
     <label>分支<input id="s-branch" value="main"></label>
@@ -136,7 +139,7 @@ body.unlocked .wrap{display:block}
   <div class="hint" id="saveHint"></div>
 </section>
 
-<footer>保存到仓库会触发 GitHub Actions 自动检测与发布 · Token 仅存本机浏览器</footer>
+<footer id="footNote">保存到仓库会触发 GitHub Actions 自动检测与发布 · Token 仅存本机浏览器</footer>
 </div>
 
 <script>
@@ -149,6 +152,10 @@ body.unlocked .wrap{display:block}
   /* 内置保存凭据（fine-grained token，仅限本仓库 Contents 读写）。留空则需手动填写。 */
   var BUILTIN_TOKEN="";
   var SESSION_KEY="lm_admin_auth_v1";
+  /* 服务端模式：由 server.py（NAS 部署）托管时自动启用。
+     此时登录与保存都走后端，页面不含任何凭据，PAT 只在服务端使用。 */
+  var API="api/";
+  var SERVER=false;
   var tries=0, lockUntil=0;
 
   var CATS=[["online_video","在线影视站"],["open_source","开源项目"],["tvbox_config","TVBox 配置"],["magnet_search","磁力搜索"],["player","播放器"],["music","音乐网站"],["subscription","订阅服务"],["video_app","影视 App"],["cloud_search","网盘搜索"],["subtitles","字幕工具"]];
@@ -297,7 +304,9 @@ body.unlocked .wrap{display:block}
   async function load(){
     var listEl=$("#list");
     try{
-      var r=await fetch(SRC+"?t="+Date.now(),{cache:"no-store"});
+      var url=SERVER?(API+"resources?t="+Date.now()):(SRC+"?t="+Date.now());
+      var r=await fetch(url,{cache:"no-store",credentials:"same-origin"});
+      if(r.status===401){listEl.innerHTML='<div class="empty">登录状态已失效，请刷新页面重新登录。</div>';$("#count").textContent="未登录";return}
       if(!r.ok)throw new Error("HTTP "+r.status);
       var d=await r.json();
       if(!d||!Array.isArray(d.resources))throw new Error("文件结构不正确");
@@ -382,6 +391,23 @@ body.unlocked .wrap{display:block}
   }
 
   $("#saveGithub").addEventListener("click",async function(){
+    if(SERVER){
+      var h0=$("#saveHint"),b0=this;
+      b0.disabled=true;hint(h0,"正在保存到服务端…");
+      try{
+        var resp=await fetch(API+"save",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload())});
+        var jd=await resp.json().catch(function(){return{}});
+        if(!resp.ok)throw new Error(jd.error||("HTTP "+resp.status));
+        state.items.forEach(function(it){delete it.__new});
+        state.dirty=false;localStorage.removeItem(DRAFT);render();
+        hint(h0,(jd.message||"已保存")+"（共 "+jd.total+" 项）","ok");
+      }catch(e){
+        hint(h0,"保存失败："+e.message,"err");
+      }finally{
+        b0.disabled=false;
+      }
+      return;
+    }
     var typed=$("#s-token").value.trim();
     var token=typed||BUILTIN_TOKEN;
     var repo=$("#s-repo").value.trim();
@@ -451,6 +477,14 @@ body.unlocked .wrap{display:block}
     $("#lock").classList.add("hide");
     document.body.classList.add("unlocked");
     initCats();
+    if(SERVER){
+      $("#credGrid").style.display="none";
+      $("#logoutBtn").style.display="";
+      $("#footNote").textContent="保存由服务端完成 · 管理员口令与 GitHub 凭据只存在服务器上，不经过浏览器";
+      hint($("#saveHint"),"服务端模式：改完直接点「保存到仓库」，无需填写 Token。");
+      load();
+      return;
+    }
     var savedToken=localStorage.getItem(TOKEN_KEY);
     if(savedToken)$("#s-token").value=savedToken;
     if(BUILTIN_TOKEN&&!savedToken){
@@ -478,6 +512,24 @@ body.unlocked .wrap{display:block}
       return;
     }
     if(!u||!pw){lockMsg("请输入用户名和密码");return}
+    if(SERVER){
+      btn.disabled=true;lockMsg("正在验证…");
+      try{
+        var resp=await fetch(API+"login",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},body:JSON.stringify({user:u,password:pw})});
+        var jd=await resp.json().catch(function(){return{}});
+        if(resp.ok){
+          lockMsg("");$("#l-pass").value="";boot();
+        }else{
+          lockMsg(jd.error||"用户名或密码不正确");
+          $("#l-pass").value="";$("#l-pass").focus();
+        }
+      }catch(e){
+        lockMsg("登录失败："+e.message);
+      }finally{
+        btn.disabled=false;
+      }
+      return;
+    }
     if(!window.crypto||!crypto.subtle){lockMsg("当前环境不支持加密校验，请用 HTTPS 打开本页");return}
     btn.disabled=true;lockMsg("正在验证…");
     try{
@@ -501,11 +553,34 @@ body.unlocked .wrap{display:block}
     }
   });
 
-  if(sessionStorage.getItem(SESSION_KEY)==="1"){
-    boot();
-  }else{
-    $("#l-user").focus();
+  /* 探测是否由 server.py 托管：是则启用服务端登录与保存 */
+  function probeServer(){
+    return fetch(API+"session",{credentials:"same-origin",cache:"no-store"})
+      .then(function(r){return r.ok?r.json():null})
+      .then(function(d){if(d&&d.server){SERVER=true;return !!d.authed}return null})
+      .catch(function(){return null});
   }
+
+  $("#logoutBtn").addEventListener("click",async function(){
+    try{await fetch(API+"logout",{method:"POST",credentials:"same-origin"})}catch(e){}
+    location.reload();
+  });
+
+  (async function(){
+    var authed=await probeServer();
+    if(SERVER){
+      var tip=$("#lockForm").querySelector(".tip");
+      if(tip)tip.textContent="服务端鉴权 · 口令与 GitHub 凭据只保存在服务器上";
+      $("#footNote").textContent="保存由服务端完成 · 管理员口令与 GitHub 凭据只存在服务器上，不经过浏览器";
+      if(authed){boot()}else{$("#l-user").focus()}
+      return;
+    }
+    if(sessionStorage.getItem(SESSION_KEY)==="1"){
+      boot();
+    }else{
+      $("#l-user").focus();
+    }
+  })();
 })();
 </script>
 </body>

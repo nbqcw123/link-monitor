@@ -2,6 +2,8 @@
 
 照着 `awesome-zhuiju-free` 的机制搭的通用版：**数据驱动 → 每天自动检测 → 生成静态导航页 → 发布**。资源内容完全由你自己放（合法网站、自建服务、订阅源都行），项目只提供"检测+发布"的工程框架，零第三方依赖。
 
+> **推荐部署方式：飞牛 NAS 服务端（方式 A）**。管理员口令和 GitHub Token 都留在 NAS 上，管理页登录后一键保存，浏览器全程拿不到凭据。GitHub Pages 只用来给别人看。详见第五节。
+
 ## 一、它做了什么
 
 ```
@@ -31,12 +33,16 @@ link-monitor/
 ├── scripts/
 │   ├── check.py            # 检测脚本
 │   ├── publish.py          # 发布页生成脚本
-│   └── set_admin_password.py  # 设置管理页口令
+│   └── set_admin_password.py  # 设置管理员口令（静态页 / 服务端）
+├── server.py               # 服务端模式（NAS 部署，含登录与保存接口）
+├── Dockerfile              # 容器镜像
+├── docker-compose.yml      # 一键部署
+├── .env.example            # 服务端配置模板（复制为 .env）
 ├── .github/workflows/
 │   └── daily.yml           # GitHub Actions 每天 01:00 定时
-├── run_daily.sh            # 飞牛 NAS 本地定时入口
+├── run_daily.sh            # NAS 本地定时入口（不用容器时）
 ├── index.html              # 生成的静态发布页
-├── admin.html              # 数据字段管理页（需管理员口令）
+├── admin.html              # 数据字段管理页（自动识别静态/服务端模式）
 └── README.md
 ```
 
@@ -89,31 +95,91 @@ score = clamp(2.0 + log10(stars + 1) * 0.75, 1, 5)
 - 想强制保留自己的评分：给该资源加 `"scores_locked": true`，脚本会跳过并标记 `scores_source: "manual"`
 - 发布页评分行会显示 `Star 自动` 小标记，方便区分自动 / 手填
 
-## 五、两套部署方式
+## 五、部署方式（推荐 NAS 服务端）
 
-### 方式 A：GitHub Actions（推荐，零运维）
+三种方式可以单用，也可以组合：**NAS 管后台，Pages 管展示**。
 
-1. 把整个目录推到一个新 GitHub 仓库
-2. Settings → Pages → Source 选 `gh-pages` 分支
+| | 方式 A：NAS 服务端 | 方式 B：GitHub Actions | 方式 C：NAS 纯静态 |
+|---|---|---|---|
+| 管理页鉴权 | **服务端**，无法绕过 | 浏览器端，懂技术可绕 | 无 |
+| GitHub Token | 只存服务端，浏览器拿不到 | 需在页面填写，等于公开 | — |
+| 保存资源 | 点一下即写入并推送 | 需每次填 PAT | 手动改文件 |
+| 访问范围 | 内网（可穿透/反代） | 公网所有人 | 内网 |
+| 运维成本 | 一个容器 | 零 | 一条 cron |
+| 适合 | **自己维护资源（推荐）** | 给别人看的展示页 | 临时试用 |
+
+### 方式 A：飞牛 NAS 服务端
+
+把管理员口令和 GitHub 凭据都放在 NAS 上，浏览器只拿到一个登录 Cookie。
+
+```bash
+# 1. 目录放到 NAS
+cd /vol1/1000/docker
+git clone https://github.com/<你>/link-monitor.git
+
+# 2. 生成管理员口令（只写哈希，不存明文）
+cd link-monitor
+python3 scripts/set_admin_password.py --target env --password '你的密码'
+
+# 3. 填 GitHub PAT（保存时自动推送用，可留空先只存本机）
+vi .env
+
+# 4. 启动
+docker compose up -d
+```
+
+打开 `http://<NAS_IP>:8801/` 就是导航页，`/admin.html` 是管理页，登录后加完字段直接点「保存到仓库」即可——**不需要填任何 Token**。
+
+想让首页也每天自动检测，加一条 cron：
+
+```bash
+# 每天 08:30 在容器内跑检测 + 重新生成页面
+30 8 * * * docker exec link-monitor /bin/sh -c "cd /app && python3 scripts/check.py && python3 scripts/publish.py" >> /vol1/1000/docker/link-monitor/reports/cron.log 2>&1
+```
+
+`.env` 关键项：
+
+| 变量 | 说明 |
+|---|---|
+| `PORT` / `HOST` | 监听地址，默认 `8801` / `0.0.0.0` |
+| `ADMIN_USER` / `ADMIN_PASS_HASH` | 管理员账号；口令用上面的脚本生成，只存 PBKDF2 哈希 |
+| `SESSION_HOURS` | 登录有效期，默认 12 小时 |
+| `GITHUB_TOKEN` | 只用服务端，**建议 fine-grained token，只授权本仓库 Contents 读写** |
+| `GITHUB_REPO` / `GITHUB_BRANCH` / `GITHUB_PATH` | 推送目标，默认本仓库 `main` 的 `resources/resources.json` |
+| `GITHUB_PROXY` | NAS 访问 GitHub 需要代理时填，如 `http://192.168.10.7:7890` |
+| `PUBLISH_ON_SAVE` | 保存后是否立即重生成 `index.html`，默认 1 |
+| `PROTECT_ALL` | 1 = 首页也要登录；0 = 首页公开、仅管理页需登录（推荐） |
+| `COOKIE_SECURE` | 前面挂了 HTTPS 反代时设为 1 |
+
+**安全设计**：登录状态是 HttpOnly Cookie，脚本无法读取；连续输错 5 次锁 60 秒；密码用 `hmac.compare_digest` 常数时间比较；静态文件有路径穿越防护；`/api/save` 会校验 id 唯一、地址协议、必填字段。`.env` 已在 `.gitignore` 里，不会被提交。
+
+### 方式 B：GitHub Actions + Pages（公网展示）
+
+1. 把整个目录推到一个 GitHub 仓库
+2. Settings → Pages → Source 选 `main` 分支根目录
 3. Workflow 已配置每天 UTC 01:00（北京时间 09:00）自动跑：检测 → 生成 → 提交 → 发布
 4. 也可以随时在 Actions 页面手动点 `Run workflow`
 
 访问地址：`https://<用户名>.github.io/<仓库名>/`
 
-### 方式 B：飞牛 NAS 本地定时
+> 这种方式下 `/admin.html` 会退化为前端校验模式（页面里只有口令哈希，保存需要手填 PAT）。适合"给别人看"，不适合当自己的后台。
+
+### 方式 C：NAS 纯静态（不推荐）
 
 1. 把目录放到 NAS，例如 `/vol1/1000/docker/link-monitor`
-2. 加 crontab（用 root 或该目录属主）：
+2. 加 crontab：
 
 ```bash
 # 每天 08:30 执行
 30 8 * * * /bin/bash /vol1/1000/docker/link-monitor/run_daily.sh >> /vol1/1000/docker/link-monitor/reports/cron.log 2>&1
 ```
 
-3. 用 NAS 自带的 Web 服务器/Nginx 把目录根指向 `link-monitor/`，`index.html` 就是发布页
-4. 或装个轻量静态服务器：`python3 -m http.server 8899 -d /vol1/1000/docker/link-monitor`
+3. 用 NAS 自带的 Web 服务器指到该目录，或 `python3 -m http.server 8899`
 
-## 六、可调参数（环境变量）
+> 没有服务端鉴权，管理页的口令只是前端遮挡。仅建议在完全可信的内网临时使用。
+
+## 六、可调参数（检测脚本）
+
 
 | 变量 | 默认 | 说明 |
 |---|---|---|
@@ -122,7 +188,7 @@ score = clamp(2.0 + log10(stars + 1) * 0.75, 1, 5)
 | `CHECK_RETRIES` | 2 | 失败重试次数 |
 | `GH_TIMEOUT` | 10 | GitHub API 请求超时秒数 |
 | `GH_WORKERS` | 4 | GitHub API 并发数 |
-| `GITHUB_TOKEN` | 空 | 可选；GitHub Actions 已自动注入，提高 API 限额 |
+| `GITHUB_TOKEN` | 空 | 检测脚本与服务端保存共用；Actions 自动注入，自建服务端则在 `.env` 里填 |
 | `SKIP_AVAILABILITY` | 0 | 设为 `1` 时只刷新 Star / 评分，不跑可用性检测，适合本地调试 |
 
 ## 七、状态说明
@@ -141,6 +207,8 @@ score = clamp(2.0 + log10(stars + 1) * 0.75, 1, 5)
 | 发布 | Typecho 站点 | GitHub Pages / 任意静态服务器 |
 | 数据字段 | 20+（含评分/风险/验证） | 采用源站完整字段结构，20+ |
 | 评分来源 | 人工维护 | GitHub Star 自动计算（可锁定手填） |
+| 管理页鉴权 | 无 | 静态哈希 → 或 NAS 服务端鉴权（推荐） |
+| 保存资源 | 手改文件 | 网页增删，一键保存并推送 |
 | 资源内容 | 影视站导航 | 由你自行填充合法来源 |
 
 ## 九、合规提示
@@ -151,26 +219,32 @@ score = clamp(2.0 + log10(stars + 1) * 0.75, 1, 5)
 
 访问 `/admin.html` 可在线增删资源字段：只填 **名称 / 地址 / 类型**，保存时按源站完整字段结构写入 `resources/resources.json`。
 
-**管理员口令**
+页面会**自动识别运行环境**：
 
-- 页面源码里只保存 PBKDF2-SHA256 的盐与派生值，**不存明文密码**。
-- 默认用户名 `admin`，密码在首次运行下方命令时生成并只显示一次。
-- 修改/重置密码：
+| 运行在 | 模式 | 登录校验 | 保存方式 |
+|---|---|---|---|
+| NAS（`server.py` / Docker） | 服务端 | `/api/login`，HttpOnly Cookie | 一键写入本机并推送 GitHub，**不填 Token** |
+| GitHub Pages | 静态 | 页面内 PBKDF2 哈希比对 | 需手填 PAT，或下载 JSON 手动替换 |
+
+**设置口令**
 
 ```bash
-python scripts/set_admin_password.py                    # 随机生成强密码并写入
-python scripts/set_admin_password.py --password 你的密码   # 指定密码
-python scripts/set_admin_password.py --print-only        # 只看配置，不改文件
+python3 scripts/set_admin_password.py --target env --password '你的密码'   # NAS 服务端（写 .env）
+python3 scripts/set_admin_password.py --password '你的密码'                # 静态页（写 admin.html）
+python3 scripts/set_admin_password.py --target both --password '你的密码'  # 两边都改
+python3 scripts/set_admin_password.py --print-only                        # 只看配置，不改文件
 ```
 
-- 登录状态用 `sessionStorage` 记住，关掉标签页即失效；连续输错 3 次要等 5 秒。
+两种方式都只保存 PBKDF2-SHA256 的盐与派生值，**不存明文密码**。默认用户名 `admin`。
 
-**保存方式**
+**保存方式对比**
 
 | 方式 | 说明 |
 |---|---|
-| 保存到仓库 | 填 GitHub PAT（`repo` 权限），调用 Contents API 直接提交，触发 Actions 自动检测发布 |
-| 下载 JSON | 下载完整的 `resources.json`，手动替换到 `resources/` |
-| 复制 JSON | 复制到剪贴板，自行粘贴 |
+| 保存到仓库（服务端模式） | 后端用 `.env` 里的 PAT 提交，成功后会触发 Actions 自动检测发布 |
+| 保存到仓库（静态模式） | 手填 PAT 调 Contents API，Token 存本机 `localStorage` |
+| 下载 JSON | 下载完整 `resources.json`，手动替换到 `resources/` |
+| 复制 JSON | 复制到剪贴板 |
 
-> 注意：这是纯静态站点，口令校验只在前端执行，能挡住随手访问，但**不能替代服务端鉴权**。真正敏感的是 GitHub PAT，建议用细粒度、仅该仓库可写的 token，不要长期保存在公共电脑上。
+> 静态模式的口令校验跑在浏览器里，能挡住随手访问，但**挡不住懂技术的人**——他们可以改 JS 直接调接口。真正的写权限在 PAT 上，所以静态模式务必用细粒度、仅本仓库可写的 token。想要真正安全的鉴权，用第五节的 NAS 服务端模式。
+

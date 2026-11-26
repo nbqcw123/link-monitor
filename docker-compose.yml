@@ -1,0 +1,13 @@
+services:
+  link-monitor:
+    build: .
+    image: link-monitor:local
+    container_name: link-monitor
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "8801:8801"
+    volumes:
+      # 挂载整个项目目录：保存后 resources.json / index.html 直接写回宿主机
+      - ./:/app
