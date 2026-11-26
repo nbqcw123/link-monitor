@@ -54,6 +54,9 @@ button:disabled{opacity:.5;cursor:not-allowed}
 .draft button{padding:4px 12px;font-size:12.5px}
 code{background:var(--bg);border:1px solid var(--line);border-radius:5px;padding:1px 5px;font-size:12px}
 .search{margin-bottom:10px;max-width:320px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+.filters .search{margin-bottom:0;flex:1 1 240px;max-width:320px}
+.filter-cat{flex:0 0 auto;width:auto;min-width:160px;max-width:220px;cursor:pointer}
 footer{margin-top:26px;font-size:12px;color:var(--sub);text-align:center}
 .lock{position:fixed;inset:0;z-index:100;background:rgba(247,248,250,.97);display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(6px)}
 .lock.hide{display:none}
@@ -110,7 +113,10 @@ body.unlocked .wrap{display:block}
     <h2>已添加字段 <span class="count" id="count">加载中…</span></h2>
     <button class="ghost" id="reloadBtn" type="button">从仓库重新加载</button>
   </div>
-  <input class="search" id="search" placeholder="搜索名称 / 地址 / 类型">
+  <div class="filters">
+    <input class="search" id="search" placeholder="搜索名称 / 地址">
+    <select class="filter-cat" id="filterCat" aria-label="按类型筛选"></select>
+  </div>
   <div class="list" id="list"><div class="empty">加载中…</div></div>
 </section>
 
@@ -162,6 +168,29 @@ body.unlocked .wrap{display:block}
     });
   }
 
+  // 按类型筛选的下拉：只列出实际存在的数据类型，并带数量
+  function updateFilterOptions(){
+    var sel=$("#filterCat");
+    var cur=sel.value;
+    var counts={},order=[];
+    state.items.forEach(function(it){
+      var k=it.category||"other";
+      if(counts[k]===undefined){counts[k]=0;order.push(k)}
+      counts[k]++;
+    });
+    sel.innerHTML="";
+    var all=document.createElement("option");
+    all.value="";all.textContent="全部类型（"+state.items.length+"）";
+    sel.appendChild(all);
+    order.sort(function(a,b){return counts[b]-counts[a]});
+    order.forEach(function(k){
+      var o=document.createElement("option");
+      o.value=k;o.textContent=catName(k)+"（"+counts[k]+"）";
+      sel.appendChild(o);
+    });
+    if(cur&&counts[cur]!==undefined)sel.value=cur;else sel.value="";
+  }
+
   function makeId(name,url,items){
     var base=String(url||"").replace(/^https?:\/\//,"").split("/")[0].split("?")[0].replace(/[^a-zA-Z0-9]+/g,"-").replace(/^-+|-+$/g,"").toLowerCase();
     if(!base)base=String(name||"item").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"")||"item";
@@ -197,13 +226,16 @@ body.unlocked .wrap{display:block}
   }
 
   function render(){
+    updateFilterOptions();
     var q=($("#search").value||"").trim().toLowerCase();
+    var fc=$("#filterCat").value;
     var list=$("#list");
     var items=state.items.filter(function(it){
+      if(fc&&(it.category||"other")!==fc)return false;
       if(!q)return true;
       return (it.name||"").toLowerCase().indexOf(q)>=0||(it.url||"").toLowerCase().indexOf(q)>=0||catName(it.category).toLowerCase().indexOf(q)>=0;
     });
-    $("#count").textContent=state.items.length+" 项"+(q?"（筛选 "+items.length+"）":"");
+    $("#count").textContent=state.items.length+" 项"+((q||fc)?"（筛选 "+items.length+"）":"");
     if(!items.length){list.innerHTML='<div class="empty">'+(state.items.length?"没有匹配的字段":"还没有字段，用上方表单添加")+'</div>';return}
     var html=items.map(function(it,idx){
       var i=state.items.indexOf(it);
@@ -299,6 +331,7 @@ body.unlocked .wrap{display:block}
   });
 
   $("#search").addEventListener("input",render);
+  $("#filterCat").addEventListener("change",render);
 
   $("#reloadBtn").addEventListener("click",function(){
     if(state.dirty&&!confirm("当前改动未保存，重新加载会丢弃，继续？"))return;
