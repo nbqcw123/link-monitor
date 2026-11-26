@@ -123,7 +123,7 @@ body.unlocked .wrap{display:block}
 <section class="panel">
   <h2>保存</h2>
   <div class="save-grid">
-    <label>GitHub Token（可选）<input id="s-token" type="password" placeholder="已内置，留空即可"></label>
+    <label>GitHub Token（可选）<input id="s-token" type="password" placeholder="请填写 PAT"></label>
     <label>仓库<input id="s-repo" value="nbqcw123/link-monitor"></label>
     <label>分支<input id="s-branch" value="main"></label>
     <label>文件路径<input id="s-path" value="resources/resources.json"></label>
@@ -456,6 +456,8 @@ body.unlocked .wrap{display:block}
     if(BUILTIN_TOKEN&&!savedToken){
       $("#s-token").placeholder="已内置保存凭据，留空即可";
       hint($("#saveHint"),"已内置保存凭据，添加后直接点「保存到仓库」即可。");
+    }else if(!savedToken){
+      $("#s-token").placeholder="未内置：请填写 PAT";
     }
     load();
   }
