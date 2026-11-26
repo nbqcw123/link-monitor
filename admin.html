@@ -55,9 +55,29 @@ button:disabled{opacity:.5;cursor:not-allowed}
 code{background:var(--bg);border:1px solid var(--line);border-radius:5px;padding:1px 5px;font-size:12px}
 .search{margin-bottom:10px;max-width:320px}
 footer{margin-top:26px;font-size:12px;color:var(--sub);text-align:center}
+.lock{position:fixed;inset:0;z-index:100;background:rgba(247,248,250,.97);display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(6px)}
+.lock.hide{display:none}
+.lock-card{width:100%;max-width:360px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 24px;box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.lock-card h2{font-size:17px;margin:0 0 4px;border:0;padding:0}
+.lock-card .tip{font-size:12.5px;color:var(--sub);margin-bottom:16px}
+.lock-card label{margin-bottom:12px}
+.lock-card button{width:100%;margin-top:6px;padding:9px}
+.lock-msg{font-size:12.5px;color:var(--red);min-height:18px;margin-top:10px}
+.wrap{display:none}
+body.unlocked .wrap{display:block}
 </style>
 </head>
 <body>
+<div class="lock" id="lock">
+  <form class="lock-card" id="lockForm" autocomplete="on">
+    <h2>管理员登录</h2>
+    <div class="tip">此页可修改资源字段，需验证管理员身份</div>
+    <label>用户名<input id="l-user" name="username" autocomplete="username" placeholder="管理员账号"></label>
+    <label>密码<input id="l-pass" name="password" type="password" autocomplete="current-password" placeholder="管理员密码"></label>
+    <button class="primary" type="submit" id="l-btn">进入管理页</button>
+    <div class="lock-msg" id="lockMsg"></div>
+  </form>
+</div>
 <div class="wrap">
 <header>
   <div class="head-top">
@@ -115,6 +135,14 @@ footer{margin-top:26px;font-size:12px;color:var(--sub);text-align:center}
 
 <script>
 (function(){
+  /* ===== 管理员校验 =====
+     源码只保存 PBKDF2-SHA256 的盐与派生值，不含明文密码。
+     修改密码：本地运行 scripts/set_admin_password.py，把输出的 AUTH 行替换到这里。
+     注意：纯静态页面，此校验只拦截普通访问，不能替代服务端鉴权。 */
+  var AUTH = {"user":"admin","iter":150000,"salt":"2218cc44bbaec5c3ac1a1a36cb79e680","hash":"hwa4DuYIjkpE3D1XXIRhV5cPUroKrwXRGXWF5djnYpw="};
+  var SESSION_KEY="lm_admin_auth_v1";
+  var tries=0, lockUntil=0;
+
   var CATS=[["online_video","在线影视站"],["open_source","开源项目"],["tvbox_config","TVBox 配置"],["magnet_search","磁力搜索"],["player","播放器"],["subscription","订阅服务"],["video_app","影视 App"],["cloud_search","网盘搜索"],["subtitles","字幕工具"]];
   var SRC="resources/resources.json";
   var DRAFT="lm_admin_draft_v1";
@@ -355,10 +383,86 @@ footer{margin-top:26px;font-size:12px;color:var(--sub);text-align:center}
     }
   });
 
-  initCats();
-  var savedToken=localStorage.getItem(TOKEN_KEY);
-  if(savedToken)$("#s-token").value=savedToken;
-  load();
+  /* ===== 登录与启动 ===== */
+  function hexToBytes(hex){
+    var a=new Uint8Array(hex.length/2);
+    for(var i=0;i<a.length;i++)a[i]=parseInt(hex.substr(i*2,2),16);
+    return a;
+  }
+  function toB64(buf){
+    var b=new Uint8Array(buf),s="";
+    for(var i=0;i<b.length;i++)s+=String.fromCharCode(b[i]);
+    return btoa(s);
+  }
+  async function derive(pw){
+    var enc=new TextEncoder();
+    var key=await crypto.subtle.importKey("raw",enc.encode(pw),"PBKDF2",false,["deriveBits"]);
+    var bits=await crypto.subtle.deriveBits({name:"PBKDF2",salt:hexToBytes(AUTH.salt),iterations:AUTH.iter,hash:"SHA-256"},key,256);
+    return toB64(bits);
+  }
+  function timingEq(a,b){
+    if(a.length!==b.length)return false;
+    var r=0;
+    for(var i=0;i<a.length;i++)r|=a.charCodeAt(i)^b.charCodeAt(i);
+    return r===0;
+  }
+
+  var booted=false;
+  function boot(){
+    if(booted)return;
+    booted=true;
+    $("#lock").classList.add("hide");
+    document.body.classList.add("unlocked");
+    initCats();
+    var savedToken=localStorage.getItem(TOKEN_KEY);
+    if(savedToken)$("#s-token").value=savedToken;
+    load();
+  }
+
+  function lockMsg(text){
+    var el=$("#lockMsg");
+    if(el)el.textContent=text||"";
+  }
+
+  $("#lockForm").addEventListener("submit",async function(ev){
+    ev.preventDefault();
+    var u=$("#l-user").value.trim();
+    var pw=$("#l-pass").value;
+    var btn=$("#l-btn");
+    var now=Date.now();
+    if(now<lockUntil){
+      lockMsg("尝试次数过多，请 "+Math.ceil((lockUntil-now)/1000)+" 秒后再试");
+      return;
+    }
+    if(!u||!pw){lockMsg("请输入用户名和密码");return}
+    if(!window.crypto||!crypto.subtle){lockMsg("当前环境不支持加密校验，请用 HTTPS 打开本页");return}
+    btn.disabled=true;lockMsg("正在验证…");
+    try{
+      var h=await derive(pw);
+      if(u===AUTH.user&&timingEq(h,AUTH.hash)){
+        sessionStorage.setItem(SESSION_KEY,"1");
+        lockMsg("");
+        $("#l-pass").value="";
+        boot();
+      }else{
+        tries++;
+        lockMsg("用户名或密码不正确");
+        if(tries>=3){lockUntil=Date.now()+5000;tries=0;lockMsg("连续失败，请 5 秒后再试")}
+        $("#l-pass").value="";
+        $("#l-pass").focus();
+      }
+    }catch(e){
+      lockMsg("校验失败："+e.message);
+    }finally{
+      btn.disabled=false;
+    }
+  });
+
+  if(sessionStorage.getItem(SESSION_KEY)==="1"){
+    boot();
+  }else{
+    $("#l-user").focus();
+  }
 })();
 </script>
 </body>

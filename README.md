@@ -30,11 +30,13 @@ link-monitor/
 │   └── availability.json   # 每日检测报告（自动生成）
 ├── scripts/
 │   ├── check.py            # 检测脚本
-│   └── publish.py          # 发布页生成脚本
+│   ├── publish.py          # 发布页生成脚本
+│   └── set_admin_password.py  # 设置管理页口令
 ├── .github/workflows/
 │   └── daily.yml           # GitHub Actions 每天 01:00 定时
 ├── run_daily.sh            # 飞牛 NAS 本地定时入口
 ├── index.html              # 生成的静态发布页
+├── admin.html              # 数据字段管理页（需管理员口令）
 └── README.md
 ```
 
@@ -144,3 +146,31 @@ score = clamp(2.0 + log10(stars + 1) * 0.75, 1, 5)
 ## 九、合规提示
 
 本框架只做"链接可用性检测 + 静态展示"，不提供任何资源内容。请只填入你有权使用或公开的合法链接，通过正规渠道获取内容。
+
+## 十、网页管理数据（管理员口令）
+
+访问 `/admin.html` 可在线增删资源字段：只填 **名称 / 地址 / 类型**，保存时按源站完整字段结构写入 `resources/resources.json`。
+
+**管理员口令**
+
+- 页面源码里只保存 PBKDF2-SHA256 的盐与派生值，**不存明文密码**。
+- 默认用户名 `admin`，密码在首次运行下方命令时生成并只显示一次。
+- 修改/重置密码：
+
+```bash
+python scripts/set_admin_password.py                    # 随机生成强密码并写入
+python scripts/set_admin_password.py --password 你的密码   # 指定密码
+python scripts/set_admin_password.py --print-only        # 只看配置，不改文件
+```
+
+- 登录状态用 `sessionStorage` 记住，关掉标签页即失效；连续输错 3 次要等 5 秒。
+
+**保存方式**
+
+| 方式 | 说明 |
+|---|---|
+| 保存到仓库 | 填 GitHub PAT（`repo` 权限），调用 Contents API 直接提交，触发 Actions 自动检测发布 |
+| 下载 JSON | 下载完整的 `resources.json`，手动替换到 `resources/` |
+| 复制 JSON | 复制到剪贴板，自行粘贴 |
+
+> 注意：这是纯静态站点，口令校验只在前端执行，能挡住随手访问，但**不能替代服务端鉴权**。真正敏感的是 GitHub PAT，建议用细粒度、仅该仓库可写的 token，不要长期保存在公共电脑上。
