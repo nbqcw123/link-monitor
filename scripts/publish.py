@@ -85,9 +85,17 @@ def main():
         gen_disp = "尚未检测"
 
     s = report.get("summary", {})
-    total = s.get("total", len(resources))
-    ok = s.get("reachable", 0)
-    bad = s.get("unreachable", 0)
+    if status_by_id:
+        # 按当前资源清单统计，避免新增资源后与旧报告数字对不上
+        total = len(resources)
+        ok = sum(1 for r in resources if (status_by_id.get(r["id"]) or {}).get("status") == "reachable")
+        bad = sum(1 for r in resources if (status_by_id.get(r["id"]) or {}).get("status") == "unreachable")
+        pending = sum(1 for r in resources if r["id"] not in status_by_id)
+    else:
+        total = s.get("total", len(resources))
+        ok = s.get("reachable", 0)
+        bad = s.get("unreachable", 0)
+        pending = 0
 
     parts = ["""<!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="UTF-8">
@@ -121,8 +129,8 @@ h2{font-size:17px;margin:26px 0 12px;font-weight:600;border-left:4px solid var(-
 .risk{font-size:10.5px;padding:1px 7px;border-radius:8px;margin-left:6px}
 .ms{font-size:11px;color:var(--sub)}
 footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
-.tabs{position:sticky;top:0;z-index:20;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px;margin-bottom:20px;display:flex;gap:6px;overflow-x:auto;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-.tab{white-space:nowrap;cursor:pointer;border:0;background:transparent;color:var(--sub);font-size:13px;padding:7px 13px;border-radius:8px;font-weight:500;font-family:inherit}
+.tabs{position:sticky;top:0;z-index:20;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px;margin-bottom:20px;display:flex;flex-wrap:wrap;gap:6px;overflow:visible;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.tab{flex:0 0 auto;white-space:nowrap;cursor:pointer;border:0;background:transparent;color:var(--sub);font-size:13px;padding:7px 13px;border-radius:8px;font-weight:500;font-family:inherit}
 .tab:hover{background:var(--bg)}
 .tab.active{background:var(--blue);color:#fff}
 .tab .n{opacity:.75;font-size:11px;margin-left:3px}
@@ -141,11 +149,14 @@ footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
 <div class="stat"><b class="c-b">__TOTAL__</b> 个资源</div>
 <div class="stat"><b class="c-g">__OK__</b> 可访问</div>
 <div class="stat"><b class="c-r">__BAD__</b> 无法访问</div>
+__PEND__
 </div>
 </header>
 """]
     head = "\n".join(parts)
-    head = head.replace("__GEN__", E(gen_disp)).replace("__TOTAL__", str(total)).replace("__OK__", str(ok)).replace("__BAD__", str(bad))
+    pend_html = ('<div class="stat"><b style="color:#8c8c8c">%d</b> 待检测</div>' % pending) if pending else ""
+    head = (head.replace("__GEN__", E(gen_disp)).replace("__TOTAL__", str(total))
+            .replace("__OK__", str(ok)).replace("__BAD__", str(bad)).replace("__PEND__", pend_html))
 
     cats_sorted = sorted(groups, key=lambda c: (-len(groups[c]), c))
 
