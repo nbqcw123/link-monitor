@@ -41,7 +41,6 @@ STATUS_META = {
     "unreachable": ("无法访问", "#d54941", "#fef0ef"),
     "unknown": ("未检测", "#8c8c8c", "#f5f5f5"),
 }
-RISK_LABEL = {"high": "高风险", "medium": "中风险", "low": "低风险", "unknown": "未知"}
 E = html.escape
 
 
@@ -126,7 +125,6 @@ h2{font-size:17px;margin:26px 0 12px;font-weight:600;border-left:4px solid var(-
 .card .foot{display:flex;justify-content:space-between;align-items:center;margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
 .badge{font-size:11px;padding:2px 8px;border-radius:10px}
 .badge.dim{opacity:.6}
-.risk{font-size:10.5px;padding:1px 7px;border-radius:8px;margin-left:6px}
 .ms{font-size:11px;color:var(--sub)}
 footer{margin-top:30px;font-size:12px;color:var(--sub);text-align:center}
 .tabs{position:sticky;top:0;z-index:20;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px;margin-bottom:20px;display:flex;flex-wrap:wrap;gap:6px;overflow:visible;box-shadow:0 2px 8px rgba(0,0,0,.04)}
@@ -203,20 +201,14 @@ __PEND__
             if gh.get("full_name"):
                 gh_txt = gh["full_name"] + (" · ★%s" % gh["stars"] if gh.get("stars") is not None else "")
                 gh_html = '<div class="gh">⌘ %s</div>' % E(gh_txt)
-            risk_html = ""
-            risk = (r.get("risks") or {}).get("copyright")
-            if risk and risk != "low":
-                rc = {"high": "#d54941", "medium": "#d89614", "unknown": "#8c8c8c"}.get(risk, "#8c8c8c")
-                risk_html = '<span class="risk" style="color:%s;background:#f5f5f5">%s</span>' % (rc, RISK_LABEL.get(risk, risk))
-
             body.append(
                 '<a class="card" href="%s" target="_blank" rel="noopener">'
-                '<div class="name">%s%s</div>'
+                '<div class="name">%s</div>'
                 '<div class="desc">%s</div>'
                 '%s%s%s'
                 '<div class="foot"><span class="badge%s" style="color:%s;background:%s">%s</span>'
                 '<span class="ms">%s</span></div></a>'
-                % (E(r["url"]), E(r["name"]), risk_html, E(r.get("summary_short") or r.get("summary", "")),
+                % (E(r["url"]), E(r["name"]), E(r.get("summary_short") or r.get("summary", "")),
                    tags_html, score_html, gh_html,
                    dim, fg, bg, label, ms_txt)
             )
@@ -224,7 +216,8 @@ __PEND__
         body.append("</section>")
 
     tail = """
-<footer>由 link-monitor 自动生成 · 采用源站完整字段结构 · 资源可用性每日检测<br>仅供技术研究，请通过正规渠道获取内容</footer>
+<footer>由 link-monitor 自动生成 · 采用源站完整字段结构 · 资源可用性每日检测<br>
+本站仅对第三方网站链接进行整理与收录，不托管、不提供任何资源内容，亦不对所收录网站的内容及版权事宜负责；相关权利归各网站权利人所有，请通过正规渠道访问与使用。</footer>
 </div>
 <script>
 (function(){
