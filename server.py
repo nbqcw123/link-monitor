@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """link-monitor 服务端模式（推荐用于飞牛 NAS / 内网服务器）。
 
-相比纯静态 GitHub Pages，它把两样东西放到了服务端：
-  1. 管理员账号：密码只存 PBKDF2 哈希，校验在服务端完成，无法绕过前端；
-  2. GitHub Token：只保存在 NAS 的环境变量里，永远不会下发到浏览器。
+数据完全留在 NAS 本地：管理页保存时只写 resources.json 并重新生成 index.html，
+不会推送到 GitHub。只有 GitHub Actions 静态部署方式才需要把更改推到仓库。
+
+管理员口令只存 PBKDF2 哈希，校验在服务端完成，浏览器拿不到任何凭据。
 
 用法：
-    cp .env.example .env      # 填管理员口令哈希与 PAT
+    cp .env.example .env      # 填管理员口令哈希
     python3 server.py         # 默认 0.0.0.0:8801
 
 只依赖 Python 3.9+ 标准库。
@@ -24,8 +25,6 @@ import subprocess
 import sys
 import threading
 import time
-import urllib.error
-import urllib.request
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import unquote, urlparse
 
@@ -62,11 +61,6 @@ CFG = {
     "cookie_secure": env("COOKIE_SECURE", "0") == "1",
     "protect_all": env("PROTECT_ALL", "0") == "1",
     "data_file": os.path.join(BASE, env("DATA_FILE", "resources/resources.json")),
-    "gh_token": env("GITHUB_TOKEN"),
-    "gh_repo": env("GITHUB_REPO", "nbqcw123/link-monitor"),
-    "gh_branch": env("GITHUB_BRANCH", "main"),
-    "gh_path": env("GITHUB_PATH", "resources/resources.json"),
-    "gh_proxy": env("GITHUB_PROXY"),
     "publish_on_save": env("PUBLISH_ON_SAVE", "1") == "1",
 }
 
@@ -159,64 +153,6 @@ def session_valid(token):
             SESSIONS.pop(token, None)
             return False
         return True
-
-
-# ---------------------------------------------------------------- GitHub
-
-def gh_opener():
-    proxy = CFG["gh_proxy"]
-    if proxy:
-        handler = urllib.request.ProxyHandler({"http": proxy, "https": proxy})
-    else:
-        handler = urllib.request.ProxyHandler({})
-    return urllib.request.build_opener(handler)
-
-
-def gh_request(method, path, body=None, tries=3):
-    url = "https://api.github.com/repos/%s/%s" % (CFG["gh_repo"], path)
-    payload = json.dumps(body).encode("utf-8") if body is not None else None
-    headers = {
-        "Authorization": "Bearer " + CFG["gh_token"],
-        "User-Agent": "link-monitor-server",
-        "Accept": "application/vnd.github+json",
-        "Content-Type": "application/json",
-    }
-    opener = gh_opener()
-    last = None
-    for attempt in range(tries):
-        try:
-            req = urllib.request.Request(url, data=payload, headers=headers, method=method)
-            with opener.open(req, timeout=45) as resp:
-                return json.loads(resp.read().decode("utf-8"))
-        except urllib.error.HTTPError as exc:
-            if exc.code == 404:
-                return None
-            last = exc
-        except Exception as exc:  # noqa: BLE001
-            last = exc
-        if attempt < tries - 1:
-            time.sleep(2 + attempt * 2)
-    raise last
-
-
-def push_to_github(text, message):
-    """用服务端 PAT 把 resources.json 提交到仓库。返回 (ok, 说明)。"""
-    if not CFG["gh_token"]:
-        return False, "未配置 GITHUB_TOKEN，已只保存到本机"
-    try:
-        path = CFG["gh_path"].lstrip("/")
-        current = gh_request("GET", "contents/%s?ref=%s" % (path, CFG["gh_branch"]))
-        body = {
-            "message": message,
-            "content": base64.b64encode(text.encode("utf-8")).decode("ascii"),
-            "branch": CFG["gh_branch"],
-        }
-        if current and current.get("sha"):
-            body["sha"] = current["sha"]
-        gh_request("PUT", "contents/%s" % path, body)
-        return True, "已推送到 %s@%s" % (CFG["gh_repo"], CFG["gh_branch"])
-    except Exception as exc:  # noqa: BLE001
-        return False, "推送到 GitHub 失败：%s" % str(exc)[:160]
 
 
 # ---------------------------------------------------------------- 数据
@@ -394,14 +330,11 @@ class Handler(BaseHTTPRequestHandler):
             if CFG["publish_on_save"]:
                 regenerate_page()
 
-            added = sum(1 for row in data["resources"] if row.get("__new"))
-            message = "chore: 管理页更新资源字段（共 %d 项）" % len(data["resources"])
-            ok, note = push_to_github(text, message)
             return self.send_json(200, {
                 "ok": True,
                 "local": True,
-                "github": ok,
-                "message": "已保存到本机" + ("，" + note if ok else "；" + note),
+                "github": False,
+                "message": "已保存到 NAS 本地，未推送 GitHub",
                 "total": len(data["resources"]),
             })
 
@@ -438,8 +371,7 @@ def main():
         print("     先生成：python3 scripts/set_admin_password.py --target env", file=sys.stderr)
     print("link-monitor 服务端已启动：http://%s:%d/  (管理页 /admin.html)" % (CFG["host"], CFG["port"]))
     print("数据文件：%s" % CFG["data_file"])
-    print("GitHub： %s@%s%s" % (CFG["gh_repo"], CFG["gh_branch"],
-                                "" if CFG["gh_token"] else "（未配置 PAT，仅本机保存）"))
+    print("保存目标：NAS 本地（不推送 GitHub）")
     httpd = ThreadingHTTPServer((CFG["host"], CFG["port"]), Handler)
     httpd.daemon_threads = True
     try:

@@ -2,7 +2,7 @@
 
 照着 `awesome-zhuiju-free` 的机制搭的通用版：**数据驱动 → 每天自动检测 → 生成静态导航页 → 发布**。资源内容完全由你自己放（合法网站、自建服务、订阅源都行），项目只提供"检测+发布"的工程框架，零第三方依赖。
 
-> **推荐部署方式：飞牛 NAS 服务端（方式 A）**。管理员口令和 GitHub Token 都留在 NAS 上，管理页登录后一键保存，浏览器全程拿不到凭据。GitHub Pages 只用来给别人看。详见第五节。
+> **推荐部署方式：飞牛 NAS 服务端（方式 A）**。数据和管理员口令都留在 NAS 本地，管理页登录后一键保存即可，不推送 GitHub、浏览器全程拿不到凭据。GitHub Pages 只用来给别人看；只有选择 GitHub Actions 部署时，才需要把更改提交到部署人自己的仓库。详见第五节。
 
 ## 一、它做了什么
 
@@ -102,33 +102,30 @@ score = clamp(2.0 + log10(stars + 1) * 0.75, 1, 5)
 | | 方式 A：NAS 服务端 | 方式 B：GitHub Actions | 方式 C：NAS 纯静态 |
 |---|---|---|---|
 | 管理页鉴权 | **服务端**，无法绕过 | 浏览器端，懂技术可绕 | 无 |
-| GitHub Token | 只存服务端，浏览器拿不到 | 需在页面填写，等于公开 | — |
-| 保存资源 | 点一下即写入并推送 | 需每次填 PAT | 手动改文件 |
+| 保存目标 | **只写 NAS 本地**，不推 GitHub | 提交到部署人自己的仓库 | 手动改文件 |
+| GitHub Token | 不需要 | 需在页面填写，等于公开 | — |
 | 访问范围 | 内网（可穿透/反代） | 公网所有人 | 内网 |
 | 运维成本 | 一个容器 | 零 | 一条 cron |
 | 适合 | **自己维护资源（推荐）** | 给别人看的展示页 | 临时试用 |
 
 ### 方式 A：飞牛 NAS 服务端
 
-把管理员口令和 GitHub 凭据都放在 NAS 上，浏览器只拿到一个登录 Cookie。
+数据和口令都留在 NAS 本地：管理页保存时只写 `resources.json` 并重新生成 `index.html`，**不会推送 GitHub**。浏览器只拿到一个登录 Cookie。
 
 ```bash
-# 1. 目录放到 NAS
+# 1. 目录放到 NAS（直接复制项目文件即可，不需要 Git 仓库）
 cd /vol1/1000/docker
-git clone https://github.com/<你>/link-monitor.git
+cp -r /path/to/link-monitor .
 
 # 2. 生成管理员口令（只写哈希，不存明文）
 cd link-monitor
 python3 scripts/set_admin_password.py --target env --password '你的密码'
 
-# 3. 填 GitHub PAT（保存时自动推送用，可留空先只存本机）
-vi .env
-
-# 4. 启动
+# 3. 启动
 docker compose up -d
 ```
 
-打开 `http://<NAS_IP>:8801/` 就是导航页，`/admin.html` 是管理页，登录后加完字段直接点「保存到仓库」即可——**不需要填任何 Token**。
+打开 `http://<NAS_IP>:8801/` 就是导航页，`/admin.html` 是管理页，登录后加完字段直接点「保存到 NAS」即可——**不需要填任何 Token，也不会提交到仓库**。
 
 想让首页也每天自动检测，加一条 cron：
 
@@ -144,9 +141,6 @@ docker compose up -d
 | `PORT` / `HOST` | 监听地址，默认 `8801` / `0.0.0.0` |
 | `ADMIN_USER` / `ADMIN_PASS_HASH` | 管理员账号；口令用上面的脚本生成，只存 PBKDF2 哈希 |
 | `SESSION_HOURS` | 登录有效期，默认 12 小时 |
-| `GITHUB_TOKEN` | 只用服务端，**建议 fine-grained token，只授权本仓库 Contents 读写** |
-| `GITHUB_REPO` / `GITHUB_BRANCH` / `GITHUB_PATH` | 推送目标，默认本仓库 `main` 的 `resources/resources.json` |
-| `GITHUB_PROXY` | NAS 访问 GitHub 需要代理时填，如 `http://192.168.10.7:7890` |
 | `PUBLISH_ON_SAVE` | 保存后是否立即重生成 `index.html`，默认 1 |
 | `PROTECT_ALL` | 1 = 首页也要登录；0 = 首页公开、仅管理页需登录（推荐） |
 | `COOKIE_SECURE` | 前面挂了 HTTPS 反代时设为 1 |
@@ -162,7 +156,7 @@ docker compose up -d
 
 访问地址：`https://<用户名>.github.io/<仓库名>/`
 
-> 这种方式下 `/admin.html` 会退化为前端校验模式（页面里只有口令哈希，保存需要手填 PAT）。适合"给别人看"，不适合当自己的后台。
+> 这种方式下 `/admin.html` 会退化为前端校验模式（页面里只有口令哈希，保存需要手填 PAT 把更改提交到**部署人自己的仓库**）。只有这种部署方式才需要推仓库；适合"给别人看"，不适合当自己的后台。
 
 ### 方式 C：NAS 纯静态（不推荐）
 
@@ -188,7 +182,7 @@ docker compose up -d
 | `CHECK_RETRIES` | 2 | 失败重试次数 |
 | `GH_TIMEOUT` | 10 | GitHub API 请求超时秒数 |
 | `GH_WORKERS` | 4 | GitHub API 并发数 |
-| `GITHUB_TOKEN` | 空 | 检测脚本与服务端保存共用；Actions 自动注入，自建服务端则在 `.env` 里填 |
+| `GITHUB_TOKEN` | 空 | 检测脚本拉 Star 元数据用；Actions 自动注入，NAS 服务端不再需要 |
 | `SKIP_AVAILABILITY` | 0 | 设为 `1` 时只刷新 Star / 评分，不跑可用性检测，适合本地调试 |
 
 ## 七、状态说明
@@ -208,7 +202,7 @@ docker compose up -d
 | 数据字段 | 20+（含评分/风险/验证） | 采用源站完整字段结构，20+ |
 | 评分来源 | 人工维护 | GitHub Star 自动计算（可锁定手填） |
 | 管理页鉴权 | 无 | 静态哈希 → 或 NAS 服务端鉴权（推荐） |
-| 保存资源 | 手改文件 | 网页增删，一键保存并推送 |
+| 保存资源 | 手改文件 | 网页增删，一键保存（NAS 存本地 / Actions 推仓库） |
 | 资源内容 | 影视站导航 | 由你自行填充合法来源 |
 
 ## 九、合规提示
@@ -223,8 +217,8 @@ docker compose up -d
 
 | 运行在 | 模式 | 登录校验 | 保存方式 |
 |---|---|---|---|
-| NAS（`server.py` / Docker） | 服务端 | `/api/login`，HttpOnly Cookie | 一键写入本机并推送 GitHub，**不填 Token** |
-| GitHub Pages | 静态 | 页面内 PBKDF2 哈希比对 | 需手填 PAT，或下载 JSON 手动替换 |
+| NAS（`server.py` / Docker） | 服务端 | `/api/login`，HttpOnly Cookie | 一键写入 NAS 本地，**不推送 GitHub、不填 Token** |
+| GitHub Pages | 静态 | 页面内 PBKDF2 哈希比对 | 需手填 PAT 提交到部署人自己的仓库，或下载 JSON 手动替换 |
 
 **设置口令**
 
@@ -241,8 +235,8 @@ python3 scripts/set_admin_password.py --print-only                        # 只�
 
 | 方式 | 说明 |
 |---|---|
-| 保存到仓库（服务端模式） | 后端用 `.env` 里的 PAT 提交，成功后会触发 Actions 自动检测发布 |
-| 保存到仓库（静态模式） | 手填 PAT 调 Contents API，Token 存本机 `localStorage` |
+| 保存到 NAS（服务端模式） | 后端只写 NAS 本地的 `resources.json`，并重生成 `index.html`；**不推送 GitHub** |
+| 保存到仓库（静态 / GitHub Actions 模式） | 手填 PAT 调 Contents API，提交到部署人自己的仓库，随后触发 Actions 自动检测发布；Token 存本机 `localStorage` |
 | 下载 JSON | 下载完整 `resources.json`，手动替换到 `resources/` |
 | 复制 JSON | 复制到剪贴板 |
 

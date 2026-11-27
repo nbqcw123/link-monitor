@@ -139,7 +139,7 @@ body.unlocked .wrap{display:block}
   <div class="hint" id="saveHint"></div>
 </section>
 
-<footer id="footNote">保存到仓库会触发 GitHub Actions 自动检测与发布 · Token 仅存本机浏览器</footer>
+<footer id="footNote">GitHub Actions 方式：保存到仓库会触发自动检测与发布 · Token 仅存本机浏览器</footer>
 </div>
 
 <script>
@@ -153,7 +153,8 @@ body.unlocked .wrap{display:block}
   var BUILTIN_TOKEN="";
   var SESSION_KEY="lm_admin_auth_v1";
   /* 服务端模式：由 server.py（NAS 部署）托管时自动启用。
-     此时登录与保存都走后端，页面不含任何凭据，PAT 只在服务端使用。 */
+     此时登录与保存都走后端，数据只写 NAS 本地，不推送 GitHub；
+     静态模式（GitHub Pages / Actions）才需要 PAT 把更改提交到仓库。 */
   var API="api/";
   var SERVER=false;
   var tries=0, lockUntil=0;
@@ -338,7 +339,7 @@ body.unlocked .wrap{display:block}
     render();
     $("#f-name").value="";$("#f-url").value="";
     $("#f-name").focus();
-    hint(h,"已添加「"+name+"」，记得点下方「保存到仓库」。","ok");
+    hint(h,"已添加「"+name+"」，记得点下方保存按钮。","ok");
   });
 
   $("#search").addEventListener("input",render);
@@ -393,7 +394,7 @@ body.unlocked .wrap{display:block}
   $("#saveGithub").addEventListener("click",async function(){
     if(SERVER){
       var h0=$("#saveHint"),b0=this;
-      b0.disabled=true;hint(h0,"正在保存到服务端…");
+      b0.disabled=true;hint(h0,"正在保存到 NAS 本地…");
       try{
         var resp=await fetch(API+"save",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload())});
         var jd=await resp.json().catch(function(){return{}});
@@ -480,8 +481,9 @@ body.unlocked .wrap{display:block}
     if(SERVER){
       $("#credGrid").style.display="none";
       $("#logoutBtn").style.display="";
-      $("#footNote").textContent="保存由服务端完成 · 管理员口令与 GitHub 凭据只存在服务器上，不经过浏览器";
-      hint($("#saveHint"),"服务端模式：改完直接点「保存到仓库」，无需填写 Token。");
+      $("#saveGithub").textContent="保存到 NAS";
+      $("#footNote").textContent="NAS 服务端模式：数据只保存到本机 · 不推送 GitHub · 管理员口令只存在服务器上";
+      hint($("#saveHint"),"服务端模式：改完直接点「保存到 NAS」，无需填写 Token，也不会提交到任何仓库。");
       load();
       return;
     }
@@ -570,8 +572,8 @@ body.unlocked .wrap{display:block}
     var authed=await probeServer();
     if(SERVER){
       var tip=$("#lockForm").querySelector(".tip");
-      if(tip)tip.textContent="服务端鉴权 · 口令与 GitHub 凭据只保存在服务器上";
-      $("#footNote").textContent="保存由服务端完成 · 管理员口令与 GitHub 凭据只存在服务器上，不经过浏览器";
+      if(tip)tip.textContent="服务端鉴权 · 口令只保存在服务器上 · 数据只存 NAS 本地";
+      $("#footNote").textContent="NAS 服务端模式：数据只保存到本机 · 不推送 GitHub · 管理员口令只存在服务器上";
       if(authed){boot()}else{$("#l-user").focus()}
       return;
     }
